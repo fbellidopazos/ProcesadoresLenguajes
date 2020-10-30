@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileSystemView;
+import java.io.PrintStream;
 
 public class main {
     
     
 
     public static void main(String[] args) throws Exception {
+        
 
         
 
@@ -25,24 +27,33 @@ public class main {
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = jfc.getSelectedFile();
             String archivo=selectedFile.getCanonicalPath();
-            
-            analizadorLexico aLexico=new analizadorLexico(archivo,errorModule);
 
-            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("mainName");
 
+            System.out.println(archivo);
+            String[] parts=archivo.split("\\\\");
+
+            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS_"+parts[parts.length-1],errorModule);
+
+            analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
             
-            
+            PrintStream fileOut = new PrintStream("./tokens.txt");
+            System.setOut(fileOut);
+
             /*
             Aqui el cuerpo de funcionamiento del procesador
             */
             Token<String,String> token=aLexico.generarToken(); 
-            for (int i = 0; i < 31 && token.first!="EOF"; i++) {
+            for (int i = 0; token.first!="EOF"; i++) {
                 System.out.println(token);
 
                 token=aLexico.generarToken();
             }   
             System.out.println(token);
 
+
+            fileOut = new PrintStream("./TablaSimbolos.txt");
+            System.setOut(fileOut);
+            gestorTablaSimbolos.showAllTables();
 
             
         }

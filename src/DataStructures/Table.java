@@ -45,7 +45,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Table extends JPanel {
-    private boolean DEBUG = false;
+    
 
     public Table(String[] columnNames,Object[][] data) {
 
@@ -57,14 +57,7 @@ public class Table extends JPanel {
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         table.setFillsViewportHeight(true);
 
-        if (DEBUG) {
-            table.addMouseListener(new MouseAdapter() {
-                public void mouseClicked(MouseEvent e) {
-                    printDebugData(table);
-                }
-            });
-        }
-
+    
         //Create the scroll pane and add the table to it.
         JScrollPane scrollPane = new JScrollPane(table);
 
@@ -72,21 +65,7 @@ public class Table extends JPanel {
         add(scrollPane);
     }
 
-    private void printDebugData(JTable table) {
-        int numRows = table.getRowCount();
-        int numCols = table.getColumnCount();
-        javax.swing.table.TableModel model = table.getModel();
-
-        System.out.println("Value of data: ");
-        for (int i=0; i < numRows; i++) {
-            System.out.print("    row " + i + ":");
-            for (int j=0; j < numCols; j++) {
-                System.out.print("  " + model.getValueAt(i, j));
-            }
-            System.out.println();
-        }
-        System.out.println("--------------------------");
-    }
+    
 
     /**
      * Create the GUI and show it.  For thread safety,
@@ -106,6 +85,19 @@ public class Table extends JPanel {
         //Display the window.
         frame.pack();
         frame.setVisible(true);
+
+
+        System.out.println(name);
+        for (int i = 0; i < columnNames.length; i++) {
+            System.out.print(columnNames[i]);
+        }
+        System.out.println("");
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                System.out.print(data[i][j]+" ");
+            }
+            System.out.println("");
+        }
     }
 
 }

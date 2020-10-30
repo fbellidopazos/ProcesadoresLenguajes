@@ -21,6 +21,7 @@ public class analizadorLexico {
     public HashMap<String, Integer> aplicacionEstados; // Biyeccion estado - posicion array vertical
     public HashMap<String, Integer> aplicacionCaracter; // Biyeccion char/charInt - posicion array horizontal
     public int line=0;
+    public GestorTablaSimbolos gestorTablaSimbolos;
     /**
      * Modulo buscador accionEstado
      * Letras [charInit:charFinal] --> 65-90 [Mayus]// 97-122 [Minus]
@@ -34,8 +35,9 @@ public class analizadorLexico {
          */
         
         int caracter = (int) c;
-        String caracter2find;
- 
+        String caracter2find="";
+        
+
         if(estado.equals("A") &&  !((caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122) || (caracter>=48 && caracter<=57))){
             caracter2find="o.c"; // Estamos en A y no es letra ni digito
  
@@ -70,13 +72,16 @@ public class analizadorLexico {
 
             else if(getCarEspeciales(caracter))  
                 caracter2find="ce"; //Es un delimitador
-            else
-                caracter2find=Character.toString(c);
+            else{
+                if((((int) c) == -1 || ((int) c) ==65535) && caracter2find.isEmpty()){
+                    return new Pair<>("EOF","A32");
+                }else
+                    caracter2find=Character.toString(c);
+            }
+                
         }
-        //
-        if(((int) c) == -1 || ((int) c) ==65535){
-            return new Pair<>("EOF","A32");
-        }
+        
+        
 
         if((int) c==10){
             line++;
@@ -259,7 +264,7 @@ public class analizadorLexico {
                         if(isReservada(lexema))
                             token=new Token<>(lexema,"-"); //--------------------------------------> Mirar reservadas
                         else
-                            token=new Token<>("identificador",lexema); //--------------------------------------> TABLA SIMBOLOS 
+                            token=new Token<>("identificador",Integer.toString(gestorTablaSimbolos.insertarLexema(lexema))); //--------------------------------------> TABLA SIMBOLOS 
                         //System.out.println("A->oc B");
                         break;
                     case "A15":
@@ -373,12 +378,13 @@ public class analizadorLexico {
      * 
      * @param archivo
      */
-    public analizadorLexico(String archivo,moduloError errorModule) throws IOException {
+    public analizadorLexico(String archivo,moduloError errorModule,GestorTablaSimbolos gestorTablaSimbolos) throws IOException {
         // Inicializamos archivo a leer
         File f = new File(archivo); // Creation of File Descriptor for input file
         FileReader fr = new FileReader(f); // Creation of File Reader object
         file = new BufferedReader(fr); // Creation of BufferedReader object
         this.errorModule=errorModule;
+        this.gestorTablaSimbolos=gestorTablaSimbolos;
 
         gramaticaRegular = new Pair[12][17];
         /*

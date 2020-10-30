@@ -1,0 +1,12 @@
+<identificador, 0>
+<identificador, 1>
+<identificador, 2>
+<identificador, 3>
+<identificador, 4>
+<identificador, 5>
+<identificador, 6>
+<identificador, 7>
+<identificador, 8>
+Error code 1: Ya esta en la tabla de simbolos!!!
+<identificador, -1>
+<EOF, ->
