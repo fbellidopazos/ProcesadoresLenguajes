@@ -20,6 +20,7 @@ public class GestorTablaSimbolos {
     public int insertarLexema(String lexema){
 
         
+        
         return currentTable.newInsert(lexema);
     }
     public void showAllTables(){
