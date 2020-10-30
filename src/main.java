@@ -34,9 +34,11 @@ public class main {
 
             GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS_"+parts[parts.length-1],errorModule);
 
+            PrintStream fileOut = new PrintStream("./gramaticaTabular.txt");
+            System.setOut(fileOut);
             analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
             
-            PrintStream fileOut = new PrintStream("./tokens.txt");
+            fileOut = new PrintStream("./tokens.txt");
             System.setOut(fileOut);
 
             /*

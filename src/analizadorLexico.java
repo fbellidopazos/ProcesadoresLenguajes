@@ -516,18 +516,24 @@ public class analizadorLexico {
         aplicacionCaracter.put("o.c", 16);
 
         // Testing Purposes
-        /*
         for (int i = 0; i < gramaticaRegular.length; i++) {
             for (int j = 0; j < gramaticaRegular[0].length; j++) {
                 if (gramaticaRegular[i][j] == null)
-                    System.out.print(gramaticaRegular[i][j] + "  ");
-                else
-                    System.out.print(gramaticaRegular[i][j] + " ");
+                    System.out.print(gramaticaRegular[i][j] + "       ");
+                else{
+                    Pair<String,String> printer=gramaticaRegular[i][j];
+                    if(printer.second.length()==2)
+                        System.out.print( printer+ "    ");
+                    else
+                        System.out.print( printer+ "   ");
+                }
+
+                    
 
             }
             System.out.println();
         }
-        */
+        
 
         leer(); // Leemos el Primer caracter del archivo
     }
