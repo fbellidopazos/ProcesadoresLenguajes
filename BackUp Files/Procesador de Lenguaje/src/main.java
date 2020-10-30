@@ -1,5 +1,4 @@
 import DataStructures.Pair;
-import DataStructures.Token;
 import java.io.IOException;
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -21,30 +20,19 @@ public class main {
 		       
         moduloError errorModule=new moduloError();
         
-
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = jfc.getSelectedFile();
             String archivo=selectedFile.getCanonicalPath();
             
             analizadorLexico aLexico=new analizadorLexico(archivo,errorModule);
-
-            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("mainName");
-
-            
+            aLexico.generarToken();
             
             /*
             Aqui el cuerpo de funcionamiento del procesador
             */
-            Token<String,String> token=aLexico.generarToken(); 
-            for (int i = 0; i < 31 && token.first!="EOF"; i++) {
-                System.out.println(token);
-
-                token=aLexico.generarToken();
-            }   
-            System.out.println(token);
 
 
-            
+
         }
         else{
             throw new Exception("No hay archivo para analizar"); // No hay archivo a analizador

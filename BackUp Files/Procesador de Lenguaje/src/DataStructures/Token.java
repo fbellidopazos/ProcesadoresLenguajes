@@ -9,7 +9,7 @@ public class Token<U, V> {
 	public final V second; // second field of a Token
 
 	// Constructs a new Token with specified values
-	public Token(U first, V second) {
+	private Token(U first, V second) {
 		this.first = first;
 		this.second = second;
 	}

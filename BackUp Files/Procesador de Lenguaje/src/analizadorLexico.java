@@ -1,7 +1,5 @@
 import java.util.HashMap;
 import DataStructures.Pair;
-import DataStructures.Token;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -73,13 +71,9 @@ public class analizadorLexico {
             else
                 caracter2find=Character.toString(c);
         }
-        //
+        
         if(((int) c) == -1 || ((int) c) ==65535){
             return new Pair<>("EOF","A32");
-        }
-
-        if((int) c==10){
-            line++;
         }
 
         int fila=aplicacionEstados.get(estado);
@@ -127,7 +121,7 @@ public class analizadorLexico {
     }
 
     private boolean isReservada(String lexema){
-        String[] reservadas={"do","while","function","return","input","alert","else","Number","Boolean","String","let","if"};
+        String[] reservadas={};
 
         boolean found=false;
         for (int i = 0; i < reservadas.length && !found; i++) {
@@ -137,7 +131,7 @@ public class analizadorLexico {
     }
 
     private boolean isFinal(String estado){
-        String[] finals={"V","M","B","D","F","H","NN","T","L","O","K","R","D","EOF"};
+        String[] finals={"V","M","B","D","F","H","NN","T","L","O","K","R","D"};
 
         boolean found=false;
         
@@ -150,22 +144,22 @@ public class analizadorLexico {
     /**
      * Modulo de generacion de Tokens
      */
-    public Token<String,String> generarToken() throws Exception{
+    public void generarToken() throws Exception{
         String estado = "S";
         String accion;
-        Token<String,String> token=null;
+
         
-        String lexema="";
+        
 
         while (estado != null && !isFinal(estado)) {
-             
             
-            int digito=0;
-            Pair<String, String> accionEstado = getAccionEstado(estado); // Correlacionamos Estado y caracter
-            // System.out.println(c+" "+(int)c+" "+accionEstado); //--> Testing Purposes
+            
+
+            Pair<String, String> accionEstado = getAccionEstado(estado);
+            System.out.println(c+" "+(int)c+" "+accionEstado);
             accion = accionEstado == null ? null : accionEstado.second; // Obtenemos la accion a ejecutar
             estado = accionEstado == null ? null : accionEstado.first; // Obtenemos el estado al que hemos llegado
-            // System.out.println((int)c+" "+c+"   "+accionEstado); //--> Testing Purposes
+
 
             
             if (estado == null) {
@@ -174,198 +168,145 @@ public class analizadorLexico {
             } else {
                 switch (accion) {
                     case "A0":
-                        // Saltamos Del
-                        //System.out.println("S->del S");
-                        leer();
+                        
+                        System.out.println("Accion 0");
                         break;
                     case "A1":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("S->lA");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A2":
-                        lexema="";
-                        leer();
-                        //System.out.println("S->\"C");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A3":
-                        digito=Character.getNumericValue(c);
-                        leer();
-                        //System.out.println("S->dE");
+                        
+                        System.out.println("Accion 4");
                         break;
                     case "A4":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("S->-G");
+                        
+                        System.out.println("Accion 5");
                         break;
                     case "A5":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("S-> |I");
+                        
+                        System.out.println("Accion 6");
                         break;
                     case "A6":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("S->&J");
+                        
+                        System.out.println("Accion 7");
                         break;
                     case "A7":
-                        lexema=lexema+c;
-                        leer();
-
-                        //System.out.println("S->=N");
+                        
+                        System.out.println("Accion 8");
                         break;
                     case "A8":
-                        lexema=lexema+c;
-                        leer();
-
-                        //System.out.println("S->!Q");
+                        
+                        System.out.println("Accion 9");
                         break;
                     case "A9":
-                        // COMENTARIO
-                        //System.out.println("S->/U");
-                        leer();
+                        
+                        System.out.println("Accion 10");
                         break;
                     case "A10":
-                        switch(c){
-                            case ';': token=new Token<>("punto_y_coma","-");break;
-                            case '(': token=new Token<>("abrirParentesis","-");break;
-                            case ')': token=new Token<>("cerrarParentesis","-");break;
-                            case '{': token=new Token<>("abrirCorchete","-");break;
-                            case '}': token=new Token<>("cerrarCorchete","-");break;
-                            case ',': token=new Token<>("coma","-");break;
-                            default:errorModule.raiseError(-1);
-                        }
-                        leer();
-
-
-                        //System.out.println("S-> c.e V");
+                        
+                        System.out.println("Accion 11");
                         break;
                     case "A11":
-                        token = new Token<>("opAritmetico","1");
-                        leer();
-                        //System.out.println("S->+M");
+                        
+                        System.out.println("Accion 12");
                         break;
                     case "A12":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("A->dA");
+                        
+                        System.out.println("Accion 13");
                         break;
                     case "A13":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("A->lA");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A14":
-                        if(isReservada(lexema))
-                            token=new Token<>(lexema,"-"); //--------------------------------------> Mirar reservadas
-                        else
-                            token=new Token<>("identificador",lexema); //--------------------------------------> TABLA SIMBOLOS 
-                        //System.out.println("A->oc B");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A15":
-                        lexema=lexema+c;
-                        leer();
-                        //System.out.println("C->c1 C"+lexema);
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A16":
                         
-                        token=new Token<>("cadena",lexema);//--------------------------------------> CHECK Longitud??
-                        leer();
-                        //System.out.println("c->\"D");
+                        System.out.println("Accion 1");
                         break;
                     case "A17":
-                        digito=digito*10+Character.getNumericValue(c);
-                        leer();
-                        //System.out.println("E->dE");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A18":
-                        token=new Token<>("cte-entera",""+digito); //--------------------------------------> CHECK Longitud??
-                        //System.out.println("E->oc F");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A19":
-                        lexema=lexema+c;
-                        token=new Token<>("restaAsignacion","-");
-                        leer();
-                        //System.out.println("G->=H");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A20":
-                        token=new Token<>("opAritmetico","2");
-                        //System.out.println("G->oc NN");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A21":
-                        lexema=lexema+c;
-                        token=new Token<>("opLogico","2");
-                        leer();
-                        //System.out.println("I-> |J");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A22":
-                        lexema=lexema+c;
-                        token = new Token<>("opLogico","1");
-                        leer();
-                        //System.out.println("J->&L");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A23":
-                        lexema=lexema+c;
-                        token=new Token<>("opRelacional","1");
-                        leer();
-                        //System.out.println("N->=0");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A24":
-                        token=new Token<>("asignacion","-");
-                        //System.out.println("N->oc K");
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A25":
-                        lexema=lexema+c;
-                        token=new Token<>("opRelacional","2");
-                        leer();
-
-                        //System.out.println("Q->=R");
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A26":
-                        // Comentario
-                        //System.out.println("U->*Y");
-                        leer();
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A27":
-                        // Comentario
-                        //System.out.println("Y->c2 Y");
-                        leer();
+                        
+                        System.out.println("Accion 27");
+                        
                         break;
                     case "A28":
-                        // Comentario
-                        //System.out.println("Y->*Z");
-                        leer();
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A29":
-                        // Comentario
-                        //System.out.println("Z->c3 Y");
-                        leer();
+                        
+                        System.out.println("Accion 2");
                         break;
                     case "A30":
-                        // Comentario
-                        //System.out.println("Z->*Z");
-                        leer();
+                        
+                        System.out.println("Accion 1");
                         break;
                     case "A31":
-                        // Comentario
-                        //System.out.println("Z->/S");
-                        leer();
+                        
+                        System.out.println("Accion 2");
                         break;
-                    case "A32":
-                        token=new Token<>("EOF","-");
-                    break;
+
                     default:
-                        errorModule.raiseError(-1);
+                        System.out.println("EOF");
+                        System.exit(0); // No hacemos nada
                         break;
 
                 }
-                
+                leer();
             }
         }
-        if(token==null)
-            errorModule.raiseError(-1);
 
-        return token;
     }
 
     /**
@@ -402,8 +343,8 @@ public class analizadorLexico {
         Pair<String, String> par13 = new Pair<String, String>("A", "A13"); // A->lA
         Pair<String, String> par14 = new Pair<String, String>("B", "A14"); // A->otroCaracter-B
 
-        Pair<String, String> par15 = new Pair<String, String>("C", "A15"); // C->c_1C
-        Pair<String, String> par16 = new Pair<String, String>("D", "A16"); // C->"D
+        Pair<String, String> par15 = new Pair<String, String>("C", "A15"); // B->c_1C
+        Pair<String, String> par16 = new Pair<String, String>("D", "A16"); // B->"D
 
         Pair<String, String> par17 = new Pair<String, String>("E", "A17"); // dE
         Pair<String, String> par18 = new Pair<String, String>("F", "A18"); // otroCaracter-F
@@ -415,8 +356,8 @@ public class analizadorLexico {
 
         Pair<String, String> par22 = new Pair<String, String>("L", "A22"); // &L
 
-        Pair<String, String> par23 = new Pair<String, String>("O", "A23"); // N->=0
-        Pair<String, String> par24 = new Pair<String, String>("K", "A24"); // N->otroCarcter--K
+        Pair<String, String> par23 = new Pair<String, String>("O", "A23"); // =0
+        Pair<String, String> par24 = new Pair<String, String>("K", "A24"); // otroCarcter--K
 
         Pair<String, String> par25 = new Pair<String, String>("R", "A25"); // =R
 
@@ -510,7 +451,7 @@ public class analizadorLexico {
         aplicacionCaracter.put("o.c", 16);
 
         // Testing Purposes
-        /*
+        
         for (int i = 0; i < gramaticaRegular.length; i++) {
             for (int j = 0; j < gramaticaRegular[0].length; j++) {
                 if (gramaticaRegular[i][j] == null)
@@ -521,7 +462,7 @@ public class analizadorLexico {
             }
             System.out.println();
         }
-        */
+        
 
         leer(); // Leemos el Primer caracter del archivo
     }

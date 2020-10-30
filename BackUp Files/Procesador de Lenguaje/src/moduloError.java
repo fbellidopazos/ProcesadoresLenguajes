@@ -7,15 +7,12 @@ public class moduloError {
     public void raiseError(int errorCode){
         System.err.println(errorCodes.get(errorCode));
     }
-    public void raiseError(int errorCode,int line){
-        System.err.println(errorCodes.get(errorCode)+" at Line:"+line);
-    }
 
     public moduloError(){
         errorCodes=new HashMap<>();
         
         errorCodes.put(0, "Caracter No valido");
-        errorCodes.put(-1,"Something did not go according to plan");
+
 
     }
 }

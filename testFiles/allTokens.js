@@ -1,1 +1,19 @@
-+ - * / % == != < > <= >= && || ! ++ -- = += -= *= /= %= &= |= 123 0123 0x12AF "Cadena\n" 'Cadena\n' true false var int bool chars write prompt return if else while do for switch case break default function ( ) { } , ; : identificador
+{ } ( ) ; , != == = hola hola235 "TESTING" -= - 154345 + || && /* COMENT *****Test;D:;W: */
+
+do 
+    
+while 
+
+function 
+    return   
+
+input 
+alert
+if  
+    Number
+ else 
+    Boolean
+    String
+let
+
+
