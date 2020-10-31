@@ -41,7 +41,7 @@ public class GestorTablaSimbolos {
         return -1;
     }
     public void showAllTables() throws FileNotFoundException{
-        PrintStream fileOut = new PrintStream("./TablaSimbolos.txt");
+        PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");
         System.setOut(fileOut);
 
 
