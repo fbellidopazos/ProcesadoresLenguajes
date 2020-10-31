@@ -7,12 +7,12 @@ public class moduloError {
     public void raiseError(int errorCode){
         String error=errorCodes.get(errorCode);
         System.err.println(error);
-        System.out.println(error);
+        //System.out.println(error);
     }
     public void raiseError(int errorCode,int line){
         String error=errorCodes.get(errorCode);
         System.err.println(error+" at Line:"+line);
-        System.out.println(error+" at Line:"+line);
+        //System.out.println(error+" at Line:"+line);
     }
 
     public moduloError(){

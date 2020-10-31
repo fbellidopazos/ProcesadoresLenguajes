@@ -263,8 +263,18 @@ public class analizadorLexico {
                     case "A14":
                         if(isReservada(lexema))
                             token=new Token<>(lexema,"-"); //--------------------------------------> Mirar reservadas
-                        else
-                            token=new Token<>("identificador",Integer.toString(gestorTablaSimbolos.insertarLexema(lexema))); //--------------------------------------> TABLA SIMBOLOS 
+                        else{
+                            int index=gestorTablaSimbolos.insertarLexema(lexema);
+                            if(index==-1){
+                                estado="S";
+                                lexema="";
+                                digito=0;
+                            }else{
+                                token=new Token<>("identificador",Integer.toString(index));//--------------------------------------> TABLA SIMBOLOS 
+                            }
+
+                             
+                        }
                         //System.out.println("A->oc B");
                         break;
                     case "A15":

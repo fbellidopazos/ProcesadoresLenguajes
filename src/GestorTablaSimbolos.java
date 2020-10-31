@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 
 public class GestorTablaSimbolos {
     Stack<TablaSimbolos> pilaTablas;
@@ -24,7 +26,7 @@ public class GestorTablaSimbolos {
         boolean found=false;
         for (List<Object> fila : currentTable.tabla.values()) {
             
-            if(fila.get(1).equals(lexema)){
+            if(fila.get(0).equals(lexema)){ // .get 0 OJO
                 errorModule.raiseError(1);
                 found=true;
                 break;
@@ -38,9 +40,18 @@ public class GestorTablaSimbolos {
 
         return -1;
     }
-    public void showAllTables(){
+    public void showAllTables() throws FileNotFoundException{
+        PrintStream fileOut = new PrintStream("./TablaSimbolos.txt");
+        System.setOut(fileOut);
+
+
         for (TablaSimbolos tablaSimbolos : todasTablas) {
             tablaSimbolos.showTable();
+            tablaSimbolos.printTable();
         }
+
+
+
+
     }
 }

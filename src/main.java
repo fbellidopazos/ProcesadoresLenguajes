@@ -53,8 +53,7 @@ public class main {
             System.out.println(token);
 
 
-            fileOut = new PrintStream("./TablaSimbolos.txt");
-            System.setOut(fileOut);
+            
             gestorTablaSimbolos.showAllTables();
 
             

@@ -1,12 +1,7 @@
-TS_ts.js
-PosicionTSLexemaDesplazamientoNºParametrosReturnTypeEtiqueta
-0 hola null null null null 
-1 tester null null null null 
-2 todo null null null null 
-3 metido null null null null 
-4 en null null null null 
-5 tabla null null null null 
-6 de null null null null 
-7 simbolos null null null null 
-8 error null null null null 
+CONTENIDO DE LA TABLA TS_allTokens.js :
+
+	*Lexema : hola
+--------------------------------------------------------------
+	*Lexema : hola235
+--------------------------------------------------------------
 

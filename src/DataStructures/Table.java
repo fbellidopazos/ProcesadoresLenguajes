@@ -54,7 +54,7 @@ public class Table extends JPanel {
 
 
         final JTable table = new JTable(data, columnNames);
-        table.setPreferredScrollableViewportSize(new Dimension(500, 70));
+        table.setPreferredScrollableViewportSize(new Dimension(600, 80));
         table.setFillsViewportHeight(true);
 
     
@@ -87,17 +87,7 @@ public class Table extends JPanel {
         frame.setVisible(true);
 
 
-        System.out.println(name);
-        for (int i = 0; i < columnNames.length; i++) {
-            System.out.print(columnNames[i]);
-        }
-        System.out.println("");
-        for (int i = 0; i < data.length; i++) {
-            for (int j = 0; j < data[i].length; j++) {
-                System.out.print(data[i][j]+" ");
-            }
-            System.out.println("");
-        }
+        
     }
 
 }
