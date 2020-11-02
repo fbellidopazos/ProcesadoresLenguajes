@@ -24,6 +24,7 @@ public class GestorTablaSimbolos {
 
         // Buscamos si esta declarado en la activa
         boolean found=false;
+        int i=0;
         for (List<Object> fila : currentTable.tabla.values()) {
             
             if(fila.get(0).equals(lexema)){ // .get 0 OJO
@@ -32,13 +33,14 @@ public class GestorTablaSimbolos {
                 break;
                 //throw new Exception("Error de Analisis"); // EVIL IS EVIL 
             }
+            i++;
         }
 
         if(!found){
             return currentTable.newInsert(lexema);
         }
 
-        return -1;
+        return i;
     }
     public void showAllTables() throws FileNotFoundException{
         PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");

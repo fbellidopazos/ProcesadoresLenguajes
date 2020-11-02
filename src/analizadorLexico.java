@@ -38,7 +38,7 @@ public class analizadorLexico {
         String caracter2find="";
         
 
-        if(estado.equals("A") &&  !((caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122) || (caracter>=48 && caracter<=57))){
+        if(estado.equals("A") &&  !(caracter==95 || (caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122) || (caracter>=48 && caracter<=57))){
             caracter2find="o.c"; // Estamos en A y no es letra ni digito
  
         }else if(estado.equals("E") && !(caracter>=48 && caracter<=57)){
@@ -64,9 +64,10 @@ public class analizadorLexico {
             if((caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122))
                 caracter2find="l"; // Es una letra
                 
-            else if( (caracter>=48 && caracter<=57) )
+            else if( (caracter>=48 && caracter<=57) ){
                 caracter2find="d"; //Es un digito
-
+                
+            }
             else if(getDels(caracter))  
                 caracter2find="del"; //Es un delimitador
 
@@ -74,7 +75,7 @@ public class analizadorLexico {
                 caracter2find="ce"; //Es un delimitador
             else{
                 if((((int) c) == -1 || ((int) c) ==65535) && caracter2find.isEmpty()){
-                    return new Pair<>("EOF","A32");
+                    return new Pair<>("EOF","A34");
                 }else
                     caracter2find=Character.toString(c);
             }
@@ -161,11 +162,12 @@ public class analizadorLexico {
         Token<String,String> token=null;
         
         String lexema="";
+        int digito=0;
 
         while (estado != null && !isFinal(estado)) {
              
             
-            int digito=0;
+            
             Pair<String, String> accionEstado = getAccionEstado(estado); // Correlacionamos Estado y caracter
             // System.out.println(c+" "+(int)c+" "+accionEstado); //--> Testing Purposes
             accion = accionEstado == null ? null : accionEstado.second; // Obtenemos la accion a ejecutar
@@ -174,7 +176,7 @@ public class analizadorLexico {
 
             
             if (estado == null) {
-                errorModule.raiseError(0);
+                errorModule.raiseError(0,line);
 
             } else {
                 switch (accion) {
@@ -194,6 +196,7 @@ public class analizadorLexico {
                         //System.out.println("S->\"C");
                         break;
                     case "A3":
+                        
                         digito=Character.getNumericValue(c);
                         leer();
                         //System.out.println("S->dE");
@@ -283,8 +286,12 @@ public class analizadorLexico {
                         //System.out.println("C->c1 C"+lexema);
                         break;
                     case "A16":
-                        
-                        token=new Token<>("cadena",lexema);//--------------------------------------> CHECK Longitud??
+                        if(lexema.length()>=128){
+                            errorModule.raiseError(3, line);
+                            estado="S";
+                            lexema="";
+                        }else
+                            token=new Token<>("cadena",lexema);//--------------------------------------> CHECK Longitud??
                         leer();
                         //System.out.println("c->\"D");
                         break;
@@ -294,7 +301,12 @@ public class analizadorLexico {
                         //System.out.println("E->dE");
                         break;
                     case "A18":
-                        token=new Token<>("cte-entera",""+digito); //--------------------------------------> CHECK Longitud??
+                        if(digito >= Math.pow(2, 16)-1){
+                            errorModule.raiseError(2, line);
+                            estado="S";
+                            digito=0;
+                        }else
+                            token=new Token<>("cte-entera",""+digito); //--------------------------------------> CHECK Longitud??
                         //System.out.println("E->oc F");
                         break;
                     case "A19":
@@ -367,10 +379,20 @@ public class analizadorLexico {
                         leer();
                         break;
                     case "A32":
+                        lexema=lexema+c;
+                        leer();
+                        //System.out.println("S->_A");
+                        break;
+                    case "A33":
+                    lexema=lexema+c;
+                    leer();
+                    //System.out.println("A->_A");
+                        break;    
+                    case "A34":
                         token=new Token<>("EOF","-");
                     break;
                     default:
-                        errorModule.raiseError(-1);
+                        errorModule.raiseError(-1,line);
                         break;
 
                 }
@@ -396,7 +418,7 @@ public class analizadorLexico {
         this.errorModule=errorModule;
         this.gestorTablaSimbolos=gestorTablaSimbolos;
 
-        gramaticaRegular = new Pair[12][17];
+        gramaticaRegular = new Pair[12][18];
         /*
          * Gramatica Regular en formato tabular FINALES = V,M,B,D,F,H,NN,T,L,O,K,R,D
          */
@@ -413,10 +435,12 @@ public class analizadorLexico {
         Pair<String, String> par9 = new Pair<String, String>("U", "A9"); // S->/U
         Pair<String, String> par10 = new Pair<String, String>("V", "A10"); // S->CARACTERES ESPECIALES : , ; ( ) { }
         Pair<String, String> par11 = new Pair<String, String>("M", "A11"); // S->+
+        Pair<String, String> par32 = new Pair<String, String>("A", "A32"); // S->_A 
 
         Pair<String, String> par12 = new Pair<String, String>("A", "A12"); // A->dA
         Pair<String, String> par13 = new Pair<String, String>("A", "A13"); // A->lA
         Pair<String, String> par14 = new Pair<String, String>("B", "A14"); // A->otroCaracter-B
+        Pair<String, String> par33 = new Pair<String, String>("A", "A33"); // A->_A
 
         Pair<String, String> par15 = new Pair<String, String>("C", "A15"); // C->c_1C
         Pair<String, String> par16 = new Pair<String, String>("D", "A16"); // C->"D
@@ -458,10 +482,12 @@ public class analizadorLexico {
         gramaticaRegular[0][9] = par9;
         gramaticaRegular[0][10] = par10;
         gramaticaRegular[0][14] = par11;
+        gramaticaRegular[0][17] = par32;
 
         gramaticaRegular[1][1] = par13;
         gramaticaRegular[1][2] = par12;
         gramaticaRegular[1][16] = par14;
+        gramaticaRegular[1][17] = par33;
 
         gramaticaRegular[2][4] = par16;
         gramaticaRegular[2][11] = par15;
@@ -524,7 +550,7 @@ public class analizadorLexico {
         aplicacionCaracter.put("+", 14);
         aplicacionCaracter.put("*", 15);
         aplicacionCaracter.put("o.c", 16);
-
+        aplicacionCaracter.put("_", 17);
         // Testing Purposes
         for (int i = 0; i < gramaticaRegular.length; i++) {
             for (int j = 0; j < gramaticaRegular[0].length; j++) {
