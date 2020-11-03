@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
+
 public class analizadorLexico {
     /**
      * Atributos - Estructura de la gramatica regular - Archivo de lectura ->
@@ -20,7 +21,7 @@ public class analizadorLexico {
     public moduloError errorModule;
     public HashMap<String, Integer> aplicacionEstados; // Biyeccion estado - posicion array vertical
     public HashMap<String, Integer> aplicacionCaracter; // Biyeccion char/charInt - posicion array horizontal
-    public int line=0;
+    public int line=1;
     public GestorTablaSimbolos gestorTablaSimbolos;
     /**
      * Modulo buscador accionEstado
@@ -89,8 +90,15 @@ public class analizadorLexico {
         }
 
         int fila=aplicacionEstados.get(estado);
-        int columna=aplicacionCaracter.get(caracter2find);
-        return gramaticaRegular[fila][columna];
+
+        try {
+            int columna=aplicacionCaracter.get(caracter2find);
+            return gramaticaRegular[fila][columna];
+        } catch (Exception e) {
+            errorModule.raiseError(0,line);
+
+        }
+        return new Pair<String,String>("S", "B");
     }
     
     private boolean getDels(int car){
@@ -267,15 +275,21 @@ public class analizadorLexico {
                         if(isReservada(lexema))
                             token=new Token<>(lexema,""); //--------------------------------------> Mirar reservadas
                         else{
-                            int index=gestorTablaSimbolos.insertarLexema(lexema,line);
-                            if(index==-1){
+                            if(lexema.length()>=128){
+                                errorModule.raiseError(4, line);
                                 estado="S";
                                 lexema="";
-                                digito=0;
                             }else{
-                                token=new Token<>("identificador",Integer.toString(index));//--------------------------------------> TABLA SIMBOLOS 
+                                int index=gestorTablaSimbolos.insertarLexema(lexema,line);
+                                if(index==-1){
+                                    estado="S";
+                                    lexema="";
+                                    digito=0;
+                                }else{
+                                    
+                                        token=new Token<>("identificador",Integer.toString(index));//--------------------------------------> TABLA SIMBOLOS 
+                                }
                             }
-
                              
                         }
                         //System.out.println("A->oc B");
@@ -288,8 +302,8 @@ public class analizadorLexico {
                     case "A16":
                         if(lexema.length()>=128){
                             errorModule.raiseError(3, line);
-                            estado="S";
-                            lexema="";
+                            
+                            token=new Token<>("cadena","\""+lexema+"\"");
                         }else
                             token=new Token<>("cadena","\""+lexema+"\"");//--------------------------------------> CHECK Longitud??
                         leer();
@@ -301,7 +315,7 @@ public class analizadorLexico {
                         //System.out.println("E->dE");
                         break;
                     case "A18":
-                        if(digito >= Math.pow(2, 16)-1){
+                        if(digito >= Math.pow(2, 15)-1 || digito <0){
                             errorModule.raiseError(2, line);
                             estado="S";
                             digito=0;
@@ -392,7 +406,11 @@ public class analizadorLexico {
                         token=new Token<>("EOF","");
                     break;
                     default:
-                        errorModule.raiseError(-1,line);
+                        
+                        estado="S";
+                        digito=0;
+                        lexema="";
+                        leer();
                         break;
 
                 }
