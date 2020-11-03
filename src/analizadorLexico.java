@@ -241,7 +241,7 @@ public class analizadorLexico {
                             case '{': token=new Token<>("abrirCorchete","");break;
                             case '}': token=new Token<>("cerrarCorchete","");break;
                             case ',': token=new Token<>("coma","");break;
-                            default:errorModule.raiseError(-1);
+                            default:errorModule.raiseError(-1,line);
                         }
                         leer();
 
@@ -267,7 +267,7 @@ public class analizadorLexico {
                         if(isReservada(lexema))
                             token=new Token<>(lexema,""); //--------------------------------------> Mirar reservadas
                         else{
-                            int index=gestorTablaSimbolos.insertarLexema(lexema);
+                            int index=gestorTablaSimbolos.insertarLexema(lexema,line);
                             if(index==-1){
                                 estado="S";
                                 lexema="";

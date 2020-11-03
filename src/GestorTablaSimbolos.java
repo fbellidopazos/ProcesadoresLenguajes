@@ -20,7 +20,7 @@ public class GestorTablaSimbolos {
         this.todasTablas.add(ts);
         this.currentTable=ts;
     }
-    public int insertarLexema(String lexema) throws Exception{
+    public int insertarLexema(String lexema,int line) throws Exception{
 
         // Buscamos si esta declarado en la activa
         boolean found=false;
@@ -28,7 +28,7 @@ public class GestorTablaSimbolos {
         for (List<Object> fila : currentTable.tabla.values()) {
             
             if(fila.get(0).equals(lexema)){ // .get 0 OJO
-                errorModule.raiseError(1);
+                errorModule.raiseError(1,line);
                 found=true;
                 break;
                 //throw new Exception("Error de Analisis"); // EVIL IS EVIL 
