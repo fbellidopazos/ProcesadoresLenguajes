@@ -14,7 +14,7 @@ public class GestorTablaSimbolos {
         this.pilaTablas=new Stack<>();
         this.todasTablas=new ArrayList<>();
         this.errorModule=errorModule;
-        TablaSimbolos ts=new TablaSimbolos(mainName);
+        TablaSimbolos ts=new TablaSimbolos(mainName+" #1");
 
         this.pilaTablas.push(ts);
         this.todasTablas.add(ts);

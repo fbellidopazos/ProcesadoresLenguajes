@@ -133,7 +133,7 @@ public class analizadorLexico {
     }
 
     private boolean isReservada(String lexema){
-        String[] reservadas={"do","while","function","return","input","alert","else","Number","Boolean","String","let","if"};
+        String[] reservadas={"do","while","function","return","input","alert","else","number","boolean","string","let","if"};
 
         boolean found=false;
         for (int i = 0; i < reservadas.length && !found; i++) {
@@ -235,12 +235,12 @@ public class analizadorLexico {
                         break;
                     case "A10":
                         switch(c){
-                            case ';': token=new Token<>("punto_y_coma","-");break;
-                            case '(': token=new Token<>("abrirParentesis","-");break;
-                            case ')': token=new Token<>("cerrarParentesis","-");break;
-                            case '{': token=new Token<>("abrirCorchete","-");break;
-                            case '}': token=new Token<>("cerrarCorchete","-");break;
-                            case ',': token=new Token<>("coma","-");break;
+                            case ';': token=new Token<>("puntoYcoma","");break;
+                            case '(': token=new Token<>("abrirParentesis","");break;
+                            case ')': token=new Token<>("cerrarParentesis","");break;
+                            case '{': token=new Token<>("abrirCorchete","");break;
+                            case '}': token=new Token<>("cerrarCorchete","");break;
+                            case ',': token=new Token<>("coma","");break;
                             default:errorModule.raiseError(-1);
                         }
                         leer();
@@ -265,7 +265,7 @@ public class analizadorLexico {
                         break;
                     case "A14":
                         if(isReservada(lexema))
-                            token=new Token<>(lexema,"-"); //--------------------------------------> Mirar reservadas
+                            token=new Token<>(lexema,""); //--------------------------------------> Mirar reservadas
                         else{
                             int index=gestorTablaSimbolos.insertarLexema(lexema);
                             if(index==-1){
@@ -291,7 +291,7 @@ public class analizadorLexico {
                             estado="S";
                             lexema="";
                         }else
-                            token=new Token<>("cadena",lexema);//--------------------------------------> CHECK Longitud??
+                            token=new Token<>("cadena","\""+lexema+"\"");//--------------------------------------> CHECK Longitud??
                         leer();
                         //System.out.println("c->\"D");
                         break;
@@ -306,12 +306,12 @@ public class analizadorLexico {
                             estado="S";
                             digito=0;
                         }else
-                            token=new Token<>("cte-entera",""+digito); //--------------------------------------> CHECK Longitud??
+                            token=new Token<>("cteEntera",""+digito); //--------------------------------------> CHECK Longitud??
                         //System.out.println("E->oc F");
                         break;
                     case "A19":
                         lexema=lexema+c;
-                        token=new Token<>("restaAsignacion","-");
+                        token=new Token<>("restaAsignacion","");
                         leer();
                         //System.out.println("G->=H");
                         break;
@@ -338,7 +338,7 @@ public class analizadorLexico {
                         //System.out.println("N->=0");
                         break;
                     case "A24":
-                        token=new Token<>("asignacion","-");
+                        token=new Token<>("asignacion","");
                         //System.out.println("N->oc K");
                         break;
                     case "A25":
@@ -389,7 +389,7 @@ public class analizadorLexico {
                     //System.out.println("A->_A");
                         break;    
                     case "A34":
-                        token=new Token<>("EOF","-");
+                        token=new Token<>("EOF","");
                     break;
                     default:
                         errorModule.raiseError(-1,line);

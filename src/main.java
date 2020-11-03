@@ -31,8 +31,12 @@ public class main {
 
             System.out.println(archivo);
             String[] parts=archivo.split("\\\\");
+            String[] name=parts[parts.length-1].split(".");
+            
+            String value=value="MAIN";
+            
 
-            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS_"+parts[parts.length-1],errorModule);
+            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
 
             PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
             System.setOut(fileOut);
@@ -62,8 +66,5 @@ public class main {
             throw new Exception("No hay archivo para analizar"); // No hay archivo a analizador
         }
         
-
-
-        System.out.println("");
     }
 }

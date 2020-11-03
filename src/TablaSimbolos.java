@@ -16,7 +16,7 @@ public class TablaSimbolos {
         this.name = name;
         cabecera = new ArrayList<String>();
         longitud = 5;
-        String[] cabeza = { "Lexema", "Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
+        String[] cabeza = { "LEXEMA", "Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
         for (int i = 0; i < cabeza.length; i++) {
             cabecera.add(cabeza[i]);
         }
@@ -69,7 +69,7 @@ public class TablaSimbolos {
             if (object != null) {
                 String atributo = cabecera.get(i);
                 if (i == 0) {
-                    System.out.println("\t*"+atributo+" : "+object.toString());
+                    System.out.println("\t* "+atributo+" : \'"+object.toString()+"\'");
                     
                 } else {
                     if(i==1){
@@ -77,7 +77,7 @@ public class TablaSimbolos {
                     }
                     System.out.println("\t+ "+atributo+" : "+object.toString());
                     if(i>=longitud){
-                        System.out.println("\t\t"+atributo+" : "+object.toString());
+                        System.out.println("\t\t+ "+atributo+" : "+object.toString());
                     }
 
                 }
