@@ -1,0 +1,116 @@
+Z -> P
+
+P -> B P
+P -> F P
+P -> ''
+
+F -> I J G
+I -> function H id
+J -> ( A )
+G -> { C }
+H -> T
+H -> ''
+A -> T id K
+A -> ''
+K -> , T id K
+K -> ''
+C -> B C
+C -> ''
+
+S -> id = E ;
+S -> id ( L ) ;
+S -> alert ( E ) ;
+S -> input ( id ) ;
+S -> return X ;
+S -> id -= L ;
+
+B -> if ( E ) S
+B -> let T id ;
+B -> S
+B -> do { B } while ( C ) ;
+
+T -> number
+T -> boolean
+T -> string
+
+E -> E || R
+E -> R
+R -> R && U
+R -> U
+U -> U == V
+U -> U != V
+U -> V
+V -> V + W
+V -> V - W
+V -> W
+W -> id
+W -> ( E )
+W -> id ( L )
+W -> entero
+W -> cadena
+
+L -> E Q
+L -> ''
+Q -> , E Q
+Q -> ''
+X -> E
+X -> ''
+
+================================================================================
+Z -> P
+
+P -> B P
+P -> F P
+P -> ''
+
+F -> I J G
+I -> function H identificador
+J -> abrirParentesis A cerrarParentesis
+G -> abrirCorchete C cerrarCorchete
+H -> T
+H -> ''
+A -> T identificador K
+A -> ''
+K -> coma T identificador K
+K -> ''
+C -> B C
+C -> ''
+
+S -> identificador asignacion E puntoYcoma
+S -> identificador abrirParentesis L cerrarParentesis puntoYcoma
+S -> alert abrirParentesis E cerrarParentesis puntoYcoma
+S -> input abrirParentesis identificador cerrarParentesis puntoYcoma
+S -> return X puntoYcoma
+S -> identificador restaAsignacion L puntoYcoma
+
+B -> if abrirParentesis E cerrarParentesis S
+B -> let T identificador puntoYcoma
+B -> S
+B -> do abrirCorchete B cerrarCorchete while abrirParentesis C cerrarParentesis puntoYcoma
+
+T -> number
+T -> boolean
+T -> string
+
+E -> E opLogico2 R
+E -> R
+R -> R opLogico1 U
+R -> U
+U -> U opRelacional1 V
+U -> U opRelacional2 V
+U -> V
+V -> V opAritmetico1 W
+V -> V opAritmetico2 W
+V -> W
+W -> identificador
+W -> abrirParentesis E cerrarParentesis
+W -> identificador abrirParentesis L cerrarParentesis
+W -> cteEntera
+W -> cadena
+
+L -> E Q
+L -> ''
+Q -> coma E Q
+Q -> ''
+X -> E
+X -> ''

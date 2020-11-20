@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 
 public class analizadorLexico {
@@ -21,111 +20,104 @@ public class analizadorLexico {
     public moduloError errorModule;
     public HashMap<String, Integer> aplicacionEstados; // Biyeccion estado - posicion array vertical
     public HashMap<String, Integer> aplicacionCaracter; // Biyeccion char/charInt - posicion array horizontal
-    public int line=1;
+    public int line = 1;
     public GestorTablaSimbolos gestorTablaSimbolos;
+
     /**
-     * Modulo buscador accionEstado
-     * Letras [charInit:charFinal] --> 65-90 [Mayus]// 97-122 [Minus]
-     * Numeros [charInit:charFinal] --> 48-57
+     * Modulo buscador accionEstado Letras [charInit:charFinal] --> 65-90 [Mayus]//
+     * 97-122 [Minus] Numeros [charInit:charFinal] --> 48-57
      */
-    public Pair<String, String> getAccionEstado(String estado){
+    public Pair<String, String> getAccionEstado(String estado) {
         /*
-         * Biyeccion estado - posicion array vertical 
-         * Biyeccion char/charInt - posicion array horizontal
-         * Devolver resultado de gramaticaRegular[estado][char]
+         * Biyeccion estado - posicion array vertical Biyeccion char/charInt - posicion
+         * array horizontal Devolver resultado de gramaticaRegular[estado][char]
          */
-        
+
         int caracter = (int) c;
-        String caracter2find="";
-        
+        String caracter2find = "";
 
-        if(estado.equals("A") &&  !(caracter==95 || (caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122) || (caracter>=48 && caracter<=57))){
-            caracter2find="o.c"; // Estamos en A y no es letra ni digito
- 
-        }else if(estado.equals("E") && !(caracter>=48 && caracter<=57)){
-            caracter2find="o.c"; // Estamos en E y no es un digito
- 
-        }else if (estado.equals("G") && c!= '='){
-            caracter2find="o.c"; // Estamos en G y no es un =
- 
-        }else if (estado.equals("N") && c!= '='){
-            caracter2find="o.c"; //Estamos en N y no es un igual
-                
-        }else if (estado.equals("C") && c!= '"'){
-            caracter2find="c1"; //Estamos en C y no es un "
-            
-        }else if (estado.equals("Y") && caracter!= 42 ){
-            caracter2find="c2"; //Estamos en Y y no es un *
- 
-        }else if (estado.equals("Z") && (caracter!= 42 && caracter!=47)){ // ES UN AND!!!!??? ------->
-            caracter2find="c3"; //Estamos en Z y no es un * o /
-            
- 
-        }else{
-            if((caracter>=65 && caracter<=90) || (caracter>=97 && caracter<=122))
-                caracter2find="l"; // Es una letra
-                
-            else if( (caracter>=48 && caracter<=57) ){
-                caracter2find="d"; //Es un digito
-                
-            }
-            else if(getDels(caracter))  
-                caracter2find="del"; //Es un delimitador
+        if (estado.equals("A") && !(caracter == 95 || (caracter >= 65 && caracter <= 90)
+                || (caracter >= 97 && caracter <= 122) || (caracter >= 48 && caracter <= 57))) {
+            caracter2find = "o.c"; // Estamos en A y no es letra ni digito
 
-            else if(getCarEspeciales(caracter))  
-                caracter2find="ce"; //Es un delimitador
-            else{
-                if((((int) c) == -1 || ((int) c) ==65535) && caracter2find.isEmpty()){
-                    return new Pair<>("EOF","A34");
-                }else
-                    caracter2find=Character.toString(c);
+        } else if (estado.equals("E") && !(caracter >= 48 && caracter <= 57)) {
+            caracter2find = "o.c"; // Estamos en E y no es un digito
+
+        } else if (estado.equals("G") && c != '=') {
+            caracter2find = "o.c"; // Estamos en G y no es un =
+
+        } else if (estado.equals("N") && c != '=') {
+            caracter2find = "o.c"; // Estamos en N y no es un igual
+
+        } else if (estado.equals("C") && c != '"') {
+            caracter2find = "c1"; // Estamos en C y no es un "
+
+        } else if (estado.equals("Y") && caracter != 42) {
+            caracter2find = "c2"; // Estamos en Y y no es un *
+
+        } else if (estado.equals("Z") && (caracter != 42 && caracter != 47)) { // ES UN AND!!!!??? ------->
+            caracter2find = "c3"; // Estamos en Z y no es un * o /
+
+        } else {
+            if ((caracter >= 65 && caracter <= 90) || (caracter >= 97 && caracter <= 122))
+                caracter2find = "l"; // Es una letra
+
+            else if ((caracter >= 48 && caracter <= 57)) {
+                caracter2find = "d"; // Es un digito
+
+            } else if (getDels(caracter))
+                caracter2find = "del"; // Es un delimitador
+
+            else if (getCarEspeciales(caracter))
+                caracter2find = "ce"; // Es un delimitador
+            else {
+                if ((((int) c) == -1 || ((int) c) == 65535) && caracter2find.isEmpty()) {
+                    return new Pair<>("EOF", "A34");
+                } else
+                    caracter2find = Character.toString(c);
             }
-                
+
         }
-        
-        
 
-        if((int) c==10){
+        if ((int) c == 10) {
             line++;
         }
 
-        int fila=aplicacionEstados.get(estado);
+        int fila = aplicacionEstados.get(estado);
 
         try {
-            int columna=aplicacionCaracter.get(caracter2find);
+            int columna = aplicacionCaracter.get(caracter2find);
             return gramaticaRegular[fila][columna];
         } catch (Exception e) {
-            errorModule.raiseError(0,line);
+            errorModule.raiseError(0, line);
 
         }
-        return new Pair<String,String>("S", "B");
+        return new Pair<String, String>("S", "B");
     }
-    
-    private boolean getDels(int car){
-        int[] delimitadores={32,9,10,13};
 
-        boolean found=false;
-        
+    private boolean getDels(int car) {
+        int[] delimitadores = { 32, 9, 10, 13 };
+
+        boolean found = false;
 
         for (int i = 0; i < delimitadores.length && !found; i++) {
-            found= car == delimitadores[i];
+            found = car == delimitadores[i];
         }
-        
 
         return found;
     }
-    private boolean getCarEspeciales(int car){
-        int[] carEspeciales={59,44,123,125,40,41};
 
-        boolean found=false;
-        
+    private boolean getCarEspeciales(int car) {
+        int[] carEspeciales = { 59, 44, 123, 125, 40, 41 };
+
+        boolean found = false;
+
         for (int i = 0; i < carEspeciales.length && !found; i++) {
-            found= car == carEspeciales[i];
+            found = car == carEspeciales[i];
         }
-        
+
         return found;
     }
-
 
     /**
      * Modulo lectura: Se encarga de leer un caracter del fichero fuente Lo asgina a
@@ -140,284 +132,292 @@ public class analizadorLexico {
         this.c = (char) charInt;
     }
 
-    private boolean isReservada(String lexema){
-        String[] reservadas={"do","while","function","return","input","alert","else","number","boolean","string","let","if"};
+    private boolean isReservada(String lexema) {
+        String[] reservadas = { "do", "while", "function", "return", "input", "alert", "else", "number", "boolean",
+                "string", "let", "if" };
 
-        boolean found=false;
+        boolean found = false;
         for (int i = 0; i < reservadas.length && !found; i++) {
-            found= lexema.equals(reservadas[i]);
+            found = lexema.equals(reservadas[i]);
         }
         return found;
     }
 
-    private boolean isFinal(String estado){
-        String[] finals={"V","M","B","D","F","H","NN","T","L","O","K","R","D","EOF"};
+    private boolean isFinal(String estado) {
+        String[] finals = { "V", "M", "B", "D", "F", "H", "NN", "T", "L", "O", "K", "R", "D", "EOF" };
 
-        boolean found=false;
-        
+        boolean found = false;
+
         for (int i = 0; i < finals.length && !found; i++) {
-            found= estado.equals(finals[i]);
+            found = estado.equals(finals[i]);
         }
 
         return found;
     }
+
     /**
      * Modulo de generacion de Tokens
      */
-    public Token<String,String> generarToken() throws Exception{
+    public Token<String, String> generarToken() throws Exception {
         String estado = "S";
         String accion;
-        Token<String,String> token=null;
-        
-        String lexema="";
-        int digito=0;
+        Token<String, String> token = null;
+
+        String lexema = "";
+        int digito = 0;
 
         while (estado != null && !isFinal(estado)) {
-             
-            
-            
+
             Pair<String, String> accionEstado = getAccionEstado(estado); // Correlacionamos Estado y caracter
             // System.out.println(c+" "+(int)c+" "+accionEstado); //--> Testing Purposes
             accion = accionEstado == null ? null : accionEstado.second; // Obtenemos la accion a ejecutar
             estado = accionEstado == null ? null : accionEstado.first; // Obtenemos el estado al que hemos llegado
-            // System.out.println((int)c+" "+c+"   "+accionEstado); //--> Testing Purposes
+            // System.out.println((int)c+" "+c+" "+accionEstado); //--> Testing Purposes
 
-            
             if (estado == null) {
-                errorModule.raiseError(0,line);
+                errorModule.raiseError(0, line);
 
             } else {
                 switch (accion) {
                     case "A0":
                         // Saltamos Del
-                        //System.out.println("S->del S");
+                        // System.out.println("S->del S");
                         leer();
                         break;
                     case "A1":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("S->lA");
+                        // System.out.println("S->lA");
                         break;
                     case "A2":
-                        lexema="";
+                        lexema = "";
                         leer();
-                        //System.out.println("S->\"C");
+                        // System.out.println("S->\"C");
                         break;
                     case "A3":
-                        
-                        digito=Character.getNumericValue(c);
+
+                        digito = Character.getNumericValue(c);
                         leer();
-                        //System.out.println("S->dE");
+                        // System.out.println("S->dE");
                         break;
                     case "A4":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("S->-G");
+                        // System.out.println("S->-G");
                         break;
                     case "A5":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("S-> |I");
+                        // System.out.println("S-> |I");
                         break;
                     case "A6":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("S->&J");
+                        // System.out.println("S->&J");
                         break;
                     case "A7":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
 
-                        //System.out.println("S->=N");
+                        // System.out.println("S->=N");
                         break;
                     case "A8":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
 
-                        //System.out.println("S->!Q");
+                        // System.out.println("S->!Q");
                         break;
                     case "A9":
                         // COMENTARIO
-                        //System.out.println("S->/U");
+                        // System.out.println("S->/U");
                         leer();
                         break;
                     case "A10":
-                        switch(c){
-                            case ';': token=new Token<>("puntoYcoma","");break;
-                            case '(': token=new Token<>("abrirParentesis","");break;
-                            case ')': token=new Token<>("cerrarParentesis","");break;
-                            case '{': token=new Token<>("abrirCorchete","");break;
-                            case '}': token=new Token<>("cerrarCorchete","");break;
-                            case ',': token=new Token<>("coma","");break;
-                            default:errorModule.raiseError(-1,line);
+                        switch (c) {
+                            case ';':
+                                token = new Token<>("puntoYcoma", "");
+                                break;
+                            case '(':
+                                token = new Token<>("abrirParentesis", "");
+                                break;
+                            case ')':
+                                token = new Token<>("cerrarParentesis", "");
+                                break;
+                            case '{':
+                                token = new Token<>("abrirCorchete", "");
+                                break;
+                            case '}':
+                                token = new Token<>("cerrarCorchete", "");
+                                break;
+                            case ',':
+                                token = new Token<>("coma", "");
+                                break;
+                            default:
+                                errorModule.raiseError(-1, line);
                         }
                         leer();
 
-
-                        //System.out.println("S-> c.e V");
+                        // System.out.println("S-> c.e V");
                         break;
                     case "A11":
-                        token = new Token<>("opAritmetico","1");
+                        token = new Token<>("opAritmetico", "1");
                         leer();
-                        //System.out.println("S->+M");
+                        // System.out.println("S->+M");
                         break;
                     case "A12":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("A->dA");
+                        // System.out.println("A->dA");
                         break;
                     case "A13":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("A->lA");
+                        // System.out.println("A->lA");
                         break;
                     case "A14":
-                        if(isReservada(lexema))
-                            token=new Token<>(lexema,""); //--------------------------------------> Mirar reservadas
-                        else{
-                            if(lexema.length()>=128){
-                                errorModule.raiseError(4, line);
-                                estado="S";
-                                lexema="";
-                            }else{
-                                int index=gestorTablaSimbolos.insertarLexema(lexema,line);
-                                if(index==-1){
-                                    estado="S";
-                                    lexema="";
-                                    digito=0;
-                                }else{
-                                    
-                                        token=new Token<>("identificador",Integer.toString(index));//--------------------------------------> TABLA SIMBOLOS 
-                                }
+                        if (isReservada(lexema))
+                            token = new Token<>(lexema, ""); // --------------------------------------> Mirar reservadas
+                        else {
+
+                            int index = gestorTablaSimbolos.insertarLexema(lexema, line);
+                            if (index == -1) {
+                                estado = "S";
+                                lexema = "";
+                                digito = 0;
+                            } else {
+                                token = new Token<>("identificador", Integer.toString(index));// -------------------------------------->
+                                                                                              // TABLA SIMBOLOS
                             }
-                             
+
                         }
-                        //System.out.println("A->oc B");
+                        // System.out.println("A->oc B");
                         break;
                     case "A15":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("C->c1 C"+lexema);
+                        // System.out.println("C->c1 C"+lexema);
                         break;
                     case "A16":
-                        if(lexema.length()>=128){
+                        if (lexema.length() >= 64) {
                             errorModule.raiseError(3, line);
-                            
-                            token=new Token<>("cadena","\""+lexema+"\"");
-                        }else
-                            token=new Token<>("cadena","\""+lexema+"\"");//--------------------------------------> CHECK Longitud??
+
+                            token = new Token<>("cadena", "\"" + lexema + "\"");
+                        } else
+                            token = new Token<>("cadena", "\"" + lexema + "\"");// -------------------------------------->
+                                                                                // CHECK Longitud??
                         leer();
-                        //System.out.println("c->\"D");
+                        // System.out.println("c->\"D");
                         break;
                     case "A17":
-                        digito=digito*10+Character.getNumericValue(c);
+                        digito = digito * 10 + Character.getNumericValue(c);
                         leer();
-                        //System.out.println("E->dE");
+                        // System.out.println("E->dE");
                         break;
                     case "A18":
-                        if(digito >= Math.pow(2, 15)-1 || digito <0){
+                        if (digito >= Math.pow(2, 15)  || digito < 0) {
                             errorModule.raiseError(2, line);
-                            estado="S";
-                            digito=0;
-                        }else
-                            token=new Token<>("cteEntera",""+digito); //--------------------------------------> CHECK Longitud??
-                        //System.out.println("E->oc F");
+                            estado = "S";
+                            digito = 0;
+                        } else
+                            token = new Token<>("cteEntera", "" + digito); // -------------------------------------->
+                                                                           // CHECK Longitud??
+                        // System.out.println("E->oc F");
                         break;
                     case "A19":
-                        lexema=lexema+c;
-                        token=new Token<>("restaAsignacion","");
+                        lexema = lexema + c;
+                        token = new Token<>("restaAsignacion", "");
                         leer();
-                        //System.out.println("G->=H");
+                        // System.out.println("G->=H");
                         break;
                     case "A20":
-                        token=new Token<>("opAritmetico","2");
-                        //System.out.println("G->oc NN");
+                        token = new Token<>("opAritmetico", "2");
+                        // System.out.println("G->oc NN");
                         break;
                     case "A21":
-                        lexema=lexema+c;
-                        token=new Token<>("opLogico","2");
+                        lexema = lexema + c;
+                        token = new Token<>("opLogico", "2");
                         leer();
-                        //System.out.println("I-> |J");
+                        // System.out.println("I-> |J");
                         break;
                     case "A22":
-                        lexema=lexema+c;
-                        token = new Token<>("opLogico","1");
+                        lexema = lexema + c;
+                        token = new Token<>("opLogico", "1");
                         leer();
-                        //System.out.println("J->&L");
+                        // System.out.println("J->&L");
                         break;
                     case "A23":
-                        lexema=lexema+c;
-                        token=new Token<>("opRelacional","1");
+                        lexema = lexema + c;
+                        token = new Token<>("opRelacional", "1");
                         leer();
-                        //System.out.println("N->=0");
+                        // System.out.println("N->=0");
                         break;
                     case "A24":
-                        token=new Token<>("asignacion","");
-                        //System.out.println("N->oc K");
+                        token = new Token<>("asignacion", "");
+                        // System.out.println("N->oc K");
                         break;
                     case "A25":
-                        lexema=lexema+c;
-                        token=new Token<>("opRelacional","2");
+                        lexema = lexema + c;
+                        token = new Token<>("opRelacional", "2");
                         leer();
 
-                        //System.out.println("Q->=R");
+                        // System.out.println("Q->=R");
                         break;
                     case "A26":
                         // Comentario
-                        //System.out.println("U->*Y");
+                        // System.out.println("U->*Y");
                         leer();
                         break;
                     case "A27":
                         // Comentario
-                        //System.out.println("Y->c2 Y");
+                        // System.out.println("Y->c2 Y");
                         leer();
                         break;
                     case "A28":
                         // Comentario
-                        //System.out.println("Y->*Z");
+                        // System.out.println("Y->*Z");
                         leer();
                         break;
                     case "A29":
                         // Comentario
-                        //System.out.println("Z->c3 Y");
+                        // System.out.println("Z->c3 Y");
                         leer();
                         break;
                     case "A30":
                         // Comentario
-                        //System.out.println("Z->*Z");
+                        // System.out.println("Z->*Z");
                         leer();
                         break;
                     case "A31":
                         // Comentario
-                        //System.out.println("Z->/S");
+                        // System.out.println("Z->/S");
                         leer();
                         break;
                     case "A32":
-                        lexema=lexema+c;
+                        lexema = lexema + c;
                         leer();
-                        //System.out.println("S->_A");
+                        // System.out.println("S->_A");
                         break;
                     case "A33":
-                    lexema=lexema+c;
-                    leer();
-                    //System.out.println("A->_A");
-                        break;    
+                        lexema = lexema + c;
+                        leer();
+                        // System.out.println("A->_A");
+                        break;
                     case "A34":
-                        token=new Token<>("EOF","");
-                    break;
+                        token = new Token<>("EOF", "");
+                        break;
                     default:
-                        
-                        estado="S";
-                        digito=0;
-                        lexema="";
+
+                        estado = "S";
+                        digito = 0;
+                        lexema = "";
                         leer();
                         break;
 
                 }
-                
+
             }
         }
-        if(token==null)
+        if (token == null)
             errorModule.raiseError(-1);
 
         return token;
@@ -428,13 +428,14 @@ public class analizadorLexico {
      * 
      * @param archivo
      */
-    public analizadorLexico(String archivo,moduloError errorModule,GestorTablaSimbolos gestorTablaSimbolos) throws IOException {
+    public analizadorLexico(String archivo, moduloError errorModule, GestorTablaSimbolos gestorTablaSimbolos)
+            throws IOException {
         // Inicializamos archivo a leer
         File f = new File(archivo); // Creation of File Descriptor for input file
         FileReader fr = new FileReader(f); // Creation of File Reader object
         file = new BufferedReader(fr); // Creation of BufferedReader object
-        this.errorModule=errorModule;
-        this.gestorTablaSimbolos=gestorTablaSimbolos;
+        this.errorModule = errorModule;
+        this.gestorTablaSimbolos = gestorTablaSimbolos;
 
         gramaticaRegular = new Pair[12][18];
         /*
@@ -453,7 +454,7 @@ public class analizadorLexico {
         Pair<String, String> par9 = new Pair<String, String>("U", "A9"); // S->/U
         Pair<String, String> par10 = new Pair<String, String>("V", "A10"); // S->CARACTERES ESPECIALES : , ; ( ) { }
         Pair<String, String> par11 = new Pair<String, String>("M", "A11"); // S->+
-        Pair<String, String> par32 = new Pair<String, String>("A", "A32"); // S->_A 
+        // Pair<String, String> par32 = new Pair<String, String>("A", "A32"); // S->_A
 
         Pair<String, String> par12 = new Pair<String, String>("A", "A12"); // A->dA
         Pair<String, String> par13 = new Pair<String, String>("A", "A13"); // A->lA
@@ -500,7 +501,7 @@ public class analizadorLexico {
         gramaticaRegular[0][9] = par9;
         gramaticaRegular[0][10] = par10;
         gramaticaRegular[0][14] = par11;
-        gramaticaRegular[0][17] = par32;
+        //gramaticaRegular[0][17] = par32;
 
         gramaticaRegular[1][1] = par13;
         gramaticaRegular[1][2] = par12;
@@ -569,26 +570,25 @@ public class analizadorLexico {
         aplicacionCaracter.put("*", 15);
         aplicacionCaracter.put("o.c", 16);
         aplicacionCaracter.put("_", 17);
+        
+        /*
         // Testing Purposes
         for (int i = 0; i < gramaticaRegular.length; i++) {
             for (int j = 0; j < gramaticaRegular[0].length; j++) {
                 if (gramaticaRegular[i][j] == null)
                     System.out.print(gramaticaRegular[i][j] + "       ");
-                else{
-                    Pair<String,String> printer=gramaticaRegular[i][j];
-                    if(printer.second.length()==2)
-                        System.out.print( printer+ "    ");
+                else {
+                    Pair<String, String> printer = gramaticaRegular[i][j];
+                    if (printer.second.length() == 2)
+                        System.out.print(printer + "    ");
                     else
-                        System.out.print( printer+ "   ");
+                        System.out.print(printer + "   ");
                 }
-
-                    
 
             }
             System.out.println();
         }
-        
-
+        */
         leer(); // Leemos el Primer caracter del archivo
     }
 }

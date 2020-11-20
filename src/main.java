@@ -33,21 +33,23 @@ public class main {
             String[] parts=archivo.split("\\\\");
             String[] name=parts[parts.length-1].split(".");
             
-            String value=value="MAIN";
+            String value="MAIN";
             
-
             GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
-
+            analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
+            analizadorSintactico aSintactico = new analizadorSintactico(aLexico,errorModule,gestorTablaSimbolos);
+            /*
             PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
             System.setOut(fileOut);
-            analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
+            */
             
+            /*
             fileOut = new PrintStream("./outputs/tokens.txt");
             System.setOut(fileOut);
 
-            /*
-            Aqui el cuerpo de funcionamiento del procesador
-            */
+            
+            //Aqui el cuerpo de funcionamiento del procesador
+            
             Token<String,String> token=aLexico.generarToken(); 
             for (int i = 0; token.first!="EOF"; i++) {
                 System.out.println(token);
@@ -55,8 +57,8 @@ public class main {
                 token=aLexico.generarToken();
             }   
             System.out.println(token);
-
-
+            */
+            
             
             gestorTablaSimbolos.showAllTables();
 
