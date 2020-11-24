@@ -1,4 +1,4 @@
-Terminales = { function identificador  cerrarParentesis  abrirParentesis   cerrarCorchete  abrirCorchete coma asignacion puntoYcoma alert input return restaAsignacion if let do while number boolean string opLogico2 opLogico1 opRelacional1 opRelacional2 opAritmetico1 opAritmetico2 entero cadena }
+Terminales = { function identificador  cerrarParentesis  abrirParentesis   cerrarCorchete  abrirCorchete coma asignacion puntoYcoma alert input return restaAsignacion if let do while number boolean string opLogico2 opLogico1 opRelacional1 opRelacional2 opAritmetico1 opAritmetico2 cteEntera cadena }
 NoTerminales = { Z P F I J G H A K C S B T E R U V W L Q X }
 
 Axioma = Z

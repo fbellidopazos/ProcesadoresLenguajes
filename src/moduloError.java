@@ -23,7 +23,9 @@ public class moduloError {
         errorCodes.put(-1,"Error code -1:Something did not go according to plan\n Nuestra Culpa =D");
         errorCodes.put(2,"Integer Out Of Bounds");
         errorCodes.put(3,"String Out Of Bounds -- Desconocemos si es un error que un String sea mayor a 128.Pensamos que sí pero por mera diligencia");
-  
+        
         errorCodes.put(4,"Variable Name Out Of Bounds");
+
+        errorCodes.put(5, "Error Sintactico");
     }
 }

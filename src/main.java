@@ -38,6 +38,18 @@ public class main {
             GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
             analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
             analizadorSintactico aSintactico = new analizadorSintactico(aLexico,errorModule,gestorTablaSimbolos);
+
+
+            PrintStream fileOut = new PrintStream("./outputs/Parse.txt");
+            System.setOut(fileOut);
+            String parse="-";
+            while(!parse.equals("")){
+                parse=aSintactico.aSintactico();
+                System.out.println(parse);
+            }
+            //System.out.println(parse);
+            
+
             /*
             PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
             System.setOut(fileOut);
