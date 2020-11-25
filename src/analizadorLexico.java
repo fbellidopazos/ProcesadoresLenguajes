@@ -315,9 +315,10 @@ public class analizadorLexico {
                         break;
                     case "A18":
                         if (digito >= Math.pow(2, 15)  || digito < 0) {
+                            token = new Token<>("cteEntera", "" + digito);
                             errorModule.raiseError(2, line);
-                            estado = "S";
-                            digito = 0;
+                            //estado = "S";
+                           // digito = 0;
                         } else
                             token = new Token<>("cteEntera", "" + digito); // -------------------------------------->
                                                                            // CHECK Longitud??

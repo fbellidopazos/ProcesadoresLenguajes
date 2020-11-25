@@ -1,10 +1,8 @@
-import DataStructures.Pair;
-import DataStructures.Token;
-import java.io.IOException;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileSystemView;
 import java.io.PrintStream;
+import java.util.Arrays;
 
 public class main {
     
@@ -30,38 +28,19 @@ public class main {
 
 
             System.out.println(archivo);
-            String[] parts=archivo.split("\\\\");
-            String[] name=parts[parts.length-1].split(".");
-            
+            //String[] parts=archivo.split("\\\\");
+            //String name=parts[parts.length-1];
+            //System.out.println(name);
             String value="MAIN";
             
             GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
             analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
             analizadorSintactico aSintactico = new analizadorSintactico(aLexico,errorModule,gestorTablaSimbolos);
 
-
-            PrintStream fileOut = new PrintStream("./outputs/Parse.txt");
-            System.setOut(fileOut);
-            String parse="-";
-            while(!parse.equals("")){
-                parse=aSintactico.aSintactico();
-                System.out.println(parse);
-            }
-            //System.out.println(parse);
-            
-
             /*
-            PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
-            System.setOut(fileOut);
-            */
-            
-            /*
+            // Recolector de Tokens de ALex
             fileOut = new PrintStream("./outputs/tokens.txt");
             System.setOut(fileOut);
-
-            
-            //Aqui el cuerpo de funcionamiento del procesador
-            
             Token<String,String> token=aLexico.generarToken(); 
             for (int i = 0; token.first!="EOF"; i++) {
                 System.out.println(token);
@@ -70,8 +49,19 @@ public class main {
             }   
             System.out.println(token);
             */
-            
-            
+            // Recolector de Parse
+            PrintStream fileOut = new PrintStream("./outputs/Parse.txt");
+            System.setOut(fileOut);
+            String parse="-";
+            while(!parse.equals("")){
+                parse=aSintactico.aSintactico();
+                System.out.println(parse);
+            }
+            /*
+            // Recolector de tabla de Simbolos
+            PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
+            System.setOut(fileOut);
+            */
             gestorTablaSimbolos.showAllTables();
 
             
