@@ -49,6 +49,7 @@ public class main {
             }   
             System.out.println(token);
             */
+
             // Recolector de Parse
             PrintStream fileOut = new PrintStream("./outputs/Parse.txt");
             System.setOut(fileOut);
@@ -57,11 +58,17 @@ public class main {
                 parse=aSintactico.aSintactico();
                 System.out.println(parse);
             }
-            /*
-            // Recolector de tabla de Simbolos
-            PrintStream fileOut = new PrintStream("./outputs/gramaticaTabular.txt");
+            // Recolector de Tokens de ALex
+            fileOut = new PrintStream("./outputs/tokensUsados.txt");
             System.setOut(fileOut);
-            */
+            System.out.println(aSintactico.tokensUsados.toString());
+
+
+            
+            // Recolector de tabla de Simbolos
+            fileOut = new PrintStream("./outputs/tablaSimbolos.txt");
+            System.setOut(fileOut);
+            
             gestorTablaSimbolos.showAllTables();
 
             

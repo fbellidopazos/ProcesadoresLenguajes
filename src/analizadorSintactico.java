@@ -1,5 +1,7 @@
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Stack;
 
 import DataStructures.Pair;
@@ -15,7 +17,8 @@ public class analizadorSintactico {
     public HashMap<String, Integer> aplicacionTerminal; // Aplicacion Terminal --> Entero de tabla Accion
     public HashMap<String, Integer> aplicacionNoTerminal; // Aplicacion NoTerminal --> Entero tabla GoTo
     public Stack<String> pila; // Pila A.Sinct. Ascendente
-    public Pair<String, Integer>[] gramaticaDepurada;
+    public Pair<String, Integer>[] gramaticaDepurada; // Analisis de las cosas utiles de la gramatica
+    public List<Token<String,String>> tokensUsados; // Tokens usados
 
     public String aSintactico() throws Exception {
 
@@ -24,6 +27,7 @@ public class analizadorSintactico {
 
         String parse = "";
         Token<String, String> sig_token = aLexico.generarToken();
+        tokensUsados.add(sig_token);
         boolean condicionSalida = true;
 
         if (sig_token.first == "EOF") {
@@ -31,7 +35,7 @@ public class analizadorSintactico {
         }
 
         while (condicionSalida) {
-
+            //System.out.println(sig_token);
             /*
              * if(sig_token.first=="EOF"){ return "EOF"; }
              */
@@ -61,6 +65,7 @@ public class analizadorSintactico {
                 pila.push(a);
                 pila.push("" + accionRealizar.second);
                 sig_token = aLexico.generarToken();
+                tokensUsados.add(sig_token);
             } else if (accionRealizar != null && accionRealizar.first.equals("R")) {
 
                 int k = gramaticaDepurada[accionRealizar.second].second;
@@ -92,6 +97,7 @@ public class analizadorSintactico {
 
             } else {
                 errorModule.raiseError(5, aLexico.line);
+                System.out.println("Error en el token: "+sig_token);
                 return "";
             }
 
@@ -116,24 +122,26 @@ public class analizadorSintactico {
         this.pila = new Stack<>();
         pila.push("0");
 
+        this.tokensUsados=new ArrayList<>();
+
         // To Txt Tabla Accion --> Comprobaciones
-        /*
-         * PrintStream fileOut = new PrintStream("./outputs/SLR.txt");
-         * System.setOut(fileOut);
-         * 
-         * for (int i = 0; i < tablaAccion.length; i++) { for (int j = 0; j <
-         * tablaAccion[0].length; j++) { if (tablaAccion[i][j] == null)
-         * System.out.print(tablaAccion[i][j] + "        "); else { Pair<String,
-         * Integer> printer = tablaAccion[i][j]; if (printer.toString().length() == 6) {
-         * System.out.print(printer + "      "); } else if (printer.toString().length()
-         * == 7) { System.out.print(printer + "     "); } else if
-         * (printer.toString().length() == 8) { System.out.print(printer + "    "); }
-         * else { System.out.print(printer + " "); }
-         * 
-         * }
-         * 
-         * } System.out.println(); }
-         */
+        
+          PrintStream fileOut = new PrintStream("./outputs/SLR.txt");
+          System.setOut(fileOut);
+          
+          for (int i = 0; i < tablaAccion.length; i++) { for (int j = 0; j <
+          tablaAccion[0].length; j++) { if (tablaAccion[i][j] == null)
+          System.out.print(tablaAccion[i][j] + "        "); else { Pair<String,
+          Integer> printer = tablaAccion[i][j]; if (printer.toString().length() == 6) {
+          System.out.print(printer + "      "); } else if (printer.toString().length()
+          == 7) { System.out.print(printer + "     "); } else if
+          (printer.toString().length() == 8) { System.out.print(printer + "    "); }
+          else { System.out.print(printer + " "); }
+          
+          }
+          
+          } System.out.println(); }
+         fileOut.close();
 
     }
 }

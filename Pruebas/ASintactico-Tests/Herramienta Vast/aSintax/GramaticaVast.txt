@@ -32,7 +32,7 @@ Producciones = {
     B -> if abrirParentesis E cerrarParentesis S
     B -> let T identificador puntoYcoma
     B -> S
-    B -> do abrirCorchete B cerrarCorchete while abrirParentesis C cerrarParentesis puntoYcoma
+    B -> do abrirCorchete C cerrarCorchete while abrirParentesis E cerrarParentesis puntoYcoma
 
     T -> number
     T -> boolean

@@ -1,4 +1,4 @@
-aplicacionNoTerminal = new HashMap<>();
+HashMap<String, Integer> aplicacionNoTerminal = new HashMap<>();
 aplicacionNoTerminal.put("Z", 0);
 aplicacionNoTerminal.put("P", 1);
 aplicacionNoTerminal.put("F", 2);

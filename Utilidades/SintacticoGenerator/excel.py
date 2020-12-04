@@ -13,9 +13,9 @@ sheet = workbook["Accion"]
 file = open("toJavaAccion.txt","w")
 
 
-file.write("Pair<String, Integer>[][] tablaAccion=new Pair<>[105][29];\n")
-for i in range(2,107):
-    for j in range(2,32):
+file.write("Pair<String, Integer>[][] tablaAccion=new Pair[105][29];\n")
+for i in range(2,150):
+    for j in range(2,40):
 
         content = sheet.cell(row=i, column=j).value
         if(content != None):
@@ -48,8 +48,8 @@ file = open("toJavaGoTo.txt","w")
 
 
 file.write("int[][] tablaGoTo = new int[105][21];\n")
-for i in range(2,107):
-    for j in range(1,22):
+for i in range(2,150):
+    for j in range(1,40):
 
         content = sheet.cell(row=i, column=j).value
         if(content != None):

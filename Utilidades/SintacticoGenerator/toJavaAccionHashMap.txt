@@ -1,4 +1,4 @@
-aplicacionTerminal = new HashMap<>();
+HashMap<String, Integer> aplicacionTerminal = new HashMap<>();
 aplicacionTerminal.put("function", 0);
 aplicacionTerminal.put("identificador", 1);
 aplicacionTerminal.put("abrirParentesis", 2);

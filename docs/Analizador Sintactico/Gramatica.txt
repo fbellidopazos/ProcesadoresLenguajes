@@ -27,7 +27,7 @@ S -> id -= L ;
 B -> if ( E ) S
 B -> let T id ;
 B -> S
-B -> do { B } while ( C ) ;
+B -> do { C } while ( E ) ;
 
 T -> number
 T -> boolean
@@ -85,8 +85,8 @@ S -> identificador restaAsignacion L puntoYcoma
 
 B -> if abrirParentesis E cerrarParentesis S
 B -> let T identificador puntoYcoma
-B -> S
-B -> do abrirCorchete B cerrarCorchete while abrirParentesis C cerrarParentesis puntoYcoma
+B -> S 
+B -> do abrirCorchete C cerrarCorchete while abrirParentesis E cerrarParentesis puntoYcoma
 
 T -> number
 T -> boolean

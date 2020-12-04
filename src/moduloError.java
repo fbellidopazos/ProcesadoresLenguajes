@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class moduloError {
     HashMap<Integer,String> errorCodes;
-
+    
 
     public void raiseError(int errorCode){
         String error=errorCodes.get(errorCode);
