@@ -1,4 +1,4 @@
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,13 +12,14 @@ public class analizadorSintactico {
     moduloError errorModule;
     GestorTablaSimbolos gestorTablaSimbolos;
 
-    public Pair<String, Integer>[][] tablaAccion; // Tabla accion
+    public Pair<String, Object>[][] tablaAccion; // Tabla accion
     public int[][] tablaGoTo; // Tabla GoTo
     public HashMap<String, Integer> aplicacionTerminal; // Aplicacion Terminal --> Entero de tabla Accion
     public HashMap<String, Integer> aplicacionNoTerminal; // Aplicacion NoTerminal --> Entero tabla GoTo
     public Stack<String> pila; // Pila A.Sinct. Ascendente
     public Pair<String, Integer>[] gramaticaDepurada; // Analisis de las cosas utiles de la gramatica
-    public List<Token<String,String>> tokensUsados; // Tokens usados
+    public List<Token<String, String>> tokensUsados; // Tokens usados
+    // public Pair<String, String>[][] tablaAccionErrores;
 
     public String aSintactico() throws Exception {
 
@@ -35,17 +36,12 @@ public class analizadorSintactico {
         }
 
         while (condicionSalida) {
-            //System.out.println(sig_token);
-            /*
-             * if(sig_token.first=="EOF"){ return "EOF"; }
-             */
-
+            // Tomamos el siguiente Token
             String a = sig_token.first + "" + sig_token.second;
             String s = pila.peek();
-            // System.out.println(a);
-            // System.out.println(s);
 
-            // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
+            // Limpiamos el token para poder procesarlo bien, solo en los casos que se
+            // necesiten
             if (sig_token != null && (sig_token.first.equals("identificador") || sig_token.first.equals("cadena")
                     || sig_token.first.equals("cteEntera"))) {
                 a = sig_token.first;
@@ -53,26 +49,22 @@ public class analizadorSintactico {
             if (sig_token.first == "EOF") {
                 a = "$";
             }
-            // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
 
-            
-            // System.out.println(pila.toString());
-            Pair<String, Integer> accionRealizar = tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)];
-
-            // System.out.println(accionRealizar);
+            // Obtenemos la accion a realizar
+            Pair<String, Object> accionRealizar = tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)];
 
             if (accionRealizar != null && accionRealizar.first.equals("S")) {
+                // Desplazamos
                 pila.push(a);
                 pila.push("" + accionRealizar.second);
                 sig_token = aLexico.generarToken();
                 tokensUsados.add(sig_token);
             } else if (accionRealizar != null && accionRealizar.first.equals("R")) {
+                // Reducimos por regla X
+                int k = gramaticaDepurada[(int) accionRealizar.second].second;
+                String antecedente = gramaticaDepurada[(int) accionRealizar.second].first;
 
-                int k = gramaticaDepurada[accionRealizar.second].second;
-                String antecedente = gramaticaDepurada[accionRealizar.second].first;
-
-                // System.out.print(" --> "+k+" "+antecedente+"\n");
-                for (int i = 0; i < 2 * k; i++) { // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO (LAMBDA == 0)
+                for (int i = 0; i < 2 * k; i++) {
                     pila.pop();
                 }
                 Integer sj = Integer.valueOf(pila.peek());
@@ -80,25 +72,23 @@ public class analizadorSintactico {
                 Integer sk = Integer.valueOf(tablaGoTo[sj][aplicacionNoTerminal.get(antecedente)]);
                 pila.push(Integer.toString(sk));
 
-
-                // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
-                parse = parse.length()==0?"Ascendente "+(accionRealizar.second + 1):parse + " " + (accionRealizar.second + 1);
-                // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
-
-
-
-                // System.out.print(parse);
+                // Almacenamos el PARSE
+                parse = parse.length() == 0 ? "Ascendente " + ((int) accionRealizar.second + 1)
+                        : parse + " " + ((int) accionRealizar.second + 1);
 
             } else if (accionRealizar != null && accionRealizar.first.equals("ACC")) {
-                condicionSalida = false;
-                // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
-                parse = parse + " " + 1;
-                // ------------------------------------------------------------------------------------------------------------------------------------->> EXPLICAR GRUPO
+                // Aceptamos
+                condicionSalida = false; // Salimos bucle
+
+                parse = parse + " " + 1; // Necesario si tomamos la gramatica aumentada como gramatica
 
             } else {
-                errorModule.raiseError(5, aLexico.line);
-                System.out.println("Error en el token: "+sig_token);
-                return "";
+                // Error sintactico o interno
+                errorModule.raiseError(5, aLexico.line,
+                        "\t@Usuario: " + (String) tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)].second
+                                + "\n\t@Internal: Error en el token: " + sig_token);
+
+                return parse;
             }
 
         }
@@ -116,32 +106,30 @@ public class analizadorSintactico {
         this.tablaGoTo = definitions.tablaGoTo();
         this.aplicacionTerminal = definitions.accionHashMap();
         this.aplicacionNoTerminal = definitions.GoToHashMap();
-
         this.gramaticaDepurada = definitions.gramaticaArray();
 
         this.pila = new Stack<>();
         pila.push("0");
 
-        this.tokensUsados=new ArrayList<>();
+        this.tokensUsados = new ArrayList<>();
 
         // To Txt Tabla Accion --> Comprobaciones
-        
-          PrintStream fileOut = new PrintStream("./outputs/SLR.txt");
-          System.setOut(fileOut);
-          
-          for (int i = 0; i < tablaAccion.length; i++) { for (int j = 0; j <
-          tablaAccion[0].length; j++) { if (tablaAccion[i][j] == null)
-          System.out.print(tablaAccion[i][j] + "        "); else { Pair<String,
-          Integer> printer = tablaAccion[i][j]; if (printer.toString().length() == 6) {
-          System.out.print(printer + "      "); } else if (printer.toString().length()
-          == 7) { System.out.print(printer + "     "); } else if
-          (printer.toString().length() == 8) { System.out.print(printer + "    "); }
-          else { System.out.print(printer + " "); }
-          
-          }
-          
-          } System.out.println(); }
-         fileOut.close();
-
+        /*
+         * PrintStream fileOut = new PrintStream("./outputs/SLR.txt");
+         * System.setOut(fileOut);
+         * 
+         * for (int i = 0; i < tablaAccion.length; i++) { for (int j = 0; j <
+         * tablaAccion[0].length; j++) { if (tablaAccion[i][j] == null)
+         * System.out.print(tablaAccion[i][j] + "        "); else { Pair<String, Object>
+         * printer = tablaAccion[i][j]; if (printer.toString().length() == 6) {
+         * System.out.print(printer + "      "); } else if (printer.toString().length()
+         * == 7) { System.out.print(printer + "     "); } else if
+         * (printer.toString().length() == 8) { System.out.print(printer + "    "); }
+         * else { System.out.print(printer + " "); }
+         * 
+         * }
+         * 
+         * } System.out.println(); } fileOut.close();
+         */
     }
 }

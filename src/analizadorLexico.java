@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 public class analizadorLexico {
     /**
      * Atributos - Estructura de la gramatica regular - Archivo de lectura ->
@@ -314,11 +313,11 @@ public class analizadorLexico {
                         // System.out.println("E->dE");
                         break;
                     case "A18":
-                        if (digito >= Math.pow(2, 15)  || digito < 0) {
+                        if (digito >= Math.pow(2, 15) || digito < 0) {
                             token = new Token<>("cteEntera", "" + digito);
                             errorModule.raiseError(2, line);
-                            //estado = "S";
-                           // digito = 0;
+                            // estado = "S";
+                            // digito = 0;
                         } else
                             token = new Token<>("cteEntera", "" + digito); // -------------------------------------->
                                                                            // CHECK Longitud??
@@ -502,7 +501,7 @@ public class analizadorLexico {
         gramaticaRegular[0][9] = par9;
         gramaticaRegular[0][10] = par10;
         gramaticaRegular[0][14] = par11;
-        //gramaticaRegular[0][17] = par32;
+        // gramaticaRegular[0][17] = par32;
 
         gramaticaRegular[1][1] = par13;
         gramaticaRegular[1][2] = par12;
@@ -571,25 +570,17 @@ public class analizadorLexico {
         aplicacionCaracter.put("*", 15);
         aplicacionCaracter.put("o.c", 16);
         aplicacionCaracter.put("_", 17);
-        
-        /*
-        // Testing Purposes
-        for (int i = 0; i < gramaticaRegular.length; i++) {
-            for (int j = 0; j < gramaticaRegular[0].length; j++) {
-                if (gramaticaRegular[i][j] == null)
-                    System.out.print(gramaticaRegular[i][j] + "       ");
-                else {
-                    Pair<String, String> printer = gramaticaRegular[i][j];
-                    if (printer.second.length() == 2)
-                        System.out.print(printer + "    ");
-                    else
-                        System.out.print(printer + "   ");
-                }
 
-            }
-            System.out.println();
-        }
-        */
+        /*
+         * // Testing Purposes for (int i = 0; i < gramaticaRegular.length; i++) { for
+         * (int j = 0; j < gramaticaRegular[0].length; j++) { if (gramaticaRegular[i][j]
+         * == null) System.out.print(gramaticaRegular[i][j] + "       "); else {
+         * Pair<String, String> printer = gramaticaRegular[i][j]; if
+         * (printer.second.length() == 2) System.out.print(printer + "    "); else
+         * System.out.print(printer + "   "); }
+         * 
+         * } System.out.println(); }
+         */
         leer(); // Leemos el Primer caracter del archivo
     }
 }

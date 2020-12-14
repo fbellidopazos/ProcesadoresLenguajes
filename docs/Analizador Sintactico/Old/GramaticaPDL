@@ -1,15 +1,16 @@
-Inicio ----------------------------	P -> BP | FP | ''
+Aumentada ------------------------- Z -> P
+Inicio ----------------------------	P -> BP | FP | λ
 Funciones ------------------------- F -> I J G
-									I -> funcion H id
+									I -> function H id
 									J -> ( A )
 									G -> { C }
-									H -> T | ''
-									A -> T id K | ''
-									K -> , T id K | ''
-									C -> BC | ''
+									H -> T | λ
+									A -> T id K | λ
+									K -> , T id K | λ
+									C -> BC | λ
 Sentencias:
-+ Simples -------------------------	S -> id = E ; | id ( L ) ; | alert ( E ) ; | input ( id ) ; | return X ; | id -= L,
-+ Compuestas						B -> if ( E ) S | let T id ; | S | do { B } while ( C )
++ Simples -------------------------	S -> id = E ; | id ( L ) ; | alert ( E ) ; | input ( id ) ; | return X ; | id -= L ;
++ Compuestas						B -> if ( E ) S | let T id ; | S | do { C } while ( E )
 									T -> number | boolean | string
 
 Expresiones -----------------------	E -> E || R | R
@@ -18,9 +19,9 @@ Expresiones -----------------------	E -> E || R | R
 									V -> V + W | V - W | W
 									W -> id | ( E ) | id ( L ) | entero | cadena
 			
-Argumentos de la funcion ----------	L -> E Q | ''
-									Q -> , E Q | '' 
-Return ----------------------------	X -> E | ''
+Argumentos de la funcion ----------	L -> E Q | λ
+									Q -> , E Q | λ 
+Return ----------------------------	X -> E | λ
 
 http://jsmachines.sourceforge.net/machines/slr.html 
 

@@ -1,0 +1,20 @@
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:6
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:8
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:8
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:8
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:9
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:9
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:13
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:15
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:20
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:20
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:20
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:20
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:21
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:26
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:26
+Codigo de error 1: Ya esta en la tabla de simbolos en la linea:26
+Analizando el archivo: 
+D:/OneDrive - Universidad Politécnica de Madrid/Universidad/3º/Procesadores de Lenguajes/Practica/ProcesadoresLenguajes/Pruebas/Todas Pruebas/Prueba 11.txt

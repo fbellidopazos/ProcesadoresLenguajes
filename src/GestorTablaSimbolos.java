@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.io.FileNotFoundException;
-import java.io.PrintStream;
+
 
 public class GestorTablaSimbolos {
     Stack<TablaSimbolos> pilaTablas;
@@ -43,12 +43,12 @@ public class GestorTablaSimbolos {
         return i;
     }
     public void showAllTables() throws FileNotFoundException{
-        PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");
-        System.setOut(fileOut);
+        //PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");
+        //System.setOut(fileOut);
 
 
         for (TablaSimbolos tablaSimbolos : todasTablas) {
-            tablaSimbolos.showTable();
+            //tablaSimbolos.showTable();
             tablaSimbolos.printTable();
         }
 
