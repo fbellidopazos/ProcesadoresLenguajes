@@ -1,18 +1,37 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'n1'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'n2'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
 --------------------------------------------------------------
 	* LEXEMA : 'l1'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 4
 --------------------------------------------------------------
 	* LEXEMA : 'l2'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 6
 --------------------------------------------------------------
 	* LEXEMA : 'cad'
---------------------------------------------------------------
-	* LEXEMA : 'ff'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 8
 --------------------------------------------------------------
 	* LEXEMA : 'ss'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 11
 --------------------------------------------------------------
 	* LEXEMA : 'varglobal'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 13
 --------------------------------------------------------------

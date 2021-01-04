@@ -9,6 +9,7 @@ import DataStructures.Token;
 
 public class analizadorSintactico {
     analizadorLexico aLexico;
+    analizadorSemantico aSemantico;
     moduloError errorModule;
     GestorTablaSimbolos gestorTablaSimbolos;
 
@@ -25,6 +26,8 @@ public class analizadorSintactico {
 
         pila.removeAllElements();
         pila.push("0");
+        aSemantico.stackAtributos.removeAllElements();
+        aSemantico.stackAtributos.push(null); // Metemos un hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
         String parse = "";
         Token<String, String> sig_token = aLexico.generarToken();
@@ -56,22 +59,47 @@ public class analizadorSintactico {
             if (accionRealizar != null && accionRealizar.first.equals("S")) {
                 // Desplazamos
                 pila.push(a);
+                
+                // Meter If y cuando es identificador, entonces meter el id en los elementos >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                if(a.equals("identificador")){
+                    aSemantico.pushTokenId(sig_token);
+                }else{
+                    aSemantico.stackAtributos.push(null); // Metemos hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                }
+
                 pila.push("" + accionRealizar.second);
+                aSemantico.stackAtributos.push(null); // Metemos hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
                 sig_token = aLexico.generarToken();
                 tokensUsados.add(sig_token);
             } else if (accionRealizar != null && accionRealizar.first.equals("R")) {
+                // System.err.println(this.pila);
+                // System.err.println(this.aSemantico.stackAtributos);
                 // Reducimos por regla X
+                
                 int k = gramaticaDepurada[(int) accionRealizar.second].second;
                 String antecedente = gramaticaDepurada[(int) accionRealizar.second].first;
-
+                
+                aSemantico.logSemantico.add("Aplicando regla: "+(int)accionRealizar.second+" con stack de Atributos --> "+aSemantico.stackAtributos);
+                HashMap<String,Object> atributo= aSemantico.accionEjecutar((int)accionRealizar.second); // Evaluamos la accion Semantica >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                
                 for (int i = 0; i < 2 * k; i++) {
                     pila.pop();
+                    aSemantico.stackAtributos.pop(); // Quitamos cosas de la Pila Semantica >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 }
+
+
+
                 Integer sj = Integer.valueOf(pila.peek());
                 pila.push(antecedente);
+                aSemantico.stackAtributos.push(atributo); // Metemos el valor Calculado >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                //aSemantico.stackAtributos.push(null); 
+
                 Integer sk = Integer.valueOf(tablaGoTo[sj][aplicacionNoTerminal.get(antecedente)]);
                 pila.push(Integer.toString(sk));
+                aSemantico.stackAtributos.push(null); // Metemos un hueco en pila >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+                aSemantico.logSemantico.add("\tSe obtiene stack de Atributos --> "+aSemantico.stackAtributos+"\n");
                 // Almacenamos el PARSE
                 parse = parse.length() == 0 ? "Ascendente " + ((int) accionRealizar.second + 1)
                         : parse + " " + ((int) accionRealizar.second + 1);
@@ -88,6 +116,8 @@ public class analizadorSintactico {
                         "\t@Usuario: " + (String) tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)].second
                                 + "\n\t@Internal: Error en el token: " + sig_token);
 
+                
+
                 return parse;
             }
 
@@ -96,9 +126,10 @@ public class analizadorSintactico {
         return parse;
     }
 
-    public analizadorSintactico(analizadorLexico aLexico, moduloError errorModule,
+    public analizadorSintactico(analizadorLexico aLexico,analizadorSemantico aSemantico, moduloError errorModule,
             GestorTablaSimbolos gestorTablaSimbolos) throws Exception {
         this.aLexico = aLexico;
+        this.aSemantico = aSemantico;
         this.errorModule = errorModule;
         this.gestorTablaSimbolos = gestorTablaSimbolos;
 
@@ -132,4 +163,6 @@ public class analizadorSintactico {
          * } System.out.println(); } fileOut.close();
          */
     }
+
+	
 }

@@ -1,14 +1,1 @@
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:4
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:5
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:5
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:8
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:8
 Entero fuera de rango en la linea:8
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:9
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:9
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:9
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:10
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:11

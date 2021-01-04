@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import DataStructures.Table;
+import DataStructures.types;
 
 public class TablaSimbolos {
     List<String> cabecera;
@@ -11,12 +12,13 @@ public class TablaSimbolos {
     int posTS;
     int longitud;
     String name;
+    int desplazamientoInterno=0;
 
     public TablaSimbolos(String name) {
         this.name = name;
         cabecera = new ArrayList<String>();
-        longitud = 5;
-        String[] cabeza = { "LEXEMA", "Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
+        longitud = 6;
+        String[] cabeza = { "LEXEMA","Tipo" ,"Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
         for (int i = 0; i < cabeza.length; i++) {
             cabecera.add(cabeza[i]);
         }
@@ -28,13 +30,82 @@ public class TablaSimbolos {
         List<Object> entrada = new ArrayList<>(6);
 
         // entrada.add(0, posTS); // Posicion en Tabla
-        entrada.add(0, lexema);
+        entrada.add(lexema);
 
         tabla.put(posTS, entrada);
 
         int toReturn = posTS;
         posTS++;
         return toReturn;
+    }
+
+    public boolean existsInTable(String valor){
+        for (List<Object> lista: tabla.values()) {
+            if(valor.equals(lista.get(0))){
+                return true;
+            }
+        }
+        return false;
+    }
+    public int getId(String valor){
+        int i=0;
+        boolean found=false;
+        for (List<Object> lista: tabla.values()) {
+            if(valor.equals(lista.get(0))){
+                break;
+            }
+            i++;
+        }
+        return found?i:-1;
+    }
+
+    public types getTipo(String valor){
+        List<Object> list=null;
+        for (List<Object> lista: tabla.values()) {
+            if(valor.equals(lista.get(0))){
+                list=lista;
+            }
+        }
+        return list==null?types.tipo_error:(types)list.get(1);
+    }
+
+    public void insertarTipo(int id,types tipo){
+        List<Object> entrada=tabla.get(id);
+        entrada.add(1, tipo);
+        entrada.add(2,desplazamientoInterno);
+        desplazamientoInterno+=tipo.getAncho();
+
+    }
+
+    public List<Object> getFromPos(int pos){
+        return tabla.get(pos);
+    }
+
+    public void insertarFuncion(int idFuncion,int numero,List<types> tipos,types returnType){
+        List<Object> data=getFromPos(idFuncion);
+        data.set(1, types.FUNCTION);
+        data.set(3,numero);
+        data.set(4,returnType);
+        data.set(5,"eti"+idFuncion);
+        int i=0;
+        for(types tipoArg : tipos){
+            data.add(tipoArg);
+            if((longitud-i)-6==0){
+                cabecera.add("tipoArgumento"+i);
+                longitud++;
+            }
+            i++;
+        }
+        return;
+    }
+
+
+    public void insertarFuncion(int idFuncion,types returnType){
+        List<Object> data=getFromPos(idFuncion);
+        data.set(1, types.FUNCTION);
+        data.set(4,returnType);
+
+        return;
     }
 
     public void showTable() {

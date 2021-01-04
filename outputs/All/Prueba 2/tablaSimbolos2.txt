@@ -1,12 +1,17 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'texto'
---------------------------------------------------------------
-	* LEXEMA : 'print'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'msg'
---------------------------------------------------------------
-	* LEXEMA : 'pideTexto'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 3
 --------------------------------------------------------------
 	* LEXEMA : 'textoAux'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 6
 --------------------------------------------------------------

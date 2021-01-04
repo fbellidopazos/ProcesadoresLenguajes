@@ -1,27 +1,30 @@
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:7
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:10
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:10
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:10
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:11
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:11
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:12
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:13
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:19
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:21
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:21
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:21
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:27
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:27
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:28
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:28
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:28
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:30
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:32
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:34
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:40
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:41
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:41
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:41
-Analizando el archivo: 
-D:/OneDrive - Universidad Politécnica de Madrid/Universidad/3º/Procesadores de Lenguajes/Practica/ProcesadoresLenguajes/Pruebas/Todas Pruebas/Prueba 10.txt
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 23
+Error Semantico: 
+Tienes algun problema en el codigo en 23
+Error Semantico: 
+Tienes algun problema en el codigo en 23
+Error Semantico: 
+Tienes algun problema en el codigo en 23
+Error Semantico: 
+Tienes algun error en el cuerpo del if en 29
+Error Semantico: 
+Tienes algun problema en el codigo en 29
+Error Semantico: 
+Tienes algun problema en el codigo en 29
+Error Semantico: 
+Tienes algun error en el cuerpo del do en 31
+Error Semantico: 
+Tienes algun problema en el codigo en 31
+Error Semantico: 
+Tienes algun error en el cuerpo del if en 41
+Error Semantico: 
+Ambos lados tienen que ser del mismo tipo

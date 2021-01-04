@@ -1,16 +1,32 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
 --------------------------------------------------------------
 	* LEXEMA : 'int'
---------------------------------------------------------------
-	* LEXEMA : 'operacion'
---------------------------------------------------------------
-	* LEXEMA : 'num1'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 4
 --------------------------------------------------------------
 	* LEXEMA : 'num2'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 6
+--------------------------------------------------------------
+	* LEXEMA : 'num1'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 8
 --------------------------------------------------------------
 	* LEXEMA : 'res'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 10
 --------------------------------------------------------------

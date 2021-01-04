@@ -32,11 +32,13 @@ public class main {
             //String[] parts=archivo.split("\\\\");
             //String name=parts[parts.length-1];
             //System.out.println(name);
-            String value="MAIN";
+            String value="GLOBAL";
             
             GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
             analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
-            analizadorSintactico aSintactico = new analizadorSintactico(aLexico,errorModule,gestorTablaSimbolos);
+            analizadorSemantico aSemantico = new analizadorSemantico(aLexico,errorModule,gestorTablaSimbolos);
+            analizadorSintactico aSintactico = new analizadorSintactico(aLexico,aSemantico,errorModule,gestorTablaSimbolos);
+            
 
             /*
             // Recolector de Tokens de ALex
@@ -64,8 +66,12 @@ public class main {
                 System.out.println(token);
             }
             
-
-
+            // Log Semantico
+            fileOut = new PrintStream("./outputs/logSemantico.txt");
+            System.setOut(fileOut);
+            for(String str : aSemantico.logSemantico){
+                System.out.println(str);
+            }
             
             // Recolector de tabla de Simbolos
             fileOut = new PrintStream("./outputs/tablaSimbolos.txt");

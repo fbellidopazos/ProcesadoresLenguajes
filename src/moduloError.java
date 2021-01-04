@@ -28,6 +28,14 @@ public class moduloError {
         analysisErrors.add(error + " en la linea:" + line + "\n" + msg);
 
     }
+    public void raiseError(int errorCode, String msg) {
+        String error = errorCodes.get(errorCode);
+       
+        System.err.println(error + "\n" + msg);
+
+        analysisErrors.add(error + "\n" + msg);
+
+    }
 
     public moduloError() {
         errorCodes = new HashMap<>();
@@ -37,7 +45,7 @@ public class moduloError {
         errorCodes.put(1, "Codigo de error 1: Ya esta en la tabla de simbolos");
         errorCodes.put(-1, "Codigo de error -1: Algo no fue como esperabamos\n Nuestra Culpa =D");
         errorCodes.put(2, "Entero fuera de rango");
-        errorCodes.put(3, "");
+        errorCodes.put(3, "Error Semantico: ");
 
         errorCodes.put(4, "Nombre de variable fuera de rango");
 

@@ -1,0 +1,3 @@
+let boolean hola;
+
+test = hola;

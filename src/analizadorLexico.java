@@ -277,7 +277,7 @@ public class analizadorLexico {
                         if (isReservada(lexema))
                             token = new Token<>(lexema, ""); // --------------------------------------> Mirar reservadas
                         else {
-
+/*
                             int index = gestorTablaSimbolos.insertarLexema(lexema, line);
                             if (index == -1) {
                                 estado = "S";
@@ -287,8 +287,11 @@ public class analizadorLexico {
                                 token = new Token<>("identificador", Integer.toString(index));// -------------------------------------->
                                                                                               // TABLA SIMBOLOS
                             }
-
+*/
                         }
+                        token = new Token<>("identificador", lexema);
+                        if (isReservada(lexema))
+                            token = new Token<>(lexema, ""); 
                         // System.out.println("A->oc B");
                         break;
                     case "A15":
@@ -313,7 +316,7 @@ public class analizadorLexico {
                         // System.out.println("E->dE");
                         break;
                     case "A18":
-                        if (digito >= Math.pow(2, 15) || digito < 0) {
+                        if (digito >= 32767 || digito < 0) {
                             token = new Token<>("cteEntera", "" + digito);
                             errorModule.raiseError(2, line);
                             // estado = "S";

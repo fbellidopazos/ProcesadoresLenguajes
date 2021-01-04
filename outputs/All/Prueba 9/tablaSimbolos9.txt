@@ -1,34 +1,72 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'uno'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 3
 --------------------------------------------------------------
 	* LEXEMA : 'UNO'
---------------------------------------------------------------
-	* LEXEMA : 'Factorial'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 5
 --------------------------------------------------------------
 	* LEXEMA : 'n'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 7
 --------------------------------------------------------------
 	* LEXEMA : 'factorial'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 9
 --------------------------------------------------------------
 	* LEXEMA : 'For'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 11
 --------------------------------------------------------------
 	* LEXEMA : 'functional'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 13
 --------------------------------------------------------------
 	* LEXEMA : 'While'
---------------------------------------------------------------
-	* LEXEMA : 'print'
---------------------------------------------------------------
-	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 15
 --------------------------------------------------------------
 	* LEXEMA : 'f'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 17
 --------------------------------------------------------------
-	* LEXEMA : 'cadena'
+	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 19
+--------------------------------------------------------------
+	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 22
 --------------------------------------------------------------
 	* LEXEMA : 'log'
---------------------------------------------------------------
-	* LEXEMA : 'num'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 25
 --------------------------------------------------------------
 	* LEXEMA : 'booleano'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 27
+--------------------------------------------------------------
+	* LEXEMA : 'num'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 29
 --------------------------------------------------------------

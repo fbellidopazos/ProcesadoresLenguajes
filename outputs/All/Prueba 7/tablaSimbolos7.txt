@@ -1,22 +1,47 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'booleano'
---------------------------------------------------------------
-	* LEXEMA : 'bisiesto'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
 --------------------------------------------------------------
-	* LEXEMA : 'dias'
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 4
 --------------------------------------------------------------
 	* LEXEMA : 'm'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 6
 --------------------------------------------------------------
 	* LEXEMA : 'dd'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 8
 --------------------------------------------------------------
-	* LEXEMA : 'esFechaCorrecta'
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 10
+--------------------------------------------------------------
+	* LEXEMA : 'm'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 12
 --------------------------------------------------------------
 	* LEXEMA : 'd'
---------------------------------------------------------------
-	* LEXEMA : 'demo'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 14
 --------------------------------------------------------------
 	* LEXEMA : 'a1b2c3d4'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 16
 --------------------------------------------------------------

@@ -1,10 +1,12 @@
-CONTENIDO DE LA TABLA TSMAIN #1 :
+CONTENIDO DE LA TABLA TSGLOBAL #1 :
 
-	* LEXEMA : 'a'
+	* LEXEMA : 'hola'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
 --------------------------------------------------------------
-	* LEXEMA : 'b'
---------------------------------------------------------------
-	* LEXEMA : 'bbb'
---------------------------------------------------------------
-	* LEXEMA : 'c'
+	* LEXEMA : 'test'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 2
 --------------------------------------------------------------

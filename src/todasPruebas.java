@@ -20,14 +20,15 @@ public class todasPruebas {
             }
 
 
-            fileOut.println("Analizando el archivo: ");
-            fileOut.println(archivo);
+            System.err.println("Analizando el archivo: ");
+            System.err.println(archivo);
 
             String value = "MAIN";
             moduloError errorModule = new moduloError();
-            GestorTablaSimbolos gestorTablaSimbolos = new GestorTablaSimbolos("TS" + value, errorModule);
-            analizadorLexico aLexico = new analizadorLexico(archivo, errorModule, gestorTablaSimbolos);
-            analizadorSintactico aSintactico = new analizadorSintactico(aLexico, errorModule, gestorTablaSimbolos);
+            GestorTablaSimbolos gestorTablaSimbolos=new GestorTablaSimbolos("TS"+value,errorModule);
+            analizadorLexico aLexico=new analizadorLexico(archivo,errorModule,gestorTablaSimbolos);
+            analizadorSemantico aSemantico = new analizadorSemantico(aLexico,errorModule,gestorTablaSimbolos);
+            analizadorSintactico aSintactico = new analizadorSintactico(aLexico,aSemantico,errorModule,gestorTablaSimbolos);
 
             // Recolector de Parse
             fileOut = new PrintStream("./outputs/All/Prueba "+i+"/Parse" + i + ".txt");
@@ -41,6 +42,13 @@ public class todasPruebas {
             System.setOut(fileOut);
             for (Token<String, String> token : aSintactico.tokensUsados) {
                 System.out.println(token);
+            }
+
+            // Log Semantico
+            fileOut = new PrintStream("./outputs/All/Prueba "+i+"/logSemantico" + i + ".txt");
+            System.setOut(fileOut);
+            for(String str : aSemantico.logSemantico){
+                System.out.println(str);
             }
 
             // Recolector de tabla de Simbolos

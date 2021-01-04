@@ -1,24 +1,29 @@
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:4
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:4
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:4
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:6
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:10
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:11
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:12
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:12
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:12
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:12
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:13
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:15
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:15
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:17
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:22
-Codigo de error 1: Ya esta en la tabla de simbolos en la linea:26
-Analizando el archivo: 
-D:/OneDrive - Universidad Politécnica de Madrid/Universidad/3º/Procesadores de Lenguajes/Practica/ProcesadoresLenguajes/Pruebas/Todas Pruebas/Prueba 8.txt
+Error Semantico: 
+Tienes algun problema en el codigo en 5
+Error Semantico: 
+La expresion dentro del if debe ser logica en 13
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienes algun problema en el codigo en 14
+Error Semantico: 
+Tienen que ser del mismo tipo
+No juntes churras con merinas 
+Error Semantico: 
+El lado derecho tiene que ser un logico
+Error Semantico: 
+Tienes algun problema en el codigo en 18
+Error Semantico: 
+La expresion dentro del if debe ser logica en 23
+Error Semantico: 
+Tienes algun problema en el codigo en 24
+Error Semantico: 
+Tienes algun problema en el codigo en 24

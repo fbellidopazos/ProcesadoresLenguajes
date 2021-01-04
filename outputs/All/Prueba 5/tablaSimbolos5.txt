@@ -1,34 +1,72 @@
 CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'entero'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
 --------------------------------------------------------------
 	* LEXEMA : 'cadena'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 2
 --------------------------------------------------------------
 	* LEXEMA : 'logico'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 5
 --------------------------------------------------------------
 	* LEXEMA : 'abcdefghij________'
---------------------------------------------------------------
-	* LEXEMA : 'FuncionNumero'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 7
 --------------------------------------------------------------
 	* LEXEMA : 'i'
---------------------------------------------------------------
-	* LEXEMA : 'FuncionRetorno'
---------------------------------------------------------------
-	* LEXEMA : 'hola'
---------------------------------------------------------------
-	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 9
 --------------------------------------------------------------
 	* LEXEMA : 'z'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 11
 --------------------------------------------------------------
-	* LEXEMA : 'FuncionSentencia'
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 13
 --------------------------------------------------------------
-	* LEXEMA : 'z_Z'
+	* LEXEMA : 'hola'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 15
 --------------------------------------------------------------
 	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 18
 --------------------------------------------------------------
-	* LEXEMA : 'Funcion'
+	* LEXEMA : 'z_Z'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 20
+--------------------------------------------------------------
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 22
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 24
 --------------------------------------------------------------
 	* LEXEMA : 'iii'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 26
 --------------------------------------------------------------
 	* LEXEMA : 'bbb'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 28
 --------------------------------------------------------------
