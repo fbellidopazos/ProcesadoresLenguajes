@@ -20,53 +20,105 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 7
 --------------------------------------------------------------
-	* LEXEMA : 'i'
+	* LEXEMA : 'FuncionNumero'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
+	+ Tipo : FUNCTION
 	+ Desplazamiento : 9
+	+ NºParametros : 0
+	+ ReturnType : EMPTY
+	+ Etiqueta : eti4
 --------------------------------------------------------------
-	* LEXEMA : 'z'
+	* LEXEMA : 'FuncionRetorno'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 11
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 9
+	+ NºParametros : 3
+	+ ReturnType : STRING
+	+ Etiqueta : eti5
+	+ tipoArgumento0 : STRING
+	+ tipoArgumento1 : NUMBER
+	+ tipoArgumento2 : BOOLEAN
 --------------------------------------------------------------
-	* LEXEMA : 'x'
+	* LEXEMA : 'FuncionSentencia'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 13
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 9
+	+ NºParametros : 2
+	+ ReturnType : EMPTY
+	+ Etiqueta : eti6
+	+ tipoArgumento0 : NUMBER
+	+ tipoArgumento1 : BOOLEAN
 --------------------------------------------------------------
-	* LEXEMA : 'hola'
+	* LEXEMA : 'Funcion'
 	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 15
---------------------------------------------------------------
-	* LEXEMA : 'b'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 18
---------------------------------------------------------------
-	* LEXEMA : 'z_Z'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 20
---------------------------------------------------------------
-	* LEXEMA : 'b'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 22
---------------------------------------------------------------
-	* LEXEMA : 'x'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 24
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 9
+	+ NºParametros : 2
+	+ ReturnType : EMPTY
+	+ Etiqueta : eti7
+	+ tipoArgumento0 : NUMBER
+	+ tipoArgumento1 : BOOLEAN
 --------------------------------------------------------------
 	* LEXEMA : 'iii'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 26
+	+ Desplazamiento : 9
 --------------------------------------------------------------
 	* LEXEMA : 'bbb'
 	ATRIBUTOS:
 	+ Tipo : BOOLEAN
-	+ Desplazamiento : 28
+	+ Desplazamiento : 11
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #2 :
+
+	* LEXEMA : 'i'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #4 :
+
+	* LEXEMA : 'z'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+	* LEXEMA : 'hola'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 4
+--------------------------------------------------------------
+	* LEXEMA : 'i'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 7
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #6 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'z_Z'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #8 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
 --------------------------------------------------------------

@@ -22,6 +22,10 @@ public class analizadorLexico {
     public int line = 1;
     public GestorTablaSimbolos gestorTablaSimbolos;
 
+    // Could present useful
+    public HashMap<Integer,String[]> lexemaMemory;
+    int posMemory = 0;
+
     /**
      * Modulo buscador accionEstado Letras [charInit:charFinal] --> 65-90 [Mayus]//
      * 97-122 [Minus] Numeros [charInit:charFinal] --> 48-57

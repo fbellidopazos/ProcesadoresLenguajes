@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
 import DataStructures.Table;
 import DataStructures.types;
 
@@ -12,13 +11,13 @@ public class TablaSimbolos {
     int posTS;
     int longitud;
     String name;
-    int desplazamientoInterno=0;
+    int desplazamientoInterno = 0;
 
     public TablaSimbolos(String name) {
         this.name = name;
         cabecera = new ArrayList<String>();
         longitud = 6;
-        String[] cabeza = { "LEXEMA","Tipo" ,"Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
+        String[] cabeza = { "LEXEMA", "Tipo", "Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
         for (int i = 0; i < cabeza.length; i++) {
             cabecera.add(cabeza[i]);
         }
@@ -31,6 +30,9 @@ public class TablaSimbolos {
 
         // entrada.add(0, posTS); // Posicion en Tabla
         entrada.add(lexema);
+        for (int i = 0; i < 5; i++) {
+            entrada.add(null);
+        }
 
         tabla.put(posTS, entrada);
 
@@ -39,59 +41,60 @@ public class TablaSimbolos {
         return toReturn;
     }
 
-    public boolean existsInTable(String valor){
-        for (List<Object> lista: tabla.values()) {
-            if(valor.equals(lista.get(0))){
+    public boolean existsInTable(String valor) {
+        for (List<Object> lista : tabla.values()) {
+            if (valor.equals(lista.get(0))) {
                 return true;
             }
         }
         return false;
     }
-    public int getId(String valor){
-        int i=0;
-        boolean found=false;
-        for (List<Object> lista: tabla.values()) {
-            if(valor.equals(lista.get(0))){
+
+    public int getId(String valor) {
+        int i = 0;
+        boolean found = false;
+        for (List<Object> lista : tabla.values()) {
+            if (valor.equals(lista.get(0))) {
                 break;
             }
             i++;
         }
-        return found?i:-1;
+        return found ? i : -1;
     }
 
-    public types getTipo(String valor){
-        List<Object> list=null;
-        for (List<Object> lista: tabla.values()) {
-            if(valor.equals(lista.get(0))){
-                list=lista;
+    public types getTipo(String valor) {
+        List<Object> list = null;
+        for (List<Object> lista : tabla.values()) {
+            if (valor.equals(lista.get(0))) {
+                list = lista;
             }
         }
-        return list==null?types.tipo_error:(types)list.get(1);
+        return list == null ? types.tipo_error : (types) list.get(1);
     }
 
-    public void insertarTipo(int id,types tipo){
-        List<Object> entrada=tabla.get(id);
+    public void insertarTipo(int id, types tipo) {
+        List<Object> entrada = tabla.get(id);
         entrada.add(1, tipo);
-        entrada.add(2,desplazamientoInterno);
-        desplazamientoInterno+=tipo.getAncho();
+        entrada.add(2, desplazamientoInterno);
+        desplazamientoInterno += tipo.getAncho();
 
     }
 
-    public List<Object> getFromPos(int pos){
+    public List<Object> getFromPos(int pos) {
         return tabla.get(pos);
     }
 
-    public void insertarFuncion(int idFuncion,int numero,List<types> tipos,types returnType){
-        List<Object> data=getFromPos(idFuncion);
-        data.set(1, types.FUNCTION);
-        data.set(3,numero);
-        data.set(4,returnType);
-        data.set(5,"eti"+idFuncion);
-        int i=0;
-        for(types tipoArg : tipos){
+    public void insertarDatosFuncion(int idFuncion, int numero, List<types> tipos) {
+        List<Object> data = getFromPos(idFuncion);
+
+        data.set(3, numero);
+
+        data.set(5, "eti" + idFuncion);
+        int i = 0;
+        for (types tipoArg : tipos) {
             data.add(tipoArg);
-            if((longitud-i)-6==0){
-                cabecera.add("tipoArgumento"+i);
+            if ((longitud - i) - 6 == 0) {
+                cabecera.add("tipoArgumento" + i);
                 longitud++;
             }
             i++;
@@ -99,12 +102,13 @@ public class TablaSimbolos {
         return;
     }
 
-
-    public void insertarFuncion(int idFuncion,types returnType){
-        List<Object> data=getFromPos(idFuncion);
+    public void insertarFuncion(int idFuncion, types returnType) {
+        List<Object> data = getFromPos(idFuncion);
         data.set(1, types.FUNCTION);
-        data.set(4,returnType);
-
+        data.set(2, desplazamientoInterno);
+        data.set(3, null);
+        data.set(4, returnType);
+        // System.err.println(data);
         return;
     }
 
@@ -123,9 +127,11 @@ public class TablaSimbolos {
             int i = 0;
             for (List<Object> lista : tabla.values()) {
                 for (int j = 0; j < lista.size(); j++) {
-
-                    data[i][j] = lista.get(j);
-
+                    try {
+                        data[i][j] = lista.get(j);
+                    } catch (Exception e) {
+                        continue;
+                    }
                 }
                 i++;
             }
@@ -140,32 +146,31 @@ public class TablaSimbolos {
             if (object != null) {
                 String atributo = cabecera.get(i);
                 if (i == 0) {
-                    System.out.println("\t* "+atributo+" : \'"+object.toString()+"\'");
-                    
+                    System.out.println("\t* " + atributo + " : \'" + object.toString() + "\'");
+
                 } else {
-                    if(i==1){
+                    if (i == 1) {
                         System.out.println("\tATRIBUTOS:");
                     }
-                    System.out.println("\t+ "+atributo+" : "+object.toString());
-                    if(i>=longitud){
-                        System.out.println("\t\t+ "+atributo+" : "+object.toString());
+                    System.out.println("\t+ " + atributo + " : " + object.toString());
+                    if (i >= longitud) {
+                        System.out.println("\t\t+ " + atributo + " : " + object.toString());
                     }
 
                 }
-                i++;
+
             }
+            i++;
         }
         System.out.println("--------------------------------------------------------------");
     }
 
-    
-
-    public void printTable(){
+    public void printTable() {
 
         System.out.println("CONTENIDO DE LA TABLA " + name + " :\n");
-        for(List<Object> row:tabla.values()){
+        for (List<Object> row : tabla.values()) {
             printRow(row);
         }
-        
+
     }
 }

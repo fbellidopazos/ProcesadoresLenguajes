@@ -15,58 +15,93 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 5
 --------------------------------------------------------------
-	* LEXEMA : 'n'
+	* LEXEMA : 'Factorial'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
+	+ Tipo : FUNCTION
 	+ Desplazamiento : 7
---------------------------------------------------------------
-	* LEXEMA : 'factorial'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 9
+	+ NºParametros : 1
+	+ ReturnType : NUMBER
+	+ Etiqueta : eti3
+	+ tipoArgumento0 : NUMBER
 --------------------------------------------------------------
 	* LEXEMA : 'For'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 11
+	+ Desplazamiento : 7
 --------------------------------------------------------------
 	* LEXEMA : 'functional'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 13
+	+ Desplazamiento : 9
 --------------------------------------------------------------
 	* LEXEMA : 'While'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 15
+	+ Desplazamiento : 11
 --------------------------------------------------------------
-	* LEXEMA : 'f'
+	* LEXEMA : 'print'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 17
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 13
+	+ NºParametros : 3
+	+ ReturnType : EMPTY
+	+ Etiqueta : eti7
+	+ tipoArgumento0 : STRING
+	+ tipoArgumento1 : STRING
+	+ tipoArgumento2 : NUMBER
 --------------------------------------------------------------
-	* LEXEMA : 'msg'
+	* LEXEMA : 'cadena'
 	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 19
---------------------------------------------------------------
-	* LEXEMA : 's'
-	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 22
---------------------------------------------------------------
-	* LEXEMA : 'log'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 25
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 13
+	+ NºParametros : 1
+	+ ReturnType : STRING
+	+ Etiqueta : eti8
+	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
 	* LEXEMA : 'booleano'
 	ATRIBUTOS:
 	+ Tipo : BOOLEAN
-	+ Desplazamiento : 27
+	+ Desplazamiento : 13
 --------------------------------------------------------------
 	* LEXEMA : 'num'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 29
+	+ Desplazamiento : 15
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #2 :
+
+	* LEXEMA : 'n'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'factorial'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #4 :
+
+	* LEXEMA : 'f'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : STRING
+	+ Desplazamiento : 5
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #6 :
+
+	* LEXEMA : 'log'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
 --------------------------------------------------------------

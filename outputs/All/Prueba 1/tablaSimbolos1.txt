@@ -25,13 +25,24 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 9
 --------------------------------------------------------------
-	* LEXEMA : 'ss'
+	* LEXEMA : 'ff'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
+	+ Tipo : FUNCTION
 	+ Desplazamiento : 11
+	+ NºParametros : 1
+	+ ReturnType : BOOLEAN
+	+ Etiqueta : eti5
+	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
 	* LEXEMA : 'varglobal'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 13
+	+ Desplazamiento : 11
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #2 :
+
+	* LEXEMA : 'ss'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
+	+ Desplazamiento : 0
 --------------------------------------------------------------

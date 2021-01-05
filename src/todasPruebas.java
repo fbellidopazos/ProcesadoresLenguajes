@@ -60,7 +60,7 @@ public class todasPruebas {
             fileOut = new PrintStream("./outputs/All/Prueba "+i+"/erroresDeAnalisis" + i + ".txt");
             System.setOut(fileOut);
             for (String error : errorModule.analysisErrors) {
-                System.out.println(error);
+                System.out.println(error+"\n");
             }
             
             

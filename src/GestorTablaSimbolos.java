@@ -27,7 +27,7 @@ public class GestorTablaSimbolos {
         this.currentTable=ts;
         this.globalTable=ts;
 
-        contador++;
+        contador+=1;
     }
 
     public int comprobarEnTS(String valor){
@@ -45,11 +45,12 @@ public class GestorTablaSimbolos {
         return currentTable.newInsert(lexema);
     }
     public int insertarFuncion(String nombre,types tipo){
-        int i = currentTable.newInsert(nombre);
-        currentTable.insertarFuncion(i, tipo);  
+        //System.err.println(nombre+" Contador: "+contador);
+        int i = globalTable.newInsert(nombre);
+        globalTable.insertarFuncion(i, tipo);  
 
-        TablaSimbolos ts=new TablaSimbolos("funcion #"+contador);
-        contador++;
+        TablaSimbolos ts=new TablaSimbolos("FUNCION \""+nombre+"\" #"+contador);
+        
         currentTable=ts;
         todasTablas.add(ts);
 
@@ -60,8 +61,11 @@ public class GestorTablaSimbolos {
     public void exitFunction(){
         currentTable=globalTable;
         inFunction=false;
+        contador+=1;
     }
-    public void insertarTipo(int id,types tipo){
+    /*public void insertarTipo(int id,types tipo){
+
+        
         if(inFunction){
             currentTable.insertarTipo(id, tipo);
             
@@ -69,6 +73,21 @@ public class GestorTablaSimbolos {
         }else{
             globalTable.insertarTipo(id, tipo);
         }
+    }*/
+    public void insertarTipoLocal(int id,types tipo){
+
+        
+        
+            currentTable.insertarTipo(id, tipo);
+            
+
+    }
+    public void insertarTipoGlobal(int id,types tipo){
+
+        
+       
+            globalTable.insertarTipo(id, tipo);
+        
     }
     
     public types getType(String valor){
@@ -113,12 +132,13 @@ public class GestorTablaSimbolos {
         return globalTable.getFromPos(id);
     }
 
-    public void insertarFuncion(int idFuncion,int numero,List<types> tipos,types returnType){
-        currentTable.insertarFuncion(idFuncion, numero, tipos, returnType);
-        TablaSimbolos ts=new TablaSimbolos("funcion #"+contador);
-        contador++;
-        currentTable=ts;
-        todasTablas.add(ts);
+    public void insertarDatosFuncion(int idFuncion,int numero,List<types> tipos){
+        
+        globalTable.insertarDatosFuncion(idFuncion, numero, tipos);
+        //TablaSimbolos ts=new TablaSimbolos("funcion #"+contador);
+        //contador++;
+        //currentTable=ts;
+        //todasTablas.add(ts);
         
         return;
     }
@@ -130,9 +150,9 @@ public class GestorTablaSimbolos {
         //PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");
         //System.setOut(fileOut);
 
-
+        //System.err.println(todasTablas);
         for (TablaSimbolos tablaSimbolos : todasTablas) {
-            //tablaSimbolos.showTable();
+            tablaSimbolos.showTable();
             tablaSimbolos.printTable();
         }
 

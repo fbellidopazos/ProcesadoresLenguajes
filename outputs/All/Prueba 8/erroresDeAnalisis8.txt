@@ -1,33 +1,46 @@
 Error Semantico: 
-Tienes algun problema en el codigo en 7
-Error Semantico: 
-Tienes algun problema en el codigo en 7
-Error Semantico: 
-Tienes algun problema en el codigo en 7
-Error Semantico: 
-Tienes algun problema en el codigo en 7
-Error Semantico: 
 La expresion dentro del if debe ser logica en 15
+	@Usuario: 
+		 (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>
+		 (Su construccion) >> if(<null>) <tipo_Ok>
+
 Error Semantico: 
-Tienes algun problema en el codigo en 16
+Tienes algun problema en el codigo alrededor de la linea 16
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+
 Error Semantico: 
-Tienes algun problema en el codigo en 16
+Tienes algun problema en el codigo alrededor de la linea 16
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+
 Error Semantico: 
-Tienes algun problema en el codigo en 16
+Tienes algun problema en el codigo alrededor de la linea 16
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+
 Error Semantico: 
-Tienes algun problema en el codigo en 16
+Tienes algun problema en el codigo alrededor de la linea 16
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+
 Error Semantico: 
-Tienes algun problema en el codigo en 16
-Error Semantico: 
-Tienes algun problema en el codigo en 16
+Tienes algun problema en el codigo alrededor de la linea 16
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+
 Error Semantico: 
 Tienen que ser del mismo tipo
 No juntes churras con merinas 
+	@Usuario: 
+		 (Construccion Coreccta) >> <TIPO> == <TIPO> 
+		 (Su construccion) >> <NUMBER> == <null>
+
 Error Semantico: 
-Tienes algun problema en el codigo en 20
+Estas devolviendo dentor de la funcion algo del tipo: tipo_error cuando tu funcion tiene que devolver: BOOLEAN
+
 Error Semantico: 
 La expresion dentro del if debe ser logica en 25
+	@Usuario: 
+		 (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>
+		 (Su construccion) >> if(<null>) <tipo_Ok>
+
 Error Semantico: 
-Tienes algun problema en el codigo en 26
-Error Semantico: 
-Tienes algun problema en el codigo en 26
+Tienes algun problema en el codigo alrededor de la linea 26
+	@Usuario: Mira otros mensajes de error para hacerte una idea
+

@@ -1,30 +1,4 @@
 Error Semantico: 
-Tienes algun problema en el codigo en 14
-Error Semantico: 
-Tienes algun problema en el codigo en 14
-Error Semantico: 
-Tienes algun problema en el codigo en 14
-Error Semantico: 
-Tienes algun problema en el codigo en 14
-Error Semantico: 
-Tienes algun problema en el codigo en 23
-Error Semantico: 
-Tienes algun problema en el codigo en 23
-Error Semantico: 
-Tienes algun problema en el codigo en 23
-Error Semantico: 
-Tienes algun problema en el codigo en 23
-Error Semantico: 
-Tienes algun error en el cuerpo del if en 29
-Error Semantico: 
-Tienes algun problema en el codigo en 29
-Error Semantico: 
-Tienes algun problema en el codigo en 29
-Error Semantico: 
-Tienes algun error en el cuerpo del do en 31
-Error Semantico: 
-Tienes algun problema en el codigo en 31
-Error Semantico: 
-Tienes algun error en el cuerpo del if en 41
-Error Semantico: 
-Ambos lados tienen que ser del mismo tipo
+Ambos lados tienen que ser del mismo tipo en un entorno de la linea 42
+	@Usuario: For con tipo <NUMBER>, esta siendo asignado a null
+

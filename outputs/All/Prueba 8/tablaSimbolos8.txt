@@ -5,48 +5,89 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-	* LEXEMA : 'a'
+	* LEXEMA : 'bisiesto'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
+	+ Tipo : FUNCTION
 	+ Desplazamiento : 2
+	+ NºParametros : 1
+	+ ReturnType : BOOLEAN
+	+ Etiqueta : eti1
+	+ tipoArgumento0 : NUMBER
 --------------------------------------------------------------
-	* LEXEMA : 'bis'
+	* LEXEMA : 'dias'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 4
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 2
+	+ NºParametros : 2
+	+ ReturnType : NUMBER
+	+ Etiqueta : eti2
+	+ tipoArgumento0 : NUMBER
+	+ tipoArgumento1 : NUMBER
 --------------------------------------------------------------
-	* LEXEMA : 'a'
+	* LEXEMA : 'esFechaCorrecta'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 6
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 2
+	+ ReturnType : BOOLEAN
 --------------------------------------------------------------
-	* LEXEMA : 'm'
+	* LEXEMA : 'demo'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 8
---------------------------------------------------------------
-	* LEXEMA : 'dd'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 10
---------------------------------------------------------------
-	* LEXEMA : 'a'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 12
---------------------------------------------------------------
-	* LEXEMA : 'm'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 14
---------------------------------------------------------------
-	* LEXEMA : 'd'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 16
+	+ Tipo : FUNCTION
+	+ Desplazamiento : 2
+	+ NºParametros : 0
+	+ ReturnType : EMPTY
+	+ Etiqueta : eti4
 --------------------------------------------------------------
 	* LEXEMA : 'A_A_A_'
 	ATRIBUTOS:
 	+ Tipo : STRING
-	+ Desplazamiento : 18
+	+ Desplazamiento : 2
 --------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #2 :
+
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'bis'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #4 :
+
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'm'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+	* LEXEMA : 'dd'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 4
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #6 :
+
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 0
+--------------------------------------------------------------
+	* LEXEMA : 'm'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 2
+--------------------------------------------------------------
+	* LEXEMA : 'd'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 4
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA funcion #7 :
+
