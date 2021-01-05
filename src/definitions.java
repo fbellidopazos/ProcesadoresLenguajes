@@ -569,7 +569,7 @@ public class definitions {
                 tablaAccion[4][26] = new Pair<>("E", repetition);
                 tablaAccion[4][27] = new Pair<>("E", repetition);
                 tablaAccion[4][28] = new Pair<>("E", repetition);
-                repetition="Se esperaba: number,boolean,string";
+                repetition = "Se esperaba: number,boolean,string";
                 tablaAccion[5][0] = new Pair<>("E", repetition);
                 tablaAccion[5][1] = new Pair<>("E", repetition);
                 tablaAccion[5][2] = new Pair<>("E", repetition);
@@ -596,7 +596,7 @@ public class definitions {
                 tablaAccion[5][26] = new Pair<>("E", repetition);
                 tablaAccion[5][27] = new Pair<>("E", repetition);
                 tablaAccion[5][28] = new Pair<>("E", repetition);
-                repetition="No se esperaba nada";
+                repetition = "No se esperaba nada";
                 tablaAccion[6][2] = new Pair<>("E", repetition);
                 tablaAccion[6][3] = new Pair<>("E", repetition);
                 tablaAccion[6][4] = new Pair<>("E", repetition);
@@ -616,7 +616,7 @@ public class definitions {
                 tablaAccion[6][25] = new Pair<>("E", repetition);
                 tablaAccion[6][26] = new Pair<>("E", repetition);
                 tablaAccion[6][27] = new Pair<>("E", repetition);
-                repetition="Se esperaba: {";
+                repetition = "Se esperaba: {";
                 tablaAccion[7][0] = new Pair<>("E", repetition);
                 tablaAccion[7][1] = new Pair<>("E", repetition);
                 tablaAccion[7][2] = new Pair<>("E", repetition);
@@ -673,7 +673,7 @@ public class definitions {
                 tablaAccion[8][26] = new Pair<>("E", repetition);
                 tablaAccion[8][27] = new Pair<>("E", repetition);
                 tablaAccion[8][28] = new Pair<>("E", repetition);
-                repetition="Se esperaba: =";
+                repetition = "Se esperaba: =";
                 tablaAccion[9][0] = new Pair<>("E", repetition);
                 tablaAccion[9][1] = new Pair<>("E", repetition);
                 tablaAccion[9][3] = new Pair<>("E", repetition);

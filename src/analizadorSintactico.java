@@ -59,12 +59,14 @@ public class analizadorSintactico {
             if (accionRealizar != null && accionRealizar.first.equals("S")) {
                 // Desplazamos
                 pila.push(a);
-                
-                // Meter If y cuando es identificador, entonces meter el id en los elementos >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                if(a.equals("identificador")){
+
+                // Meter If y cuando es identificador, entonces meter el id en los elementos
+                // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                if (a.equals("identificador")) {
                     aSemantico.pushTokenId(sig_token);
-                }else{
-                    aSemantico.stackAtributos.push(null); // Metemos hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                } else {
+                    aSemantico.stackAtributos.push(null); // Metemos hueco
+                                                          // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 }
 
                 pila.push("" + accionRealizar.second);
@@ -76,30 +78,35 @@ public class analizadorSintactico {
                 // System.err.println(this.pila);
                 // System.err.println(this.aSemantico.stackAtributos);
                 // Reducimos por regla X
-                
+
                 int k = gramaticaDepurada[(int) accionRealizar.second].second;
                 String antecedente = gramaticaDepurada[(int) accionRealizar.second].first;
-                
-                aSemantico.logSemantico.add("Aplicando regla: "+(int)accionRealizar.second+" con stack de Atributos --> "+aSemantico.stackAtributos);
-                HashMap<String,Object> atributo= aSemantico.accionEjecutar((int)accionRealizar.second); // Evaluamos la accion Semantica >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                
+
+                aSemantico.logSemantico.add("Aplicando regla: " + (int) accionRealizar.second
+                        + " con stack de Atributos --> " + aSemantico.stackAtributos);
+                HashMap<String, Object> atributo = aSemantico.accionEjecutar((int) accionRealizar.second); // Evaluamos
+                                                                                                           // la accion
+                                                                                                           // Semantica
+                                                                                                           // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
                 for (int i = 0; i < 2 * k; i++) {
                     pila.pop();
-                    aSemantico.stackAtributos.pop(); // Quitamos cosas de la Pila Semantica >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                    aSemantico.stackAtributos.pop(); // Quitamos cosas de la Pila Semantica
+                                                     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 }
-
-
 
                 Integer sj = Integer.valueOf(pila.peek());
                 pila.push(antecedente);
-                aSemantico.stackAtributos.push(atributo); // Metemos el valor Calculado >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                //aSemantico.stackAtributos.push(null); 
+                aSemantico.stackAtributos.push(atributo); // Metemos el valor Calculado
+                                                          // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                // aSemantico.stackAtributos.push(null);
 
                 Integer sk = Integer.valueOf(tablaGoTo[sj][aplicacionNoTerminal.get(antecedente)]);
                 pila.push(Integer.toString(sk));
-                aSemantico.stackAtributos.push(null); // Metemos un hueco en pila >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                aSemantico.stackAtributos.push(null); // Metemos un hueco en pila
+                                                      // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-                aSemantico.logSemantico.add("\tSe obtiene stack de Atributos --> "+aSemantico.stackAtributos+"\n");
+                aSemantico.logSemantico.add("\tSe obtiene stack de Atributos --> " + aSemantico.stackAtributos + "\n");
                 // Almacenamos el PARSE
                 parse = parse.length() == 0 ? "Ascendente " + ((int) accionRealizar.second + 1)
                         : parse + " " + ((int) accionRealizar.second + 1);
@@ -116,8 +123,6 @@ public class analizadorSintactico {
                         "\t@Usuario: " + (String) tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)].second
                                 + "\n\t@Internal: Error en el token: " + sig_token);
 
-                
-
                 return parse;
             }
 
@@ -126,7 +131,7 @@ public class analizadorSintactico {
         return parse;
     }
 
-    public analizadorSintactico(analizadorLexico aLexico,analizadorSemantico aSemantico, moduloError errorModule,
+    public analizadorSintactico(analizadorLexico aLexico, analizadorSemantico aSemantico, moduloError errorModule,
             GestorTablaSimbolos gestorTablaSimbolos) throws Exception {
         this.aLexico = aLexico;
         this.aSemantico = aSemantico;
@@ -144,25 +149,6 @@ public class analizadorSintactico {
 
         this.tokensUsados = new ArrayList<>();
 
-        // To Txt Tabla Accion --> Comprobaciones
-        /*
-         * PrintStream fileOut = new PrintStream("./outputs/SLR.txt");
-         * System.setOut(fileOut);
-         * 
-         * for (int i = 0; i < tablaAccion.length; i++) { for (int j = 0; j <
-         * tablaAccion[0].length; j++) { if (tablaAccion[i][j] == null)
-         * System.out.print(tablaAccion[i][j] + "        "); else { Pair<String, Object>
-         * printer = tablaAccion[i][j]; if (printer.toString().length() == 6) {
-         * System.out.print(printer + "      "); } else if (printer.toString().length()
-         * == 7) { System.out.print(printer + "     "); } else if
-         * (printer.toString().length() == 8) { System.out.print(printer + "    "); }
-         * else { System.out.print(printer + " "); }
-         * 
-         * }
-         * 
-         * } System.out.println(); } fileOut.close();
-         */
     }
 
-	
 }

@@ -12,8 +12,7 @@ public class analizadorSemantico {
     GestorTablaSimbolos gestorTablaSimbolos;
     List<String> logSemantico;
 
-    Stack<HashMap<String, Object>> stackAtributos; // NOTA MENTAL: stack.get(stack.indexOf(stack.peek())-n) el primer
-                                                   // elemento es la cima(NO hace pop)
+    Stack<HashMap<String, Object>> stackAtributos;
 
     public HashMap<String, Object> function0() {
         HashMap<String, Object> resHashMap = new HashMap<>();

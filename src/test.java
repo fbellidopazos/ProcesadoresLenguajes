@@ -4,11 +4,10 @@ import DataStructures.Token;
 
 public class test {
     public static void main(String[] args) throws Exception {
-       
-        String value = "GLOBAL";
-        
 
-        moduloError errorModule=new moduloError();
+        String value = "GLOBAL";
+
+        moduloError errorModule = new moduloError();
         GestorTablaSimbolos gestorTablaSimbolos = new GestorTablaSimbolos("TS" + value, errorModule);
         analizadorLexico aLexico = new analizadorLexico("test.txt", errorModule, gestorTablaSimbolos);
         analizadorSemantico aSemantico = new analizadorSemantico(aLexico, errorModule, gestorTablaSimbolos);
@@ -19,7 +18,7 @@ public class test {
         PrintStream fileOut = new PrintStream("./outputs/Parse.txt");
         System.setOut(fileOut);
         String parse = aSintactico.aSintactico();
-        
+
         System.out.println(parse);
 
         // Recolector de Tokens de ALex

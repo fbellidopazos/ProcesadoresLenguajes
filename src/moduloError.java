@@ -28,9 +28,10 @@ public class moduloError {
         analysisErrors.add(error + " en la linea:" + line + "\n" + msg);
 
     }
+
     public void raiseError(int errorCode, String msg) {
         String error = errorCodes.get(errorCode);
-       
+
         System.err.println(error + "\n" + msg);
 
         analysisErrors.add(error + "\n" + msg);
