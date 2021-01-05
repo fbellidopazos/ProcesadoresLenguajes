@@ -1,5 +1,4 @@
 # Introducción
-
 La Práctica consistirá en el diseño y construcción de un Analizador de una versión del lenguaje JavaScript llamado JavaScript-PDL (Una version reducida de JavaScript)
 ## Objetivos Comunes
 * La estructura general de un programa compuesto por funciones, declaraciones y sentencias.
@@ -24,7 +23,12 @@ La Práctica consistirá en el diseño y construcción de un Analizador de una v
 * Comentarios: Comentario de bloque (/* */)
 * Cadenas: Con comillas dobles (" ")
 
-
+# Uso de Analizador
+1. Duplicar el repositorio
+2. Tener instalado java y saber como compilar y ejecturar ....
+3. Ejecturas main.java
+    1. Elegir archivo a compilar
+4. Mirar en la carpeta `outputs` donde estaran todos los errores, las tablas de simbolos en ASCII, tokens del programa, parse y el logSemantico
 
 # Espacio de Trabajo
 El espacio de trabajo consta de 
@@ -35,12 +39,7 @@ El espacio de trabajo consta de
 - `Pruebas` : Todas las pruebas realizadas, correctamente
 - `outputs` : Folder donde se diriguen toda la informacion obtenida de los analizadores
 
-# Uso de Analizador
-1. Duplicar el repositorio
-2. Tener instalado java y saber como compilar y ejecturar ....
-3. Ejecturas main.java
-    1. Elegir archivo a compilar
-4. Mirar en la carpeta `outputs` donde estaran todos los errores, las tablas de simbolos en ASCII, tokens del programa, parse y el logSemantico
+
 
 # Miembros del proyecto
 * Sofía Hernández Montero - 18M046 - 
