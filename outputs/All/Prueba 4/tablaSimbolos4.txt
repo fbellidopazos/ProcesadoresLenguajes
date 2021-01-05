@@ -25,7 +25,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : NUMBER
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "operacion" #2 :
 
 	* LEXEMA : 'num2'
 	ATRIBUTOS:

@@ -1,4 +1,0 @@
-Error Semantico: 
-Ambos lados tienen que ser del mismo tipo en un entorno de la linea 42
-	@Usuario: For con tipo <NUMBER>, esta siendo asignado a null
-

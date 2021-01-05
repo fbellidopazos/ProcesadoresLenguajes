@@ -55,6 +55,7 @@ public class TablaSimbolos {
         boolean found = false;
         for (List<Object> lista : tabla.values()) {
             if (valor.equals(lista.get(0))) {
+                found=true;
                 break;
             }
             i++;
@@ -86,6 +87,10 @@ public class TablaSimbolos {
 
     public void insertarDatosFuncion(int idFuncion, int numero, List<types> tipos) {
         List<Object> data = getFromPos(idFuncion);
+
+        //System.err.println(idFuncion);
+        //System.err.println(numero);
+
 
         data.set(3, numero);
 

@@ -97,28 +97,29 @@ public class analizadorSemantico {
         HashMap<String, Object> jAtribs = getFromPos(2);
         HashMap<String, Object> gAtribs = getFromPos(1);
 
-       
+        if (gAtribs.get("hasReturn") != null && (boolean) gAtribs.get("hasReturn")) {
 
-        if(gAtribs.get("hasReturn")!=null && (boolean)gAtribs.get("hasReturn")){
-           
-            if((types)gAtribs.get("returnType") == (types)iAtribs.get("tipo")){
-                gestorTablaSimbolos.insertarDatosFuncion((int)iAtribs.get("id"), (int)jAtribs.get("numeros"), (List<types>)jAtribs.get("tipos"));
+            if ((types) gAtribs.get("returnType") == (types) iAtribs.get("tipo")) {
+                // gestorTablaSimbolos.insertarDatosFuncion((int)iAtribs.get("id"),
+                // (int)jAtribs.get("numeros"), (List<types>)jAtribs.get("tipos"));
                 resHashMap.put("tipo", gAtribs.get("tipo"));
-            }else{
-                errorModule.raiseError(3,"Estas devolviendo dentor de la funcion algo del tipo: "+(types)gAtribs.get("returnType")+" cuando tu funcion tiene que devolver: "+(types)iAtribs.get("tipo"));
+            } else {
+                errorModule.raiseError(3,
+                        "Estas devolviendo dentor de la funcion algo del tipo: " + (types) gAtribs.get("returnType")
+                                + " cuando tu funcion tiene que devolver: " + (types) iAtribs.get("tipo"));
             }
-        }else{
-            if((types)iAtribs.get("tipo") == types.EMPTY){
-                
+        } else {
+            if ((types) iAtribs.get("tipo") == types.EMPTY) {
 
-                gestorTablaSimbolos.insertarDatosFuncion((int)iAtribs.get("id"), (int)jAtribs.get("numeros"), (List<types>)jAtribs.get("tipos"));
+                // gestorTablaSimbolos.insertarDatosFuncion((int)iAtribs.get("id"),
+                // (int)jAtribs.get("numeros"), (List<types>)jAtribs.get("tipos"));
                 resHashMap.put("tipo", gAtribs.get("tipo"));
-            }else{
-                errorModule.raiseError(3, "La cabeza de la funcion esta mal, prueba a poner : function id(...){}\n\tEs decir sin tipo definir el tipo de la funcion");
+            } else {
+                errorModule.raiseError(3,
+                        "La cabeza de la funcion esta mal, prueba a poner : function id(...){}\n\tEs decir sin tipo definir el tipo de la funcion");
             }
         }
 
-        
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
@@ -127,7 +128,7 @@ public class analizadorSemantico {
         resHashMap.put("id", null);
 
         // F --> I J G
-        
+
         gestorTablaSimbolos.exitFunction();
         return resHashMap;
     }
@@ -138,10 +139,10 @@ public class analizadorSemantico {
         String idValue = (String) getFromPos(1).get("valor");
         types hTipo = (types) getFromPos(2).get("tipo");
         if (gestorTablaSimbolos.comprobarEnTS(idValue) == 0) {
-            
-            int codigoTs=gestorTablaSimbolos.insertarFuncion(idValue, hTipo);
-            //System.err.println(idValue);
-            
+
+            int codigoTs = gestorTablaSimbolos.insertarFuncion(idValue, hTipo);
+            // System.err.println(idValue);
+
             resHashMap.put("tipo", hTipo);
             resHashMap.put("valor", idValue);
             resHashMap.put("id", codigoTs);
@@ -152,13 +153,10 @@ public class analizadorSemantico {
             resHashMap.put("id", -1);
         }
 
-        
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
         resHashMap.put("hasReturn", null);
-        
-        
 
         // I --> function H id
 
@@ -167,6 +165,11 @@ public class analizadorSemantico {
 
     public HashMap<String, Object> function6() {
         HashMap<String, Object> resHashMap = new HashMap<>();
+
+        HashMap<String, Object> aAtribs = getFromPos(2);
+
+        gestorTablaSimbolos.insertarDatosFuncion(gestorTablaSimbolos.lastFunctionId, (int) aAtribs.get("numeros"),
+                (List<types>) aAtribs.get("tipos"));
 
         resHashMap.put("tipo", null);
         resHashMap.put("numeros", getFromPos(2).get("numeros"));
@@ -315,24 +318,21 @@ public class analizadorSemantico {
         if (bTipo == types.tipo_Ok && cTipo == types.tipo_Ok) {
             resHashMap.put("tipo", types.tipo_Ok);
         } else {
-            errorModule.raiseError(3, "Tienes algun problema en el codigo alrededor de la linea "+aLexico.line+"\n\t@Usuario: Mira otros mensajes de error para hacerte una idea");
+            errorModule.raiseError(3, "Tienes algun problema en el codigo alrededor de la linea " + aLexico.line
+                    + "\n\t@Usuario: Mira otros mensajes de error para hacerte una idea");
             resHashMap.put("tipo", types.tipo_error);
         }
 
         resHashMap.put("numeros", bAtribs.get("numeros"));
         resHashMap.put("tipos", bAtribs.get("tipos"));
 
-        if(bAtribs.get("hasReturn")!=null && (boolean)bAtribs.get("hasReturn")){
+        if (bAtribs.get("hasReturn") != null && (boolean) bAtribs.get("hasReturn")) {
             resHashMap.put("returnType", bAtribs.get("returnType"));
             resHashMap.put("hasReturn", true);
-        }else if(cAtribs.get("hasReturn")!=null && (boolean)cAtribs.get("hasReturn")){
+        } else if (cAtribs.get("hasReturn") != null && (boolean) cAtribs.get("hasReturn")) {
             resHashMap.put("returnType", cAtribs.get("returnType"));
             resHashMap.put("hasReturn", true);
         }
-
-        
-
-
 
         resHashMap.put("valor", bAtribs.get("valor"));
         resHashMap.put("id", bAtribs.get("id"));
@@ -361,7 +361,7 @@ public class analizadorSemantico {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         String idValue = (String) getFromPos(4).get("valor");
-        
+
         types eTipo = (types) getFromPos(2).get("tipo");
 
         if (gestorTablaSimbolos.comprobarEnTS(idValue) == 0) {
@@ -374,7 +374,10 @@ public class analizadorSemantico {
             resHashMap.put("tipo", types.tipo_Ok);
 
         } else {
-            errorModule.raiseError(3, "Ambos lados tienen que ser del mismo tipo en un entorno de la linea "+aLexico.line+"\n\t@Usuario: "+ idValue +" con tipo <"+ (types) gestorTablaSimbolos.getType(idValue) +">, esta siendo asignado a " + eTipo);
+            errorModule.raiseError(3,
+                    "Ambos lados tienen que ser del mismo tipo en un entorno de la linea " + aLexico.line
+                            + "\n\t@Usuario: " + idValue + " con tipo <" + (types) gestorTablaSimbolos.getType(idValue)
+                            + ">, esta siendo asignado a " + eTipo);
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -392,39 +395,96 @@ public class analizadorSemantico {
 
     public HashMap<String, Object> function17() {
         HashMap<String, Object> resHashMap = new HashMap<>();
-        resHashMap.put("tipo", types.tipo_Ok);
+
+        String nombreFuncion = (String) getFromPos(5).get("valor");
+
+        if (gestorTablaSimbolos.comprobarEnTS(nombreFuncion) == 0) {
+            resHashMap.put("tipo", types.tipo_error);
+            errorModule.raiseError(3,
+                    "La funcion " + nombreFuncion + " no ha sido definida previamente, por favor definela =D");
+        } else {
+            Object[] datosFuncion = gestorTablaSimbolos.getDatosFuncion(nombreFuncion);
+
+            HashMap<String, Object> lAtribs = getFromPos(3);
+            int numeros = (int) lAtribs.get("numeros");
+            List<types> tipos = (List<types>) lAtribs.get("tipos");
+
+            if (checkTiposNumeros(datosFuncion, numeros, tipos)) {
+
+                resHashMap.put("tipo", types.tipo_Ok);
+
+            } else {
+                resHashMap.put("tipo", types.tipo_error);
+            }
+        }
+
+        // resHashMap.put("tipo", types.tipo_Ok);
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
         resHashMap.put("hasReturn", null);
         resHashMap.put("valor", null);
         resHashMap.put("id", null);
+
+        // S --> id ( L ) ;
 
         return resHashMap;
     }
 
     public HashMap<String, Object> function18() {
         HashMap<String, Object> resHashMap = new HashMap<>();
-        resHashMap.put("tipo", types.tipo_Ok);
+
+        types eTipo = (types) getFromPos(3).get("tipo");
+        if (eTipo == types.STRING || eTipo == types.NUMBER) {
+            resHashMap.put("tipo", types.tipo_Ok);
+        } else {
+            resHashMap.put("tipo", types.tipo_error);
+            errorModule.raiseError(3, "Alert tiene que tener como argumento una cadena o numero"
+                    + "\t@Usuario:\n\t\t(Contruccion Correcta) >> alert(<cadena|numero>);\n\t\t(Su construccion) >> alert(<"
+                    + eTipo + ">);");
+        }
+
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
         resHashMap.put("hasReturn", null);
         resHashMap.put("valor", null);
         resHashMap.put("id", null);
+
+        // S --> alert ( E ) ;
 
         return resHashMap;
     }
 
     public HashMap<String, Object> function19() {
         HashMap<String, Object> resHashMap = new HashMap<>();
-        resHashMap.put("tipo", types.tipo_Ok);
+
+        String idValue = (String) getFromPos(3).get("valor");
+        if (gestorTablaSimbolos.comprobarEnTS(idValue) == 0) {
+            int id = gestorTablaSimbolos.insertarGlobal(idValue);
+            gestorTablaSimbolos.insertarTipoGlobal(id, types.NUMBER);
+        }
+
+        types tipoId = (types) gestorTablaSimbolos.getType(idValue);
+        if (tipoId == types.NUMBER || tipoId == types.STRING) {
+
+            resHashMap.put("tipo", types.tipo_Ok);
+
+        } else {
+            errorModule.raiseError(3,
+                    "input tiene que tener como argumento una cadena o un entero\n\t@Usuario:\n \t\t (Construccion Correcta) >> input(<cadena|numero>);\t\t (Su construccion) >> input(<"
+                            + tipoId + ">);");
+            resHashMap.put("tipo", types.tipo_error);
+        }
+
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
         resHashMap.put("hasReturn", null);
         resHashMap.put("valor", null);
         resHashMap.put("id", null);
+
+        // S --> input( id );
 
         return resHashMap;
     }
@@ -443,7 +503,7 @@ public class analizadorSemantico {
         resHashMap.put("id", null);
 
         // S --> return X ;
-        
+
         return resHashMap;
     }
 
@@ -462,11 +522,14 @@ public class analizadorSemantico {
             if (eTipo == types.NUMBER) {
                 resHashMap.put("tipo", types.tipo_Ok);
             } else {
-                errorModule.raiseError(3, "El lado izquierdo de la expresion tienen que ser un entero"+"\n\t@Usuario: "+idValue+" con tipo "+(types) gestorTablaSimbolos.getType(idValue)+" -= "+eTipo);
+                errorModule.raiseError(3,
+                        "El lado izquierdo de la expresion tienen que ser un entero" + "\n\t@Usuario: " + idValue
+                                + " con tipo " + (types) gestorTablaSimbolos.getType(idValue) + " -= " + eTipo);
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
-            errorModule.raiseError(3, "El lado derecho de la expresion tienen que ser un entero"+"\n\t@Usuario: "+idValue+" con tipo "+(types) gestorTablaSimbolos.getType(idValue)+" -= "+eTipo);
+            errorModule.raiseError(3, "El lado derecho de la expresion tienen que ser un entero" + "\n\t@Usuario: "
+                    + idValue + " con tipo " + (types) gestorTablaSimbolos.getType(idValue) + " -= " + eTipo);
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -494,11 +557,16 @@ public class analizadorSemantico {
                 resHashMap.put("tipo", cAtribs.get("tipo"));
 
             } else {
-                errorModule.raiseError(3, "Tienes algun error en el cuerpo del if en " + aLexico.line+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>"+"\n\t\t (Su construccion) >> if(<"+eTipo+">) <"+(types) cAtribs.get("tipo")+">");
+                errorModule.raiseError(3, "Tienes algun error en el cuerpo del if en " + aLexico.line + "\n\t@Usuario: "
+                        + "\n\t\t (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>"
+                        + "\n\t\t (Su construccion) >> if(<" + eTipo + ">) <" + (types) cAtribs.get("tipo") + ">");
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
-            errorModule.raiseError(3, "La expresion dentro del if debe ser logica en " + aLexico.line+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>"+"\n\t\t (Su construccion) >> if(<"+eTipo+">) <"+(types) cAtribs.get("tipo")+">");
+            errorModule.raiseError(3,
+                    "La expresion dentro del if debe ser logica en " + aLexico.line + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> if(<BOOLEAN>) <CodigoCorrecto>"
+                            + "\n\t\t (Su construccion) >> if(<" + eTipo + ">) <" + (types) cAtribs.get("tipo") + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
         resHashMap.put("numeros", cAtribs.get("numeros"));
@@ -580,7 +648,11 @@ public class analizadorSemantico {
                 resHashMap.put("valor", cAtribs.get("valor"));
                 resHashMap.put("id", cAtribs.get("id"));
             } else {
-                errorModule.raiseError(3, "Tienes algun error en el cuerpo del do en " + aLexico.line+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> do {<CodigoCorrecto>} while(<BOOLEAN>) "+"\n\t\t (Su construccion) >> do {<"+(types) cAtribs.get("tipo")+">} while("+eTipo+")");
+                errorModule.raiseError(3,
+                        "Tienes algun error en el cuerpo del do en " + aLexico.line + "\n\t@Usuario: "
+                                + "\n\t\t (Construccion Coreccta) >> do {<CodigoCorrecto>} while(<BOOLEAN>) "
+                                + "\n\t\t (Su construccion) >> do {<" + (types) cAtribs.get("tipo") + ">} while("
+                                + eTipo + ")");
                 resHashMap.put("tipo", types.tipo_error);
                 resHashMap.put("numeros", cAtribs.get("numeros"));
                 resHashMap.put("tipos", cAtribs.get("tipos"));
@@ -590,7 +662,9 @@ public class analizadorSemantico {
                 resHashMap.put("id", cAtribs.get("id"));
             }
         } else {
-            errorModule.raiseError(3, "La expresion dentro del while debe ser logica en " + aLexico.line+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> do {<CodigoCorrecto>} while(<BOOLEAN>) "+"\n\t\t (Su construccion) >> do {<"+(types) cAtribs.get("tipo")+">} while("+eTipo+")");
+            errorModule.raiseError(3, "La expresion dentro del while debe ser logica en " + aLexico.line
+                    + "\n\t@Usuario: " + "\n\t\t (Construccion Coreccta) >> do {<CodigoCorrecto>} while(<BOOLEAN>) "
+                    + "\n\t\t (Su construccion) >> do {<" + (types) cAtribs.get("tipo") + ">} while(" + eTipo + ")");
             resHashMap.put("tipo", types.tipo_error);
             resHashMap.put("numeros", cAtribs.get("numeros"));
             resHashMap.put("tipos", cAtribs.get("tipos"));
@@ -660,11 +734,17 @@ public class analizadorSemantico {
             if (uTipo == types.BOOLEAN) {
                 resHashMap.put("tipo", types.BOOLEAN);
             } else {
-                errorModule.raiseError(3, "El lado derecho tiene que ser un logico"+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <BOOLEAN> || <BOOLEAN> "+"\n\t\t (Su construccion) >> <"+r1Tipo+"> || <"+uTipo+">");
+                errorModule.raiseError(3,
+                        "El lado derecho tiene que ser un logico" + "\n\t@Usuario: "
+                                + "\n\t\t (Construccion Coreccta) >> <BOOLEAN> || <BOOLEAN> "
+                                + "\n\t\t (Su construccion) >> <" + r1Tipo + "> || <" + uTipo + ">");
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
-            errorModule.raiseError(3, "El lado izquierdo tiene que ser un logico"+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <BOOLEAN> || <BOOLEAN> "+"\n\t\t (Su construccion) >> <"+r1Tipo+"> || <"+uTipo+">");
+            errorModule.raiseError(3,
+                    "El lado izquierdo tiene que ser un logico" + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> <BOOLEAN> || <BOOLEAN> "
+                            + "\n\t\t (Su construccion) >> <" + r1Tipo + "> || <" + uTipo + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -705,12 +785,18 @@ public class analizadorSemantico {
             if (uTipo == types.BOOLEAN) {
                 resHashMap.put("tipo", types.BOOLEAN);
             } else {
-                errorModule.raiseError(3, "El lado derecho tiene que ser un logico "+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <BOOLEAN> && <BOOLEAN> "+"\n\t\t (Su construccion) >> <"+r1Tipo+"> && <"+uTipo+">");
+                errorModule.raiseError(3,
+                        "El lado derecho tiene que ser un logico " + "\n\t@Usuario: "
+                                + "\n\t\t (Construccion Coreccta) >> <BOOLEAN> && <BOOLEAN> "
+                                + "\n\t\t (Su construccion) >> <" + r1Tipo + "> && <" + uTipo + ">");
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
 
-            errorModule.raiseError(3, "El lado izquierdo tiene que ser un logico "+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <BOOLEAN> && <BOOLEAN> "+"\n\t\t (Su construccion) >> <"+r1Tipo+"> && <"+uTipo+">");
+            errorModule.raiseError(3,
+                    "El lado izquierdo tiene que ser un logico " + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> <BOOLEAN> && <BOOLEAN> "
+                            + "\n\t\t (Su construccion) >> <" + r1Tipo + "> && <" + uTipo + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -747,10 +833,13 @@ public class analizadorSemantico {
         types u1Tipo = (types) getFromPos(3).get("tipo");
         types vTipo = (types) getFromPos(1).get("tipo");
 
-        if (u1Tipo == vTipo) {
+        if (u1Tipo == vTipo && u1Tipo == types.NUMBER) {
             resHashMap.put("tipo", types.BOOLEAN);
         } else {
-            errorModule.raiseError(3, "Tienen que ser del mismo tipo\nNo juntes churras con merinas "+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <TIPO> == <TIPO> "+"\n\t\t (Su construccion) >> <"+u1Tipo+"> == <"+vTipo+">");
+            errorModule.raiseError(3,
+                    "Tienen que ser del mismo tipo entero" + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> <NUMBER> == <NUMBER> "
+                            + "\n\t\t (Su construccion) >> <" + u1Tipo + "> == <" + vTipo + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -772,10 +861,13 @@ public class analizadorSemantico {
         types u1Tipo = (types) getFromPos(3).get("tipo");
         types vTipo = (types) getFromPos(1).get("tipo");
 
-        if (u1Tipo == vTipo) {
+        if (u1Tipo == vTipo && u1Tipo == types.NUMBER) {
             resHashMap.put("tipo", types.BOOLEAN);
         } else {
-            errorModule.raiseError(3, "Tienen que ser del mismo tipo\nNo juntes churras con merinas "+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <TIPO> != <TIPO> "+"\n\t\t (Su construccion) >> <"+u1Tipo+"> != <"+vTipo+">");
+            errorModule.raiseError(3,
+                    "Tienen que ser del mismo tipo entero " + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> <NUMBER> != <NUMBER> "
+                            + "\n\t\t (Su construccion) >> <" + u1Tipo + "> != <" + vTipo + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -820,7 +912,10 @@ public class analizadorSemantico {
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
-            errorModule.raiseError(3, "El lado izquierdo tiene que ser un numero"+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <NUMBER> + <NUMBER> "+"\n\t\t (Su construccion) >> <"+v1Tipo+"> + <"+wTipo+">");
+            errorModule.raiseError(3,
+                    "El lado izquierdo tiene que ser un numero" + "\n\t@Usuario: "
+                            + "\n\t\t (Construccion Coreccta) >> <NUMBER> + <NUMBER> " + "\n\t\t (Su construccion) >> <"
+                            + v1Tipo + "> + <" + wTipo + ">");
             resHashMap.put("tipo", types.tipo_error);
         }
 
@@ -846,7 +941,10 @@ public class analizadorSemantico {
             if (wTipo == types.NUMBER) {
                 resHashMap.put("tipo", types.NUMBER);
             } else {
-                errorModule.raiseError(3, "El lado derecho tiene que ser un numero "+"\n\t@Usuario: "+"\n\t\t (Construccion Coreccta) >> <NUMBER> - <NUMBER> "+"\n\t\t (Su construccion) >> <"+v1Tipo+"> - <"+wTipo+">");
+                errorModule.raiseError(3,
+                        "El lado derecho tiene que ser un numero " + "\n\t@Usuario: "
+                                + "\n\t\t (Construccion Coreccta) >> <NUMBER> - <NUMBER> "
+                                + "\n\t\t (Su construccion) >> <" + v1Tipo + "> - <" + wTipo + ">");
                 resHashMap.put("tipo", types.tipo_error);
             }
         } else {
@@ -900,7 +998,7 @@ public class analizadorSemantico {
         resHashMap.put("id", null);
 
         // W --> id
-        
+
         return resHashMap;
     }
 
@@ -921,7 +1019,30 @@ public class analizadorSemantico {
 
     public HashMap<String, Object> function41() {
         HashMap<String, Object> resHashMap = new HashMap<>();
-        resHashMap.put("tipo", null);
+
+        String nombreFuncion = (String) getFromPos(4).get("valor");
+
+        if (gestorTablaSimbolos.comprobarEnTS(nombreFuncion) == 0) {
+            resHashMap.put("tipo", types.tipo_error);
+            errorModule.raiseError(3,
+                    "La funcion " + nombreFuncion + " no ha sido definida previamente, por favor definela =D");
+        } else {
+            Object[] datosFuncion = gestorTablaSimbolos.getDatosFuncion(nombreFuncion);
+
+            HashMap<String, Object> lAtribs = getFromPos(2);
+            int numeros = (int) lAtribs.get("numeros");
+            List<types> tipos = (List<types>) lAtribs.get("tipos");
+
+            if (checkTiposNumeros(datosFuncion, numeros, tipos)) {
+
+                resHashMap.put("tipo", (types) datosFuncion[1]);
+
+            } else {
+                resHashMap.put("tipo", types.tipo_error);
+            }
+        }
+
+        // resHashMap.put("tipo", types.tipo_error);
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);
@@ -1048,7 +1169,7 @@ public class analizadorSemantico {
         resHashMap.put("id", null);
 
         // X --> E
-        
+
         return resHashMap;
     }
 
@@ -1271,6 +1392,20 @@ public class analizadorSemantico {
         res.addAll(tipos2);
 
         return res;
+    }
+
+    public boolean checkTiposNumeros(Object[] datosFuncion, int numeros, List<types> tipos) {
+        boolean res = false;
+        if ((int) datosFuncion[0] == numeros) {
+            res = true;
+            List<types> tiposOriginales = (List<types>) datosFuncion[2];
+            for (int i = 0; i < tipos.size() && res; i++) {
+                res = res && (tiposOriginales.get(i) == tipos.get(i));
+            }
+
+        }
+        return res;
+
     }
 
     public HashMap<String, Object> getFromPos(int i) {

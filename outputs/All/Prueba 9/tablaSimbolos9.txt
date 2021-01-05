@@ -59,17 +59,17 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Etiqueta : eti8
 	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
-	* LEXEMA : 'booleano'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 13
---------------------------------------------------------------
 	* LEXEMA : 'num'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
+	+ Desplazamiento : 13
+--------------------------------------------------------------
+	* LEXEMA : 'booleano'
+	ATRIBUTOS:
+	+ Tipo : BOOLEAN
 	+ Desplazamiento : 15
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "Factorial" #2 :
 
 	* LEXEMA : 'n'
 	ATRIBUTOS:
@@ -81,7 +81,7 @@ CONTENIDO DE LA TABLA funcion #2 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #4 :
+CONTENIDO DE LA TABLA FUNCION "print" #3 :
 
 	* LEXEMA : 'f'
 	ATRIBUTOS:
@@ -98,7 +98,7 @@ CONTENIDO DE LA TABLA funcion #4 :
 	+ Tipo : STRING
 	+ Desplazamiento : 5
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #6 :
+CONTENIDO DE LA TABLA FUNCION "cadena" #4 :
 
 	* LEXEMA : 'log'
 	ATRIBUTOS:

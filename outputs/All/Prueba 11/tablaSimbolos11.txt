@@ -15,8 +15,13 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 4
 --------------------------------------------------------------
-	* LEXEMA : 'y'
+	* LEXEMA : 'esto_es_un_nombre_de_variable_global_de_tipo_entero'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
 	+ Desplazamiento : 6
+--------------------------------------------------------------
+	* LEXEMA : 'y'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 8
 --------------------------------------------------------------

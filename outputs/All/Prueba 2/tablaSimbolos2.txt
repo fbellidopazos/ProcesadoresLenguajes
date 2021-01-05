@@ -27,12 +27,12 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : STRING
 	+ Desplazamiento : 3
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "print" #2 :
 
 	* LEXEMA : 'msg'
 	ATRIBUTOS:
 	+ Tipo : STRING
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #4 :
+CONTENIDO DE LA TABLA FUNCION "pideTexto" #3 :
 

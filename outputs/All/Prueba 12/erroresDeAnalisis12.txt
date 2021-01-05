@@ -1,2 +1,3 @@
+Error Lexico-Semantico:
 Entero fuera de rango en la linea:8
 

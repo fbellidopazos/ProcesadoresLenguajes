@@ -23,7 +23,7 @@ public class analizadorLexico {
     public GestorTablaSimbolos gestorTablaSimbolos;
 
     // Could present useful
-    public HashMap<Integer,String[]> lexemaMemory;
+    public HashMap<Integer, String[]> lexemaMemory;
     int posMemory = 0;
 
     /**
@@ -281,21 +281,16 @@ public class analizadorLexico {
                         if (isReservada(lexema))
                             token = new Token<>(lexema, ""); // --------------------------------------> Mirar reservadas
                         else {
-/*
-                            int index = gestorTablaSimbolos.insertarLexema(lexema, line);
-                            if (index == -1) {
-                                estado = "S";
-                                lexema = "";
-                                digito = 0;
-                            } else {
-                                token = new Token<>("identificador", Integer.toString(index));// -------------------------------------->
-                                                                                              // TABLA SIMBOLOS
-                            }
-*/
+                            /*
+                             * int index = gestorTablaSimbolos.insertarLexema(lexema, line); if (index ==
+                             * -1) { estado = "S"; lexema = ""; digito = 0; } else { token = new
+                             * Token<>("identificador", Integer.toString(index));//
+                             * --------------------------------------> // TABLA SIMBOLOS }
+                             */
                         }
                         token = new Token<>("identificador", lexema);
                         if (isReservada(lexema))
-                            token = new Token<>(lexema, ""); 
+                            token = new Token<>(lexema, "");
                         // System.out.println("A->oc B");
                         break;
                     case "A15":
@@ -309,8 +304,7 @@ public class analizadorLexico {
 
                             token = new Token<>("cadena", "\"" + lexema + "\"");
                         } else
-                            token = new Token<>("cadena", "\"" + lexema + "\"");// -------------------------------------->
-                                                                                // CHECK Longitud??
+                            token = new Token<>("cadena", "\"" + lexema + "\"");
                         leer();
                         // System.out.println("c->\"D");
                         break;

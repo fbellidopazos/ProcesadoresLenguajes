@@ -39,7 +39,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 11
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "ff" #2 :
 
 	* LEXEMA : 'ss'
 	ATRIBUTOS:

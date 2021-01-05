@@ -77,7 +77,7 @@ public class main {
             fileOut = new PrintStream("./outputs/tablaSimbolos.txt");
             System.setOut(fileOut);
             
-            gestorTablaSimbolos.showAllTables();
+            gestorTablaSimbolos.showAllTables(true);
 
             fileOut = new PrintStream("./outputs/erroresDeAnalisis.txt");
             System.setOut(fileOut);

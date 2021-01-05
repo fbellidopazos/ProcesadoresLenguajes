@@ -1,2 +1,0 @@
-String Out Of Bounds -- Desconocemos si es un error que un String sea mayor a 128.Pensamos que sí pero por mera diligencia at Line:11
-Variable Name Out Of Bounds at Line:12     

@@ -1,47 +1,26 @@
-/* prueba correcta */
-let number entero;
-let string cadena;
-let boolean logico;
-let number abcdefghij________;
-function FuncionNumero ()
-{
-  let number i;
-  
-  i = entero;
-  entero=9-i;
-}
-function string FuncionRetorno (string hola, number x, boolean z)
-{
-  let number i;
-  
-  input (i);
-  alert (hola);
-  return hola;
-}
-function FuncionSentencia (number z_Z, boolean b)
-{
-  do
-  {
-	alert (88);
-  } while (b);
-}
-function Funcion (number x, boolean b)
-{
-	FuncionNumero();
-  alert 
-    (cadena);return;
-}
-let number iii;
-let boolean bbb;
-/* comentario 
-multi 
-línea ***/
-input(iii);
-alert (iii) ;
+let number n1;
+let boolean l1;
+let string cad;
+let number n2;
+let boolean l2;
 
-iii -= iii;
-bbb = bbb;
+alert ("PdL");
+input (esto_es_un_nombre_de_variable_global_de_tipo_entero);
+input (n1);
+l1 = l2;
+if (l1&& l2) cad = "hello";
+n2 = n1 - 378;
 
-Funcion
- ( iii, 
-   bbb );
+alert(	33 
+		- 
+		n1 
+		- 
+		n2);
+function boolean ff(boolean ss)
+{
+	l2 =  l1;
+	if (l2) l1 = ff (ss);
+	varglobal = 8888;
+	return (ss);
+}		
+if (ff(l1)) alert (varglobal);

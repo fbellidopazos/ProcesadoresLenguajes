@@ -21,7 +21,7 @@ public class todasPruebas {
 
 
             System.err.println("Analizando el archivo: ");
-            System.err.println(archivo);
+            System.err.println("\t"+archivo);
 
             String value = "MAIN";
             moduloError errorModule = new moduloError();
@@ -55,7 +55,7 @@ public class todasPruebas {
             fileOut = new PrintStream("./outputs/All/Prueba "+i+"/tablaSimbolos" + i + ".txt");
             System.setOut(fileOut);
 
-            gestorTablaSimbolos.showAllTables();
+            gestorTablaSimbolos.showAllTables(false);
 
             fileOut = new PrintStream("./outputs/All/Prueba "+i+"/erroresDeAnalisis" + i + ".txt");
             System.setOut(fileOut);

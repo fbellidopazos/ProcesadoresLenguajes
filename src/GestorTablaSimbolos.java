@@ -1,28 +1,29 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
+
 
 import DataStructures.types;
 
-import java.io.FileNotFoundException;
+
 
 
 public class GestorTablaSimbolos {
-    // Stack<TablaSimbolos> pilaTablas;
+    
     List<TablaSimbolos> todasTablas;
     TablaSimbolos currentTable;
     TablaSimbolos globalTable;
     moduloError errorModule;
     int contador=1;
     boolean inFunction=false;
+    int lastFunctionId = 0;
 
     public GestorTablaSimbolos(String mainName,moduloError errorModule){
-        // this.pilaTablas=new Stack<>();
+        
         this.todasTablas=new ArrayList<>();
         this.errorModule=errorModule;
         TablaSimbolos ts=new TablaSimbolos(mainName+" #"+contador);
 
-        // this.pilaTablas.push(ts);
+        
         this.todasTablas.add(ts);
         this.currentTable=ts;
         this.globalTable=ts;
@@ -45,9 +46,10 @@ public class GestorTablaSimbolos {
         return currentTable.newInsert(lexema);
     }
     public int insertarFuncion(String nombre,types tipo){
-        //System.err.println(nombre+" Contador: "+contador);
+        
         int i = globalTable.newInsert(nombre);
         globalTable.insertarFuncion(i, tipo);  
+        lastFunctionId = i;
 
         TablaSimbolos ts=new TablaSimbolos("FUNCION \""+nombre+"\" #"+contador);
         
@@ -63,17 +65,7 @@ public class GestorTablaSimbolos {
         inFunction=false;
         contador+=1;
     }
-    /*public void insertarTipo(int id,types tipo){
-
-        
-        if(inFunction){
-            currentTable.insertarTipo(id, tipo);
-            
-
-        }else{
-            globalTable.insertarTipo(id, tipo);
-        }
-    }*/
+    
     public void insertarTipoLocal(int id,types tipo){
 
         
@@ -101,8 +93,29 @@ public class GestorTablaSimbolos {
         }
     }
     
+    public Object[] getDatosFuncion(String nombreFuncion)  {
+        
+        List<Object> datosFuncion = getFuncion(globalTable.getId(nombreFuncion));
+        
+        
+        Object[] datos =new Object[3];
 
-    public int insertarLexema(String lexema,int line) throws Exception{
+        datos[0] = datosFuncion.get(3);
+        datos[1] = datosFuncion.get(4);
+        List<types> tipos = new ArrayList<>();
+        int i = 0;
+        for(Object valores : datosFuncion){
+            if(i>=6){
+                tipos.add((types)valores);
+            }
+            i++;
+        }
+        datos[2] = tipos;
+
+        return datos;
+    }
+
+    public int insertarLexema(String lexema,int line){
 
         // Buscamos si esta declarado en la activa
         boolean found=false;
@@ -113,7 +126,7 @@ public class GestorTablaSimbolos {
                 errorModule.raiseError(1,line);
                 found=true;
                 break;
-                //throw new Exception("Error de Analisis"); // EVIL IS EVIL 
+                 
             }
             i++;
         }
@@ -135,24 +148,18 @@ public class GestorTablaSimbolos {
     public void insertarDatosFuncion(int idFuncion,int numero,List<types> tipos){
         
         globalTable.insertarDatosFuncion(idFuncion, numero, tipos);
-        //TablaSimbolos ts=new TablaSimbolos("funcion #"+contador);
-        //contador++;
-        //currentTable=ts;
-        //todasTablas.add(ts);
         
-        return;
+
     }
     public void salirFuncion(){
         currentTable=globalTable;
         inFunction=false;
     }
-    public void showAllTables() throws FileNotFoundException{
-        //PrintStream fileOut = new PrintStream("./outputs/TablaSimbolos.txt");
-        //System.setOut(fileOut);
-
-        //System.err.println(todasTablas);
+    public void showAllTables(boolean show) {
+        
         for (TablaSimbolos tablaSimbolos : todasTablas) {
-            tablaSimbolos.showTable();
+            if(show)
+                tablaSimbolos.showTable();
             tablaSimbolos.printTable();
         }
 

@@ -1,8 +1,0 @@
-Integer Out Of Bounds at Line:4
-Integer Out Of Bounds at Line:5
-String Out Of Bounds -- Desconocemos si es un error que un String sea mayor a 128.Pensamos que sí pero por mera diligencia at Line:11
-Variable Name Out Of Bounds at Line:12     
-Error code 0: Caracter No valido at Line:17
-Error code 0: Caracter No valido at Line:17
-Error code 0: Caracter No valido at Line:17
-Error code 0: Caracter No valido at Line:17

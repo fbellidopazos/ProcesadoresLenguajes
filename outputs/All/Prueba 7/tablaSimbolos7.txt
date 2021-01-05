@@ -28,7 +28,12 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
 	+ Desplazamiento : 2
+	+ NºParametros : 3
 	+ ReturnType : BOOLEAN
+	+ Etiqueta : eti3
+	+ tipoArgumento0 : NUMBER
+	+ tipoArgumento1 : NUMBER
+	+ tipoArgumento2 : NUMBER
 --------------------------------------------------------------
 	* LEXEMA : 'demo'
 	ATRIBUTOS:
@@ -43,14 +48,14 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "bisiesto" #2 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #4 :
+CONTENIDO DE LA TABLA FUNCION "dias" #3 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
@@ -67,7 +72,7 @@ CONTENIDO DE LA TABLA funcion #4 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 4
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #6 :
+CONTENIDO DE LA TABLA FUNCION "esFechaCorrecta" #4 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
@@ -84,5 +89,5 @@ CONTENIDO DE LA TABLA funcion #6 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 4
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #7 :
+CONTENIDO DE LA TABLA FUNCION "demo" #5 :
 

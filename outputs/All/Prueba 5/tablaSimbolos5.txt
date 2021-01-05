@@ -69,14 +69,14 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 11
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #2 :
+CONTENIDO DE LA TABLA FUNCION "FuncionNumero" #2 :
 
 	* LEXEMA : 'i'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #4 :
+CONTENIDO DE LA TABLA FUNCION "FuncionRetorno" #3 :
 
 	* LEXEMA : 'z'
 	ATRIBUTOS:
@@ -98,7 +98,7 @@ CONTENIDO DE LA TABLA funcion #4 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 7
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #6 :
+CONTENIDO DE LA TABLA FUNCION "FuncionSentencia" #4 :
 
 	* LEXEMA : 'b'
 	ATRIBUTOS:
@@ -110,7 +110,7 @@ CONTENIDO DE LA TABLA funcion #6 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA funcion #8 :
+CONTENIDO DE LA TABLA FUNCION "Funcion" #5 :
 
 	* LEXEMA : 'b'
 	ATRIBUTOS:

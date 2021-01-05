@@ -41,13 +41,13 @@ public class moduloError {
         errorCodes = new HashMap<>();
         analysisErrors = new ArrayList<>();
 
-        errorCodes.put(0, "Codigo de error 0: Caracter No valido");
-        errorCodes.put(1, "Codigo de error 1: Ya esta en la tabla de simbolos");
+        errorCodes.put(0, "Error Lexico:\n Caracter No valido");
+        errorCodes.put(1, "Error Lexico:\n Ya esta en la tabla de simbolos");
         errorCodes.put(-1, "Codigo de error -1: Algo no fue como esperabamos\n Nuestra Culpa =D");
-        errorCodes.put(2, "Entero fuera de rango");
+        errorCodes.put(2, "Error Lexico-Semantico:\nEntero fuera de rango");
         errorCodes.put(3, "Error Semantico: ");
 
-        errorCodes.put(4, "Nombre de variable fuera de rango");
+        errorCodes.put(4, "Error Lexico-Semantico:\nNombre de variable fuera de rango");
 
         errorCodes.put(5, "Error Sintactico");
     }
