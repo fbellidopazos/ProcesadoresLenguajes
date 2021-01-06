@@ -18,14 +18,13 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'operacion'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 6
 	+ NºParametros : 2
-	+ ReturnType : NUMBER
+	+ TipoRetorno : NUMBER
 	+ Etiqueta : eti3
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : NUMBER
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "operacion" #2 :
+CONTENIDO DE LA TABLA FUNCION operacion #2 :
 
 	* LEXEMA : 'num2'
 	ATRIBUTOS:

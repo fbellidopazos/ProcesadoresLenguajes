@@ -23,17 +23,15 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'FuncionNumero'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 9
 	+ NºParametros : 0
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti4
 --------------------------------------------------------------
 	* LEXEMA : 'FuncionRetorno'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 9
 	+ NºParametros : 3
-	+ ReturnType : STRING
+	+ TipoRetorno : STRING
 	+ Etiqueta : eti5
 	+ tipoArgumento0 : STRING
 	+ tipoArgumento1 : NUMBER
@@ -42,9 +40,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'FuncionSentencia'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 9
 	+ NºParametros : 2
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti6
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : BOOLEAN
@@ -52,9 +49,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'Funcion'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 9
 	+ NºParametros : 2
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti7
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : BOOLEAN
@@ -69,14 +65,14 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 11
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "FuncionNumero" #2 :
+CONTENIDO DE LA TABLA FUNCION FuncionNumero #2 :
 
 	* LEXEMA : 'i'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "FuncionRetorno" #3 :
+CONTENIDO DE LA TABLA FUNCION FuncionRetorno #3 :
 
 	* LEXEMA : 'z'
 	ATRIBUTOS:
@@ -98,7 +94,7 @@ CONTENIDO DE LA TABLA FUNCION "FuncionRetorno" #3 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 7
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "FuncionSentencia" #4 :
+CONTENIDO DE LA TABLA FUNCION FuncionSentencia #4 :
 
 	* LEXEMA : 'b'
 	ATRIBUTOS:
@@ -110,7 +106,7 @@ CONTENIDO DE LA TABLA FUNCION "FuncionSentencia" #4 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "Funcion" #5 :
+CONTENIDO DE LA TABLA FUNCION Funcion #5 :
 
 	* LEXEMA : 'b'
 	ATRIBUTOS:

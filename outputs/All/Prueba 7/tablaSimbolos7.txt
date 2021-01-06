@@ -8,18 +8,16 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'bisiesto'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 2
 	+ NºParametros : 1
-	+ ReturnType : BOOLEAN
+	+ TipoRetorno : BOOLEAN
 	+ Etiqueta : eti1
 	+ tipoArgumento0 : NUMBER
 --------------------------------------------------------------
 	* LEXEMA : 'dias'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 2
 	+ NºParametros : 2
-	+ ReturnType : NUMBER
+	+ TipoRetorno : NUMBER
 	+ Etiqueta : eti2
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : NUMBER
@@ -27,9 +25,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'esFechaCorrecta'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 2
 	+ NºParametros : 3
-	+ ReturnType : BOOLEAN
+	+ TipoRetorno : BOOLEAN
 	+ Etiqueta : eti3
 	+ tipoArgumento0 : NUMBER
 	+ tipoArgumento1 : NUMBER
@@ -38,9 +35,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'demo'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 2
 	+ NºParametros : 0
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti4
 --------------------------------------------------------------
 	* LEXEMA : 'a1b2c3d4'
@@ -48,14 +44,14 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "bisiesto" #2 :
+CONTENIDO DE LA TABLA FUNCION bisiesto #2 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "dias" #3 :
+CONTENIDO DE LA TABLA FUNCION dias #3 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
@@ -72,7 +68,7 @@ CONTENIDO DE LA TABLA FUNCION "dias" #3 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 4
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "esFechaCorrecta" #4 :
+CONTENIDO DE LA TABLA FUNCION esFechaCorrecta #4 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
@@ -89,5 +85,5 @@ CONTENIDO DE LA TABLA FUNCION "esFechaCorrecta" #4 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 4
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "demo" #5 :
+CONTENIDO DE LA TABLA FUNCION demo #5 :
 

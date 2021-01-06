@@ -99,7 +99,7 @@ public class analizadorSintactico {
                 pila.push(antecedente);
                 aSemantico.stackAtributos.push(atributo); // Metemos el valor Calculado
                                                           // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                // aSemantico.stackAtributos.push(null);
+                
 
                 Integer sk = Integer.valueOf(tablaGoTo[sj][aplicacionNoTerminal.get(antecedente)]);
                 pila.push(Integer.toString(sk));
@@ -114,6 +114,13 @@ public class analizadorSintactico {
             } else if (accionRealizar != null && accionRealizar.first.equals("ACC")) {
                 // Aceptamos
                 condicionSalida = false; // Salimos bucle
+
+
+                aSemantico.logSemantico.add("Aplicando regla: " + 0
+                        + " con stack de Atributos --> " + aSemantico.stackAtributos);
+                aSemantico.accionEjecutar(0);
+                aSemantico.logSemantico.add("\tSe obtiene stack de Atributos --> " + aSemantico.stackAtributos + "\n");
+
 
                 parse = parse + " " + 1; // Necesario si tomamos la gramatica aumentada como gramatica
 

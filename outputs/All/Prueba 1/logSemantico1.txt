@@ -472,3 +472,6 @@ Aplicando regla: 1 con stack de Atributos --> [null, {tipo=tipo_Ok, numeros=null
 Aplicando regla: 1 con stack de Atributos --> [null, {tipo=tipo_Ok, numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo=tipo_Ok, numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
 	Se obtiene stack de Atributos --> [null, {tipo=tipo_Ok, numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
 
+Aplicando regla: 0 con stack de Atributos --> [null, {tipo=tipo_Ok, numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+	Se obtiene stack de Atributos --> [null, {tipo=tipo_Ok, numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+

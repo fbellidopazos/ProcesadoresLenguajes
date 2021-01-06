@@ -33,9 +33,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'ff'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 13
 	+ NºParametros : 1
-	+ ReturnType : BOOLEAN
+	+ TipoRetorno : BOOLEAN
 	+ Etiqueta : eti6
 	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
@@ -44,7 +43,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 13
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "ff" #2 :
+CONTENIDO DE LA TABLA FUNCION ff #2 :
 
 	* LEXEMA : 'ss'
 	ATRIBUTOS:

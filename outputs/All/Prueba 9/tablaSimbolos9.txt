@@ -18,9 +18,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'Factorial'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 7
 	+ NºParametros : 1
-	+ ReturnType : NUMBER
+	+ TipoRetorno : NUMBER
 	+ Etiqueta : eti3
 	+ tipoArgumento0 : NUMBER
 --------------------------------------------------------------
@@ -42,9 +41,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'print'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 13
 	+ NºParametros : 3
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti7
 	+ tipoArgumento0 : STRING
 	+ tipoArgumento1 : STRING
@@ -53,9 +51,8 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'cadena'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 13
 	+ NºParametros : 1
-	+ ReturnType : STRING
+	+ TipoRetorno : STRING
 	+ Etiqueta : eti8
 	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
@@ -69,7 +66,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 15
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "Factorial" #2 :
+CONTENIDO DE LA TABLA FUNCION Factorial #2 :
 
 	* LEXEMA : 'n'
 	ATRIBUTOS:
@@ -81,7 +78,7 @@ CONTENIDO DE LA TABLA FUNCION "Factorial" #2 :
 	+ Tipo : NUMBER
 	+ Desplazamiento : 2
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "print" #3 :
+CONTENIDO DE LA TABLA FUNCION print #3 :
 
 	* LEXEMA : 'f'
 	ATRIBUTOS:
@@ -98,7 +95,7 @@ CONTENIDO DE LA TABLA FUNCION "print" #3 :
 	+ Tipo : STRING
 	+ Desplazamiento : 5
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "cadena" #4 :
+CONTENIDO DE LA TABLA FUNCION cadena #4 :
 
 	* LEXEMA : 'log'
 	ATRIBUTOS:

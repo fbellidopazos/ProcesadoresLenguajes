@@ -49,7 +49,7 @@ public class GestorTablaSimbolos {
         globalTable.insertarFuncion(i, tipo);
         lastFunctionId = i;
 
-        TablaSimbolos ts = new TablaSimbolos("FUNCION \"" + nombre + "\" #" + contador);
+        TablaSimbolos ts = new TablaSimbolos("FUNCION " + nombre + " #" + contador);
 
         currentTable = ts;
         todasTablas.add(ts);

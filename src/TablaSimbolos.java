@@ -17,7 +17,7 @@ public class TablaSimbolos {
         this.name = name;
         cabecera = new ArrayList<String>();
         longitud = 6;
-        String[] cabeza = { "LEXEMA", "Tipo", "Desplazamiento", "NºParametros", "ReturnType", "Etiqueta" };
+        String[] cabeza = { "LEXEMA", "Tipo", "Desplazamiento", "NºParametros", "TipoRetorno", "Etiqueta" };
         for (int i = 0; i < cabeza.length; i++) {
             cabecera.add(cabeza[i]);
         }
@@ -109,7 +109,7 @@ public class TablaSimbolos {
     public void insertarFuncion(int idFuncion, types returnType) {
         List<Object> data = getFromPos(idFuncion);
         data.set(1, types.FUNCTION);
-        data.set(2, desplazamientoInterno);
+        data.set(2, null);
         data.set(3, null);
         data.set(4, returnType);
         // System.err.println(data);

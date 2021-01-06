@@ -16,7 +16,11 @@ public class analizadorSemantico {
 
     public HashMap<String, Object> function0() {
         HashMap<String, Object> resHashMap = new HashMap<>();
-        resHashMap.put("tipo", (types) getFromPos(1).get("tipo"));
+        types pTipo = (types) getFromPos(1).get("tipo");
+        if(pTipo == types.tipo_error){
+            errorModule.raiseError(3, "Revisa los errores que tienes, algo no anda bien");
+        }
+        resHashMap.put("tipo", pTipo);
         resHashMap.put("numeros", null);
         resHashMap.put("tipos", null);
         resHashMap.put("returnType", null);

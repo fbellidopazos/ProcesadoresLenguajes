@@ -8,18 +8,16 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'print'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 3
 	+ NºParametros : 1
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti1
 	+ tipoArgumento0 : STRING
 --------------------------------------------------------------
 	* LEXEMA : 'pideTexto'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 3
 	+ NºParametros : 0
-	+ ReturnType : EMPTY
+	+ TipoRetorno : EMPTY
 	+ Etiqueta : eti2
 --------------------------------------------------------------
 	* LEXEMA : 'textoAux'
@@ -27,12 +25,12 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : STRING
 	+ Desplazamiento : 3
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "print" #2 :
+CONTENIDO DE LA TABLA FUNCION print #2 :
 
 	* LEXEMA : 'msg'
 	ATRIBUTOS:
 	+ Tipo : STRING
 	+ Desplazamiento : 0
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "pideTexto" #3 :
+CONTENIDO DE LA TABLA FUNCION pideTexto #3 :
 

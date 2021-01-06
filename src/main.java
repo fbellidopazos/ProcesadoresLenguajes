@@ -17,6 +17,14 @@ public class main {
         moduloError errorModule = new moduloError();
 
         if (returnValue == JFileChooser.APPROVE_OPTION) {
+            
+            File directory = new File("./outputs");
+            if (!directory.exists()) {
+
+                directory.mkdir();
+            }
+
+
             File selectedFile = jfc.getSelectedFile();
             String archivo = selectedFile.getCanonicalPath();
 
@@ -30,6 +38,7 @@ public class main {
             analizadorSemantico aSemantico = new analizadorSemantico(aLexico, errorModule, gestorTablaSimbolos);
             analizadorSintactico aSintactico = new analizadorSintactico(aLexico, aSemantico, errorModule,
                     gestorTablaSimbolos);
+
 
             // Recolector de Parse
             PrintStream fileOut = new PrintStream("./outputs/Parse.txt");

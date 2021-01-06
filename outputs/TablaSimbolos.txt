@@ -25,21 +25,25 @@ CONTENIDO DE LA TABLA TSGLOBAL #1 :
 	+ Tipo : BOOLEAN
 	+ Desplazamiento : 9
 --------------------------------------------------------------
+	* LEXEMA : 'esto_es_un_nombre_de_variable_global_de_tipo_entero'
+	ATRIBUTOS:
+	+ Tipo : NUMBER
+	+ Desplazamiento : 11
+--------------------------------------------------------------
 	* LEXEMA : 'ff'
 	ATRIBUTOS:
 	+ Tipo : FUNCTION
-	+ Desplazamiento : 11
 	+ NºParametros : 1
-	+ ReturnType : BOOLEAN
-	+ Etiqueta : eti5
+	+ TipoRetorno : BOOLEAN
+	+ Etiqueta : eti6
 	+ tipoArgumento0 : BOOLEAN
 --------------------------------------------------------------
 	* LEXEMA : 'varglobal'
 	ATRIBUTOS:
 	+ Tipo : NUMBER
-	+ Desplazamiento : 11
+	+ Desplazamiento : 13
 --------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION "ff" #2 :
+CONTENIDO DE LA TABLA FUNCION ff #2 :
 
 	* LEXEMA : 'ss'
 	ATRIBUTOS:
