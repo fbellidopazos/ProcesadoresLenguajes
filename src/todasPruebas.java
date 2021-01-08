@@ -2,6 +2,8 @@ import DataStructures.Token;
 
 import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class todasPruebas {
     public static void main(String[] args) throws Exception {
@@ -9,16 +11,24 @@ public class todasPruebas {
 
         for (int i = 1; i < 13; i++) {
             fileOut = new PrintStream(System.out);
-            String archivo = "D:/OneDrive - Universidad Politécnica de Madrid/Universidad/3º/Procesadores de Lenguajes/Practica/ProcesadoresLenguajes/Pruebas/Todas Pruebas/Prueba "
+            String archivo = "./Pruebas/Todas Pruebas/Prueba "
                     + i + ".txt";
+            File pruebaAnalizar = new File(archivo);
 
-            String path = "D:/OneDrive - Universidad Politécnica de Madrid/Universidad/3º/Procesadores de Lenguajes/Practica/ProcesadoresLenguajes/outputs/All/";
+
+            String path = "./outputs/All/";
             File directory = new File(path + "Prueba " + i);
             if (!directory.exists()) {
 
                 directory.mkdir();
             }
 
+            Files.copy(pruebaAnalizar.toPath(),(new File(path + "Prueba " + i+"/Prueba"+i)).toPath(),StandardCopyOption.REPLACE_EXISTING);
+
+
+
+
+            
             System.err.println("Analizando el archivo: ");
             System.err.println("\t" + archivo);
 

@@ -1,3 +1,0 @@
-do{
-	alert(mensaje);
-}while(valor = 1);

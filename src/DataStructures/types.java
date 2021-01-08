@@ -1,9 +1,9 @@
 package DataStructures;
 
 public enum types {
-    NUMBER("NUMBER",2),
+    NUMBER("NUMBER",1),
     STRING("STRING",3),
-    BOOLEAN("BOOLEAN",2),
+    BOOLEAN("BOOLEAN",1),
     FUNCTION("FUNCTION",0),
     EMPTY("EMTPY",0),
     tipo_Ok("tipoOk",0),
@@ -18,9 +18,14 @@ public enum types {
         this.ancho=ancho;
     }
     public String getName(){
-        return this.name;
+        return "\'"+this.name+"\'";
     }
     public int getAncho(){
         return this.ancho;
+    }
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return getName();
     }
 }

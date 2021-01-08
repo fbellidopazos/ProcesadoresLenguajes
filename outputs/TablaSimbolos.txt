@@ -2,51 +2,6 @@ CONTENIDO DE LA TABLA TSGLOBAL #1 :
 
 	* LEXEMA : 'n1'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
---------------------------------------------------------------
-	* LEXEMA : 'l1'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 2
---------------------------------------------------------------
-	* LEXEMA : 'cad'
-	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 4
---------------------------------------------------------------
-	* LEXEMA : 'n2'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 7
---------------------------------------------------------------
-	* LEXEMA : 'l2'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 9
---------------------------------------------------------------
-	* LEXEMA : 'esto_es_un_nombre_de_variable_global_de_tipo_entero'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 11
---------------------------------------------------------------
-	* LEXEMA : 'ff'
-	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 1
-	+ TipoRetorno : BOOLEAN
-	+ Etiqueta : eti6
-	+ tipoArgumento0 : BOOLEAN
---------------------------------------------------------------
-	* LEXEMA : 'varglobal'
-	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 13
---------------------------------------------------------------
-CONTENIDO DE LA TABLA FUNCION ff #2 :
-
-	* LEXEMA : 'ss'
-	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------

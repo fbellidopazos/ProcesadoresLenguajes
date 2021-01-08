@@ -75,6 +75,15 @@ public class main {
 
             fileOut.close();
         } else {
+            File directory = new File("./outputs");
+            if (!directory.exists()) {
+
+                directory.mkdir();
+            }
+            PrintStream fileOut = new PrintStream("./outputs/erroresDeAnalisis.txt");
+            System.setOut(fileOut);
+            System.out.println("No hay archivo para analizar");
+            
             throw new Exception("No hay archivo para analizar"); // No hay archivo a analizador
         }
 

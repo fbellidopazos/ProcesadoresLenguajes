@@ -2,42 +2,42 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'b'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 2
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'int'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 4
+	+ Tipo : 'NUMBER'
+	+ Despl : 4
 --------------------------------------------------------------
 	* LEXEMA : 'operacion'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 2
-	+ TipoRetorno : NUMBER
-	+ Etiqueta : eti3
-	+ tipoArgumento0 : NUMBER
-	+ tipoArgumento1 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 2
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : eti3
+	+ TipoParam0 : 'NUMBER'
+	+ TipoParam1 : 'NUMBER'
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION operacion #2 :
 
 	* LEXEMA : 'num2'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'num1'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 2
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'res'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 4
+	+ Tipo : 'NUMBER'
+	+ Despl : 4
 --------------------------------------------------------------

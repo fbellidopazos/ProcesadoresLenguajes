@@ -108,8 +108,9 @@ public class analizadorSemantico {
                 resHashMap.put("tipo", gAtribs.get("tipo"));
             } else {
                 errorModule.raiseError(3,
-                        "Estas devolviendo dentor de la funcion algo del tipo: " + (types) gAtribs.get("returnType")
+                        "Estas devolviendo dentro de la funcion algo del tipo: " + (types) gAtribs.get("returnType")
                                 + " cuando tu funcion tiene que devolver: " + (types) iAtribs.get("tipo"));
+                                resHashMap.put("tipo", types.tipo_error);
             }
         } else {
             if ((types) iAtribs.get("tipo") == types.EMPTY) {
@@ -120,6 +121,7 @@ public class analizadorSemantico {
             } else {
                 errorModule.raiseError(3,
                         "La cabeza de la funcion esta mal, prueba a poner : function id(...){}\n\tEs decir sin tipo definir el tipo de la funcion");
+                        resHashMap.put("tipo", types.tipo_error);
             }
         }
 

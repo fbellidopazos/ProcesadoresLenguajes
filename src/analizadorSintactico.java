@@ -20,7 +20,7 @@ public class analizadorSintactico {
     public Stack<String> pila; // Pila A.Sinct. Ascendente
     public Pair<String, Integer>[] gramaticaDepurada; // Analisis de las cosas utiles de la gramatica
     public List<Token<String, String>> tokensUsados; // Tokens usados
-    // public Pair<String, String>[][] tablaAccionErrores;
+    int codigoId=0;
 
     public String aSintactico() throws Exception {
 
@@ -31,7 +31,14 @@ public class analizadorSintactico {
 
         String parse = "";
         Token<String, String> sig_token = aLexico.generarToken();
-        tokensUsados.add(sig_token);
+
+        if(sig_token.first == "identificador"){
+            tokensUsados.add(new Token<>(sig_token.first, String.valueOf(codigoId++)));
+        }else{
+            tokensUsados.add(sig_token);
+        }
+
+        
         boolean condicionSalida = true;
 
         if (sig_token.first == "EOF") {
@@ -73,7 +80,11 @@ public class analizadorSintactico {
                 aSemantico.stackAtributos.push(null); // Metemos hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 sig_token = aLexico.generarToken();
-                tokensUsados.add(sig_token);
+                if(sig_token.first == "identificador"){
+                    tokensUsados.add(new Token<>(sig_token.first, String.valueOf(codigoId++)));
+                }else{
+                    tokensUsados.add(sig_token);
+                }
             } else if (accionRealizar != null && accionRealizar.first.equals("R")) {
                 // System.err.println(this.pila);
                 // System.err.println(this.aSemantico.stackAtributos);

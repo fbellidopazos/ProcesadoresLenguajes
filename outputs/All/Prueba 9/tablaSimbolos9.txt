@@ -2,103 +2,103 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 's'
 	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 0
+	+ Tipo : 'STRING'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'uno'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 3
+	+ Tipo : 'NUMBER'
+	+ Despl : 3
 --------------------------------------------------------------
 	* LEXEMA : 'UNO'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 5
+	+ Tipo : 'NUMBER'
+	+ Despl : 5
 --------------------------------------------------------------
 	* LEXEMA : 'Factorial'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 1
-	+ TipoRetorno : NUMBER
-	+ Etiqueta : eti3
-	+ tipoArgumento0 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : eti3
+	+ TipoParam0 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'For'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 7
+	+ Tipo : 'NUMBER'
+	+ Despl : 7
 --------------------------------------------------------------
 	* LEXEMA : 'functional'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 9
+	+ Tipo : 'NUMBER'
+	+ Despl : 9
 --------------------------------------------------------------
 	* LEXEMA : 'While'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 11
+	+ Tipo : 'NUMBER'
+	+ Despl : 11
 --------------------------------------------------------------
 	* LEXEMA : 'print'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 3
-	+ TipoRetorno : EMPTY
-	+ Etiqueta : eti7
-	+ tipoArgumento0 : STRING
-	+ tipoArgumento1 : STRING
-	+ tipoArgumento2 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 3
+	+ TipoRetorno : 'EMTPY'
+	+ EtiqFuncion : eti7
+	+ TipoParam0 : 'STRING'
+	+ TipoParam1 : 'STRING'
+	+ TipoParam2 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'cadena'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 1
-	+ TipoRetorno : STRING
-	+ Etiqueta : eti8
-	+ tipoArgumento0 : BOOLEAN
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'STRING'
+	+ EtiqFuncion : eti8
+	+ TipoParam0 : 'BOOLEAN'
 --------------------------------------------------------------
 	* LEXEMA : 'num'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 13
+	+ Tipo : 'NUMBER'
+	+ Despl : 13
 --------------------------------------------------------------
 	* LEXEMA : 'booleano'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 15
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 15
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION Factorial #2 :
 
 	* LEXEMA : 'n'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'factorial'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 2
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION print #3 :
 
 	* LEXEMA : 'f'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'msg'
 	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 2
+	+ Tipo : 'STRING'
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 's'
 	ATRIBUTOS:
-	+ Tipo : STRING
-	+ Desplazamiento : 5
+	+ Tipo : 'STRING'
+	+ Despl : 5
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION cadena #4 :
 
 	* LEXEMA : 'log'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 0
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
 --------------------------------------------------------------

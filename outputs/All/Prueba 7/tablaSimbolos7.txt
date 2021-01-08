@@ -2,88 +2,88 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 
 	* LEXEMA : 'booleano'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 0
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'bisiesto'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 1
-	+ TipoRetorno : BOOLEAN
-	+ Etiqueta : eti1
-	+ tipoArgumento0 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'BOOLEAN'
+	+ EtiqFuncion : eti1
+	+ TipoParam0 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'dias'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 2
-	+ TipoRetorno : NUMBER
-	+ Etiqueta : eti2
-	+ tipoArgumento0 : NUMBER
-	+ tipoArgumento1 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 2
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : eti2
+	+ TipoParam0 : 'NUMBER'
+	+ TipoParam1 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'esFechaCorrecta'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 3
-	+ TipoRetorno : BOOLEAN
-	+ Etiqueta : eti3
-	+ tipoArgumento0 : NUMBER
-	+ tipoArgumento1 : NUMBER
-	+ tipoArgumento2 : NUMBER
+	+ Tipo : 'FUNCTION'
+	+ numParam : 3
+	+ TipoRetorno : 'BOOLEAN'
+	+ EtiqFuncion : eti3
+	+ TipoParam0 : 'NUMBER'
+	+ TipoParam1 : 'NUMBER'
+	+ TipoParam2 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'demo'
 	ATRIBUTOS:
-	+ Tipo : FUNCTION
-	+ NºParametros : 0
-	+ TipoRetorno : EMPTY
-	+ Etiqueta : eti4
+	+ Tipo : 'FUNCTION'
+	+ numParam : 0
+	+ TipoRetorno : 'EMTPY'
+	+ EtiqFuncion : eti4
 --------------------------------------------------------------
 	* LEXEMA : 'a1b2c3d4'
 	ATRIBUTOS:
-	+ Tipo : BOOLEAN
-	+ Desplazamiento : 2
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 2
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION bisiesto #2 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION dias #3 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'm'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 2
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'dd'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 4
+	+ Tipo : 'NUMBER'
+	+ Despl : 4
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION esFechaCorrecta #4 :
 
 	* LEXEMA : 'a'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 0
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
 --------------------------------------------------------------
 	* LEXEMA : 'm'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 2
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'd'
 	ATRIBUTOS:
-	+ Tipo : NUMBER
-	+ Desplazamiento : 4
+	+ Tipo : 'NUMBER'
+	+ Despl : 4
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION demo #5 :
 
