@@ -1,0 +1,47 @@
+/* prueba correcta */
+let number entero;
+let string cadena;
+let boolean logico;
+let number abcdefghij________;
+function FuncionNumero ()
+{
+  let number i;
+  
+  i = entero;
+  entero=9-i;
+}
+function string FuncionRetorno (string hola, number x, boolean z)
+{
+  let number i;
+  
+  input (i);
+  alert (hola);
+  return hola;
+}
+function FuncionSentencia (number z_Z, boolean b)
+{
+  do
+  {
+	alert (88);
+  } while (b);
+}
+function Funcion (number x, boolean b)
+{
+	FuncionNumero();
+  alert 
+    (cadena);return;
+}
+let number iii;
+let boolean bbb;
+/* comentario 
+multi 
+línea ***/
+input(iii);
+alert (iii) ;
+
+iii -= iii;
+bbb = bbb;
+
+Funcion
+ ( iii, 
+   bbb );

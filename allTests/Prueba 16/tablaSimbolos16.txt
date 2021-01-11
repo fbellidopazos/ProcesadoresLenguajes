@@ -1,0 +1,104 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'uno'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 64
+--------------------------------------------------------------
+	* LEXEMA : 'UNO'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 65
+--------------------------------------------------------------
+	* LEXEMA : 'Factorial'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : 'eti3'
+	+ TipoParam1 : 'NUMBER'
+--------------------------------------------------------------
+	* LEXEMA : 'For'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 66
+--------------------------------------------------------------
+	* LEXEMA : 'functional'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 67
+--------------------------------------------------------------
+	* LEXEMA : 'While'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 68
+--------------------------------------------------------------
+	* LEXEMA : 'print'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 3
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti7'
+	+ TipoParam1 : 'STRING'
+	+ TipoParam2 : 'STRING'
+	+ TipoParam3 : 'NUMBER'
+--------------------------------------------------------------
+	* LEXEMA : 'cadena'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'STRING'
+	+ EtiqFuncion : 'eti8'
+	+ TipoParam1 : 'BOOLEAN'
+--------------------------------------------------------------
+	* LEXEMA : 'num'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 69
+--------------------------------------------------------------
+	* LEXEMA : 'booleano'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 70
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION Factorial #2 :
+
+	* LEXEMA : 'n'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'factorial'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION print #3 :
+
+	* LEXEMA : 'f'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 65
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION cadena #4 :
+
+	* LEXEMA : 'log'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
+--------------------------------------------------------------
