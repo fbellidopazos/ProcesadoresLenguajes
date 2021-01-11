@@ -39,7 +39,7 @@ public class todasPruebas {
                 directory.mkdir();
             }
 
-            Files.copy(pruebaAnalizar.toPath(),(new File(path + "Prueba " + i+"/Prueba"+i)).toPath(),StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(pruebaAnalizar.toPath(),(new File(path + "Prueba " + i+"/Prueba"+i+".txt")).toPath(),StandardCopyOption.REPLACE_EXISTING);
 
 
 
