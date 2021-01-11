@@ -98,7 +98,7 @@ public class TablaSimbolos {
         for (types tipoArg : tipos) {
             data.add(tipoArg);
             if ((longitud - i) - 6 == 0) {
-                cabecera.add("TipoParam" + i);
+                cabecera.add("TipoParam" + (i+1));
                 longitud++;
             }
             i++;

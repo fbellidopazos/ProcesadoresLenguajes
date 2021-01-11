@@ -8,35 +8,35 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'n2'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 'l1'
 	ATRIBUTOS:
 	+ Tipo : 'BOOLEAN'
-	+ Despl : 4
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'l2'
 	ATRIBUTOS:
 	+ Tipo : 'BOOLEAN'
-	+ Despl : 6
+	+ Despl : 3
 --------------------------------------------------------------
 	* LEXEMA : 'cad'
 	ATRIBUTOS:
 	+ Tipo : 'STRING'
-	+ Despl : 8
+	+ Despl : 4
 --------------------------------------------------------------
 	* LEXEMA : 'ff'
 	ATRIBUTOS:
 	+ Tipo : 'FUNCTION'
 	+ numParam : 1
 	+ TipoRetorno : 'BOOLEAN'
-	+ EtiqFuncion : eti5
+	+ EtiqFuncion : 'eti5'
 	+ TipoParam0 : 'BOOLEAN'
 --------------------------------------------------------------
 	* LEXEMA : 'varglobal'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 11
+	+ Despl : 7
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION ff #2 :
 

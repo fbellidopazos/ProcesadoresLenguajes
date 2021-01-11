@@ -1,4 +1,1 @@
-Error Semantico: 
-Nombre de identificador: "n1" ,ya declarado previamente
-Error Semantico: 
-Revisa los errores que tienes, algo no anda bien
+No hay archivo para analizar

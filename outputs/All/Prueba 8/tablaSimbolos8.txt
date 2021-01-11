@@ -10,7 +10,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : 'FUNCTION'
 	+ numParam : 1
 	+ TipoRetorno : 'BOOLEAN'
-	+ EtiqFuncion : eti1
+	+ EtiqFuncion : 'eti1'
 	+ TipoParam0 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'dias'
@@ -18,7 +18,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : 'FUNCTION'
 	+ numParam : 2
 	+ TipoRetorno : 'NUMBER'
-	+ EtiqFuncion : eti2
+	+ EtiqFuncion : 'eti2'
 	+ TipoParam0 : 'NUMBER'
 	+ TipoParam1 : 'NUMBER'
 --------------------------------------------------------------
@@ -27,7 +27,7 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : 'FUNCTION'
 	+ numParam : 3
 	+ TipoRetorno : 'BOOLEAN'
-	+ EtiqFuncion : eti3
+	+ EtiqFuncion : 'eti3'
 	+ TipoParam0 : 'NUMBER'
 	+ TipoParam1 : 'NUMBER'
 	+ TipoParam2 : 'NUMBER'
@@ -37,12 +37,12 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : 'FUNCTION'
 	+ numParam : 0
 	+ TipoRetorno : 'EMTPY'
-	+ EtiqFuncion : eti4
+	+ EtiqFuncion : 'eti4'
 --------------------------------------------------------------
 	* LEXEMA : 'A_A_A_'
 	ATRIBUTOS:
 	+ Tipo : 'STRING'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION bisiesto #2 :
 
@@ -54,7 +54,7 @@ CONTENIDO DE LA TABLA FUNCION bisiesto #2 :
 	* LEXEMA : 'bis'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION dias #3 :
 
@@ -66,12 +66,12 @@ CONTENIDO DE LA TABLA FUNCION dias #3 :
 	* LEXEMA : 'm'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 'dd'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 4
+	+ Despl : 2
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION esFechaCorrecta #4 :
 
@@ -83,12 +83,12 @@ CONTENIDO DE LA TABLA FUNCION esFechaCorrecta #4 :
 	* LEXEMA : 'm'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 'd'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 4
+	+ Despl : 2
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION demo #5 :
 

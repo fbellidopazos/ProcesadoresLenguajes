@@ -8,15 +8,15 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'b'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 'bbb'
 	ATRIBUTOS:
 	+ Tipo : 'BOOLEAN'
-	+ Despl : 4
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'c'
 	ATRIBUTOS:
 	+ Tipo : 'BOOLEAN'
-	+ Despl : 6
+	+ Despl : 3
 --------------------------------------------------------------

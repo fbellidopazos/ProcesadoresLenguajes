@@ -13,37 +13,37 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'UNO'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 5
+	+ Despl : 4
 --------------------------------------------------------------
 	* LEXEMA : 'Factorial'
 	ATRIBUTOS:
 	+ Tipo : 'FUNCTION'
 	+ numParam : 1
 	+ TipoRetorno : 'NUMBER'
-	+ EtiqFuncion : eti3
+	+ EtiqFuncion : 'eti3'
 	+ TipoParam0 : 'NUMBER'
 --------------------------------------------------------------
 	* LEXEMA : 'For'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 7
+	+ Despl : 5
 --------------------------------------------------------------
 	* LEXEMA : 'functional'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 9
+	+ Despl : 6
 --------------------------------------------------------------
 	* LEXEMA : 'While'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 11
+	+ Despl : 7
 --------------------------------------------------------------
 	* LEXEMA : 'print'
 	ATRIBUTOS:
 	+ Tipo : 'FUNCTION'
 	+ numParam : 3
 	+ TipoRetorno : 'EMTPY'
-	+ EtiqFuncion : eti7
+	+ EtiqFuncion : 'eti7'
 	+ TipoParam0 : 'STRING'
 	+ TipoParam1 : 'STRING'
 	+ TipoParam2 : 'NUMBER'
@@ -53,18 +53,18 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	+ Tipo : 'FUNCTION'
 	+ numParam : 1
 	+ TipoRetorno : 'STRING'
-	+ EtiqFuncion : eti8
+	+ EtiqFuncion : 'eti8'
 	+ TipoParam0 : 'BOOLEAN'
 --------------------------------------------------------------
 	* LEXEMA : 'num'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 13
+	+ Despl : 8
 --------------------------------------------------------------
 	* LEXEMA : 'booleano'
 	ATRIBUTOS:
 	+ Tipo : 'BOOLEAN'
-	+ Despl : 15
+	+ Despl : 9
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION Factorial #2 :
 
@@ -76,7 +76,7 @@ CONTENIDO DE LA TABLA FUNCION Factorial #2 :
 	* LEXEMA : 'factorial'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION print #3 :
 
@@ -88,12 +88,12 @@ CONTENIDO DE LA TABLA FUNCION print #3 :
 	* LEXEMA : 'msg'
 	ATRIBUTOS:
 	+ Tipo : 'STRING'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 's'
 	ATRIBUTOS:
 	+ Tipo : 'STRING'
-	+ Despl : 5
+	+ Despl : 4
 --------------------------------------------------------------
 CONTENIDO DE LA TABLA FUNCION cadena #4 :
 

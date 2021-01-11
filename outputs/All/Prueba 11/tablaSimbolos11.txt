@@ -8,20 +8,20 @@ CONTENIDO DE LA TABLA TSMAIN #1 :
 	* LEXEMA : 'x'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 2
+	+ Despl : 1
 --------------------------------------------------------------
 	* LEXEMA : 'z'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 4
+	+ Despl : 2
 --------------------------------------------------------------
 	* LEXEMA : 'esto_es_un_nombre_de_variable_global_de_tipo_entero'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 6
+	+ Despl : 3
 --------------------------------------------------------------
 	* LEXEMA : 'y'
 	ATRIBUTOS:
 	+ Tipo : 'NUMBER'
-	+ Despl : 8
+	+ Despl : 4
 --------------------------------------------------------------

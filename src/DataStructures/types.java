@@ -2,10 +2,10 @@ package DataStructures;
 
 public enum types {
     NUMBER("NUMBER",1),
-    STRING("STRING",3),
+    STRING("STRING",64),
     BOOLEAN("BOOLEAN",1),
     FUNCTION("FUNCTION",0),
-    EMPTY("EMTPY",0),
+    EMPTY("EMPTY",0),
     tipo_Ok("tipoOk",0),
     tipo_error("tipoError",0);;
     

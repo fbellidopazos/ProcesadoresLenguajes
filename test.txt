@@ -1,2 +1,0 @@
-let number n1;
-let number n1;
