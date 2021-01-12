@@ -49,6 +49,7 @@ public class main {
                 for (String error : errorModule.analysisErrors) {
                     System.out.println(error);
                 }
+                System.out.println("ENVIA LO SIGUIENTE A CUALQUIERA DE LOS PROGRAMADORES: GRACIAS!\n=======================================================\n");
                 System.out.println(e.getMessage());
                 e.printStackTrace(fileOut);
 

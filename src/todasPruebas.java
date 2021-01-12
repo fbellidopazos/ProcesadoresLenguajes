@@ -24,19 +24,23 @@ public class todasPruebas {
         // List of all the text files
         String filesList[] = directoryPath.list(textFilefilter);
 
-        for (int i = 1; i < filesList.length; i++) {
+        for (int i = 0; i < filesList.length; i++) {
             fileOut = new PrintStream(System.out);
             String archivo = "./allTests/" + filesList[i];
             File pruebaAnalizar = new File(archivo);
-
+            String name = filesList[i].substring(0, filesList[i].length()-1-3);
             String path = "./allTests/";
-            File directory = new File(path + "Prueba " + i);
+
+
+            
+            File directory = new File(path + "" + name);
             if (!directory.exists()) {
 
                 directory.mkdir();
             }
+            
 
-            Files.copy(pruebaAnalizar.toPath(), (new File(path + "Prueba " + i + "/Prueba" + i + ".txt")).toPath(),
+            Files.copy(pruebaAnalizar.toPath(), (new File(path + "" + name + "/Prueba" + i + ".txt")).toPath(),
                     StandardCopyOption.REPLACE_EXISTING);
 
             System.err.println("Analizando el archivo: ");
@@ -51,33 +55,33 @@ public class todasPruebas {
                     gestorTablaSimbolos);
 
             // Recolector de Parse
-            fileOut = new PrintStream("./allTests/Prueba " + i + "/Parse" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/Parse" + i + ".txt");
             System.setOut(fileOut);
             String parse = aSintactico.aSintactico();
 
             System.out.println(parse);
 
             // Recolector de Tokens de ALex
-            fileOut = new PrintStream("./allTests/Prueba " + i + "/tokens" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/tokens" + i + ".txt");
             System.setOut(fileOut);
             for (Token<String, String> token : aSintactico.tokensUsados) {
                 System.out.println(token);
             }
 
             // Log Semantico
-            fileOut = new PrintStream("./allTests/Prueba " + i + "/logSemantico" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/logSemantico" + i + ".txt");
             System.setOut(fileOut);
             for (String str : aSemantico.logSemantico) {
                 System.out.println(str);
             }
 
             // Recolector de tabla de Simbolos
-            fileOut = new PrintStream("./allTests/Prueba " + i + "/tablaSimbolos" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/tablaSimbolos" + i + ".txt");
             System.setOut(fileOut);
 
             gestorTablaSimbolos.showAllTables(false);
 
-            fileOut = new PrintStream("./allTests/Prueba " + i + "/erroresDeAnalisis" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/erroresDeAnalisis" + i + ".txt");
             System.setOut(fileOut);
             for (String error : errorModule.analysisErrors) {
                 System.out.println(error + "\n");
