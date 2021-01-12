@@ -22,11 +22,11 @@ public class analizadorLexico {
     public int line = 1;
     public GestorTablaSimbolos gestorTablaSimbolos;
 
-    
-
     /**
      * Modulo buscador accionEstado Letras [charInit:charFinal] --> 65-90 [Mayus]//
      * 97-122 [Minus] Numeros [charInit:charFinal] --> 48-57
+     * 
+     * @throws Exception
      */
     public Pair<String, String> getAccionEstado(String estado) {
         /*
@@ -91,9 +91,9 @@ public class analizadorLexico {
             return gramaticaRegular[fila][columna];
         } catch (Exception e) {
             errorModule.raiseError(0, line);
-
+            return new Pair<String, String>("S", "B");
         }
-        return new Pair<String, String>("S", "B");
+        // return new Pair<String, String>("S", "B");
     }
 
     private boolean getDels(int car) {
@@ -158,8 +158,10 @@ public class analizadorLexico {
 
     /**
      * Modulo de generacion de Tokens
+     * 
+     * @throws IOException
      */
-    public Token<String, String> generarToken() throws Exception {
+    public Token<String, String> generarToken() throws IOException {
         String estado = "S";
         String accion;
         Token<String, String> token = null;
@@ -177,7 +179,12 @@ public class analizadorLexico {
 
             if (estado == null) {
                 errorModule.raiseError(0, line);
-
+                
+                token = new Token<String, String>("ERROR DE TOKEN", "");
+                estado = "S";
+                digito = 0;
+                lexema = "";
+                leer();
             } else {
                 switch (accion) {
                     case "A0":
@@ -254,6 +261,7 @@ public class analizadorLexico {
                                 token = new Token<>("coma", "");
                                 break;
                             default:
+                                
                                 errorModule.raiseError(-1, line);
                         }
                         leer();
@@ -410,6 +418,7 @@ public class analizadorLexico {
                         digito = 0;
                         lexema = "";
                         leer();
+
                         break;
 
                 }

@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,9 +21,9 @@ public class analizadorSintactico {
     public Stack<String> pila; // Pila A.Sinct. Ascendente
     public Pair<String, Integer>[] gramaticaDepurada; // Analisis de las cosas utiles de la gramatica
     public List<Token<String, String>> tokensUsados; // Tokens usados
-    int codigoId=0;
+    int codigoId = 0;
 
-    public String aSintactico() throws Exception {
+    public String aSintactico() throws IOException {
 
         pila.removeAllElements();
         pila.push("0");
@@ -32,20 +33,19 @@ public class analizadorSintactico {
         String parse = "";
         Token<String, String> sig_token = aLexico.generarToken();
 
-        if(sig_token.first == "identificador"){
+        if (sig_token.first == "identificador") {
             tokensUsados.add(new Token<>(sig_token.first, String.valueOf(codigoId++)));
-        }else{
+        } else {
             tokensUsados.add(sig_token);
         }
 
-        
         boolean condicionSalida = true;
 
         if (sig_token.first == "EOF") {
             return "";
         }
 
-        while (condicionSalida) {
+        while (condicionSalida && sig_token!=null) {
             // Tomamos el siguiente Token
             String a = sig_token.first + "" + sig_token.second;
             String s = pila.peek();
@@ -80,9 +80,9 @@ public class analizadorSintactico {
                 aSemantico.stackAtributos.push(null); // Metemos hueco >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
                 sig_token = aLexico.generarToken();
-                if(sig_token.first == "identificador"){
+                if (sig_token!=null && sig_token.first == "identificador") {
                     tokensUsados.add(new Token<>(sig_token.first, String.valueOf(codigoId++)));
-                }else{
+                } else {
                     tokensUsados.add(sig_token);
                 }
             } else if (accionRealizar != null && accionRealizar.first.equals("R")) {
@@ -110,7 +110,6 @@ public class analizadorSintactico {
                 pila.push(antecedente);
                 aSemantico.stackAtributos.push(atributo); // Metemos el valor Calculado
                                                           // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                
 
                 Integer sk = Integer.valueOf(tablaGoTo[sj][aplicacionNoTerminal.get(antecedente)]);
                 pila.push(Integer.toString(sk));
@@ -126,12 +125,10 @@ public class analizadorSintactico {
                 // Aceptamos
                 condicionSalida = false; // Salimos bucle
 
-
-                aSemantico.logSemantico.add("Aplicando regla: " + 0
-                        + " con stack de Atributos --> " + aSemantico.stackAtributos);
+                aSemantico.logSemantico
+                        .add("Aplicando regla: " + 0 + " con stack de Atributos --> " + aSemantico.stackAtributos);
                 aSemantico.accionEjecutar(0);
                 aSemantico.logSemantico.add("\tSe obtiene stack de Atributos --> " + aSemantico.stackAtributos + "\n");
-
 
                 parse = parse + " " + 1; // Necesario si tomamos la gramatica aumentada como gramatica
 
@@ -150,7 +147,7 @@ public class analizadorSintactico {
     }
 
     public analizadorSintactico(analizadorLexico aLexico, analizadorSemantico aSemantico, moduloError errorModule,
-            GestorTablaSimbolos gestorTablaSimbolos) throws Exception {
+            GestorTablaSimbolos gestorTablaSimbolos) {
         this.aLexico = aLexico;
         this.aSemantico = aSemantico;
         this.errorModule = errorModule;

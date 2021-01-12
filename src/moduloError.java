@@ -7,6 +7,8 @@ public class moduloError {
     List<String> analysisErrors; // Almacen de Errores, para luego mostrarlos por pantalla
 
     public void raiseError(int errorCode) {
+        
+
         String error = errorCodes.get(errorCode);
         System.err.println(error);
 

@@ -9,28 +9,25 @@ import java.nio.file.StandardCopyOption;
 public class todasPruebas {
     public static void main(String[] args) throws Exception {
         PrintStream fileOut = System.out;
-        
+
         File directoryPath = new File("./allTests/");
-        FilenameFilter textFilefilter = new FilenameFilter(){
-           public boolean accept(File dir, String name) {
-              String lowercaseName = name.toLowerCase();
-              if (lowercaseName.endsWith(".txt")) {
-                 return true;
-              } else {
-                 return false;
-              }
-           }
+        FilenameFilter textFilefilter = new FilenameFilter() {
+            public boolean accept(File dir, String name) {
+                String lowercaseName = name.toLowerCase();
+                if (lowercaseName.endsWith(".txt")) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         };
-        //List of all the text files
+        // List of all the text files
         String filesList[] = directoryPath.list(textFilefilter);
-
-
 
         for (int i = 1; i < filesList.length; i++) {
             fileOut = new PrintStream(System.out);
-            String archivo = "./allTests/"+filesList[i];
+            String archivo = "./allTests/" + filesList[i];
             File pruebaAnalizar = new File(archivo);
-
 
             String path = "./allTests/";
             File directory = new File(path + "Prueba " + i);
@@ -39,12 +36,9 @@ public class todasPruebas {
                 directory.mkdir();
             }
 
-            Files.copy(pruebaAnalizar.toPath(),(new File(path + "Prueba " + i+"/Prueba"+i+".txt")).toPath(),StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(pruebaAnalizar.toPath(), (new File(path + "Prueba " + i + "/Prueba" + i + ".txt")).toPath(),
+                    StandardCopyOption.REPLACE_EXISTING);
 
-
-
-
-            
             System.err.println("Analizando el archivo: ");
             System.err.println("\t" + archivo);
 

@@ -17,7 +17,7 @@ public class analizadorSemantico {
     public HashMap<String, Object> function0() {
         HashMap<String, Object> resHashMap = new HashMap<>();
         types pTipo = (types) getFromPos(1).get("tipo");
-        if(pTipo == types.tipo_error){
+        if (pTipo == types.tipo_error) {
             errorModule.raiseError(3, "Revisa los errores que tienes, algo no anda bien");
         }
         resHashMap.put("tipo", pTipo);
@@ -42,6 +42,12 @@ public class analizadorSemantico {
 
         } else {
             resHashMap.put("tipo", types.tipo_error);
+        }
+
+        Boolean bHasReturn = (Boolean) getFromPos(2).get("hasReturn");
+        if(bHasReturn!=null && bHasReturn){
+            resHashMap.put("tipo", types.tipo_error);
+            errorModule.raiseError(3,"Return Fuera de funcion");
         }
 
         resHashMap.put("numeros", null);
@@ -110,7 +116,7 @@ public class analizadorSemantico {
                 errorModule.raiseError(3,
                         "Estas devolviendo dentro de la funcion algo del tipo: " + (types) gAtribs.get("returnType")
                                 + " cuando tu funcion tiene que devolver: " + (types) iAtribs.get("tipo"));
-                                resHashMap.put("tipo", types.tipo_error);
+                resHashMap.put("tipo", types.tipo_error);
             }
         } else {
             if ((types) iAtribs.get("tipo") == types.EMPTY) {
@@ -121,7 +127,7 @@ public class analizadorSemantico {
             } else {
                 errorModule.raiseError(3,
                         "La cabeza de la funcion esta mal, prueba a poner : function id(...){}\n\tEs decir sin tipo definir el tipo de la funcion");
-                        resHashMap.put("tipo", types.tipo_error);
+                resHashMap.put("tipo", types.tipo_error);
             }
         }
 
@@ -550,7 +556,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function22() throws Exception {
+    public HashMap<String, Object> function22() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types eTipo = (types) getFromPos(3).get("tipo");
@@ -636,7 +642,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function25() throws Exception {
+    public HashMap<String, Object> function25() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types eTipo = (types) getFromPos(3).get("tipo");
@@ -729,7 +735,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function29() throws Exception {
+    public HashMap<String, Object> function29() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types r1Tipo = (types) getFromPos(3).get("tipo");
@@ -780,7 +786,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function31() throws Exception {
+    public HashMap<String, Object> function31() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types r1Tipo = (types) getFromPos(3).get("tipo");
@@ -903,7 +909,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function36() throws Exception {
+    public HashMap<String, Object> function36() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types v1Tipo = (types) getFromPos(3).get("tipo");
@@ -936,7 +942,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> function37() throws Exception {
+    public HashMap<String, Object> function37() {
         HashMap<String, Object> resHashMap = new HashMap<>();
 
         types v1Tipo = (types) getFromPos(3).get("tipo");
@@ -1193,7 +1199,7 @@ public class analizadorSemantico {
         return resHashMap;
     }
 
-    public HashMap<String, Object> accionEjecutar(int regla) throws Exception {
+    public HashMap<String, Object> accionEjecutar(int regla) {
         HashMap<String, Object> resHashMap;
 
         switch (regla) {
