@@ -36,7 +36,7 @@ El espacio de trabajo consta de
     * `DataStructures` : Contiene codigo de estructuras de datos usadas
     * `Utilidades` : Contiene scripts desarrollados para auto-implementar codigo repetitivo
 - `docs` : Documentación 
-- `Pruebas` : Todas las pruebas realizadas, correctamente
+- `allTests` : Todas las pruebas realizadas, correctamente
 - `outputs` : Folder donde se diriguen toda la informacion obtenida de los analizadores
 
 
