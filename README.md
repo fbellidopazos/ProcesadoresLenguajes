@@ -35,8 +35,8 @@ El espacio de trabajo consta de
 - `src` : Todo el codigo del analizador
     * `DataStructures` : Contiene codigo de estructuras de datos usadas
     * `Utilidades` : Contiene scripts desarrollados para auto-implementar codigo repetitivo
-- `docs` : Documentación 
-- `Pruebas` : Todas las pruebas realizadas, correctamente
+- `Documentacion` : Documentación estilo Memoria del Analizador
+- `allTests` : Todas las pruebas realizadas, correctamente
 - `outputs` : Folder donde se diriguen toda la informacion obtenida de los analizadores
 
 
