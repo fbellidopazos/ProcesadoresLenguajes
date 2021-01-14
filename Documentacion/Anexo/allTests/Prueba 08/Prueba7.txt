@@ -1,0 +1,4 @@
+/* Prueba Incorrecta - Error Semantico*/ 
+
+let number b;
+return b;

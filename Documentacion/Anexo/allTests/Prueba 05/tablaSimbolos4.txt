@@ -1,0 +1,120 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'entero'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'cadena'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 'logico'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 65
+--------------------------------------------------------------
+	* LEXEMA : 'abcdefghij________'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 66
+--------------------------------------------------------------
+	* LEXEMA : 'FuncionNumero'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 0
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti4'
+--------------------------------------------------------------
+	* LEXEMA : 'FuncionRetorno'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 3
+	+ TipoRetorno : 'STRING'
+	+ EtiqFuncion : 'eti5'
+	+ TipoParam1 : 'STRING'
+	+ TipoParam2 : 'NUMBER'
+	+ TipoParam3 : 'BOOLEAN'
+--------------------------------------------------------------
+	* LEXEMA : 'FuncionSentencia'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 2
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti6'
+	+ TipoParam1 : 'NUMBER'
+	+ TipoParam2 : 'BOOLEAN'
+--------------------------------------------------------------
+	* LEXEMA : 'Funcion'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 2
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti7'
+	+ TipoParam1 : 'NUMBER'
+	+ TipoParam2 : 'BOOLEAN'
+--------------------------------------------------------------
+	* LEXEMA : 'iii'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 67
+--------------------------------------------------------------
+	* LEXEMA : 'bbb'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 68
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION FuncionNumero #2 :
+
+	* LEXEMA : 'i'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION FuncionRetorno #3 :
+
+	* LEXEMA : 'z'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 'hola'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 2
+--------------------------------------------------------------
+	* LEXEMA : 'i'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 66
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION FuncionSentencia #4 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'z_Z'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION Funcion #5 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------

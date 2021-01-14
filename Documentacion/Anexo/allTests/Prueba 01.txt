@@ -1,0 +1,15 @@
+/* Prueba Correcta */
+/*
+Sentencias Simples
+*/
+let number n;
+let boolean b;
+let string s;
+
+if(b) n=1;
+alert(s);
+input(n);
+
+n-=2;
+
+

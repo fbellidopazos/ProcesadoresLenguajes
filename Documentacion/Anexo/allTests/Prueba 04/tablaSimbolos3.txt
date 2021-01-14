@@ -1,0 +1,31 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'texto'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'pideTexto'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 0
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti1'
+--------------------------------------------------------------
+	* LEXEMA : 'print'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti2'
+	+ TipoParam1 : 'STRING'
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION pideTexto #2 :
+
+CONTENIDO DE LA TABLA FUNCION print #3 :
+
+	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------

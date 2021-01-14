@@ -1,0 +1,15 @@
+<let, >
+<boolean, >
+<identificador, 0>
+<puntoYcoma, >
+<alert, >
+<abrirParentesis, >
+<identificador, 1>
+<cerrarParentesis, >
+<puntoYcoma, >
+<input, >
+<abrirParentesis, >
+<identificador, 2>
+<cerrarParentesis, >
+<puntoYcoma, >
+<EOF, >

@@ -1,0 +1,3 @@
+Aplicando regla: 26 con stack de Atributos --> [null, null, null, null, null]
+	Se obtiene stack de Atributos --> [null, null, null, {tipo='NUMBER', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+

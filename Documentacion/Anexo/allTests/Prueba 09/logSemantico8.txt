@@ -1,0 +1,24 @@
+Aplicando regla: 26 con stack de Atributos --> [null, null, null, null, null]
+	Se obtiene stack de Atributos --> [null, null, null, {tipo='NUMBER', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 23 con stack de Atributos --> [null, null, null, {tipo='NUMBER', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo=null, numeros=null, hasReturn=null, valor=b, tipos=null, returnType=null}, null, null, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 27 con stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, null, null, null, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, null, null, {tipo='BOOLEAN', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 23 con stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, null, null, {tipo='BOOLEAN', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo=null, numeros=null, hasReturn=null, valor=b, tipos=null, returnType=null}, null, null, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 3 con stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 1 con stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 1 con stack de Atributos --> [null, {tipo='tipoOk', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+
+Aplicando regla: 0 con stack de Atributos --> [null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+	Se obtiene stack de Atributos --> [null, {tipo='tipoError', numeros=null, hasReturn=null, valor=null, tipos=null, id=null, returnType=null}, null]
+

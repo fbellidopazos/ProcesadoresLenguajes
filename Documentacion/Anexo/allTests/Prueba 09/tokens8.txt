@@ -1,0 +1,9 @@
+<let, >
+<number, >
+<identificador, 0>
+<puntoYcoma, >
+<let, >
+<boolean, >
+<identificador, 1>
+<puntoYcoma, >
+<EOF, >

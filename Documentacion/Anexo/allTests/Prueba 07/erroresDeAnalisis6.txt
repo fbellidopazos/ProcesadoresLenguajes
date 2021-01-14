@@ -1,0 +1,4 @@
+Error Sintactico en la linea:2
+	@Usuario: Se esperaba: ;
+	@Internal: Error en el token: <asignacion, >
+

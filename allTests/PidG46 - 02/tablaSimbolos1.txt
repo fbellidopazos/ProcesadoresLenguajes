@@ -1,0 +1,27 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'x'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 'esto_es_un_nombre_de_variable_global_de_tipo_entero'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 2
+--------------------------------------------------------------
+	* LEXEMA : 'z'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 3
+--------------------------------------------------------------
+	* LEXEMA : 'y'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 4
+--------------------------------------------------------------

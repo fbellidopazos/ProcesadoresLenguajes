@@ -1,0 +1,17 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 'c'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 2
+--------------------------------------------------------------

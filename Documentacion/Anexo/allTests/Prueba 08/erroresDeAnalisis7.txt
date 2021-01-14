@@ -1,0 +1,6 @@
+Error Semantico: 
+Return Fuera de funcion
+
+Error Semantico: 
+Revisa los errores que tienes, algo no anda bien
+

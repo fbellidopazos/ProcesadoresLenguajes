@@ -1,0 +1,16 @@
+/* Prueba Correcta */
+
+function print (string s, string msg, number f)	
+{
+	alert (s); alert (msg); alert (f);
+		
+}
+
+
+function number Factorial (number n)	
+{
+	if (n != 0)	return 1;
+	return n + Factorial (n - 1);	
+}
+
+print("Factorial","de 6:" ,Factorial(6));

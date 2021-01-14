@@ -1,0 +1,2 @@
+/*Prueba incorrecta - Error Sintaxis*/
+let number var4 = 1+1;

@@ -1,0 +1,67 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'cadena'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'logico1'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 64
+--------------------------------------------------------------
+	* LEXEMA : 'logico2'
+	ATRIBUTOS:
+	+ Tipo : 'BOOLEAN'
+	+ Despl : 65
+--------------------------------------------------------------
+	* LEXEMA : 'number2'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 66
+--------------------------------------------------------------
+	* LEXEMA : 'number1'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 67
+--------------------------------------------------------------
+	* LEXEMA : 'ff'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'STRING'
+	+ EtiqFuncion : 'eti5'
+	+ TipoParam1 : 'STRING'
+--------------------------------------------------------------
+	* LEXEMA : 'varglobal'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 68
+--------------------------------------------------------------
+	* LEXEMA : 'funcion'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'STRING'
+	+ EtiqFuncion : 'eti7'
+	+ TipoParam1 : 'STRING'
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION ff #2 :
+
+	* LEXEMA : 'ss'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION funcion #3 :
+
+	* LEXEMA : 'logico2'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'var'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 64
+--------------------------------------------------------------

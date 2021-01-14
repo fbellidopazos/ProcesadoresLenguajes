@@ -1,0 +1,7 @@
+/* Prueba Incorrecta - Error Lexico*/
+function number SumaAlCuadrado (number a, number b)
+{
+  j= a + b;
+  return j * j;
+  
+}

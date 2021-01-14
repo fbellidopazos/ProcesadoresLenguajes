@@ -1,0 +1,8 @@
+<let, >
+<number, >
+<identificador, 0>
+<puntoYcoma, >
+<return, >
+<identificador, 1>
+<puntoYcoma, >
+<EOF, >

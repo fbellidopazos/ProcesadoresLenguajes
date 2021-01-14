@@ -1,0 +1,7 @@
+Error Lexico:
+ Caracter No valido en la linea:5
+
+Error Sintactico en la linea:5
+	@Usuario: Se esperaba: (,||,&&,==,!=,+,- o nada
+	@Internal: Error en el token: <identificador, j>
+

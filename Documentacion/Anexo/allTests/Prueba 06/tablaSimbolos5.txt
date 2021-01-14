@@ -1,0 +1,28 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'SumaAlCuadrado'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 2
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : 'eti0'
+	+ TipoParam1 : 'NUMBER'
+	+ TipoParam2 : 'NUMBER'
+--------------------------------------------------------------
+	* LEXEMA : 'j'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION SumaAlCuadrado #2 :
+
+	* LEXEMA : 'b'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'a'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 1
+--------------------------------------------------------------

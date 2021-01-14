@@ -1,0 +1,13 @@
+Error Semantico: 
+Alert tiene que tener como argumento una cadena o numero	@Usuario:
+		(Contruccion Correcta) >> alert(<cadena|numero>);
+		(Su construccion) >> alert(<'BOOLEAN'>);
+
+Error Semantico: 
+input tiene que tener como argumento una cadena o un entero
+	@Usuario:
+ 		 (Construccion Correcta) >> input(<cadena|numero>);		 (Su construccion) >> input(<'BOOLEAN'>);
+
+Error Semantico: 
+Revisa los errores que tienes, algo no anda bien
+

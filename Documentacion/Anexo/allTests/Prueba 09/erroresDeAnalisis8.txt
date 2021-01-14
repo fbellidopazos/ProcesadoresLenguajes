@@ -1,0 +1,6 @@
+Error Semantico: 
+Nombre de identificador: "b" ,ya declarado previamente
+
+Error Semantico: 
+Revisa los errores que tienes, algo no anda bien
+

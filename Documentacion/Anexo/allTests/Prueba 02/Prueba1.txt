@@ -1,0 +1,8 @@
+/* Prueba Correcta */
+
+let number a;
+let number b;
+let boolean c;
+do{
+    if(c) a-=1;
+}while( (a+b) == 1 && (a-b) != 4 || c );

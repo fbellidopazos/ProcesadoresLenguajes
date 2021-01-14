@@ -1,0 +1,44 @@
+CONTENIDO DE LA TABLA TSMAIN #1 :
+
+	* LEXEMA : 'print'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 3
+	+ TipoRetorno : 'EMPTY'
+	+ EtiqFuncion : 'eti0'
+	+ TipoParam1 : 'STRING'
+	+ TipoParam2 : 'STRING'
+	+ TipoParam3 : 'NUMBER'
+--------------------------------------------------------------
+	* LEXEMA : 'Factorial'
+	ATRIBUTOS:
+	+ Tipo : 'FUNCTION'
+	+ numParam : 1
+	+ TipoRetorno : 'NUMBER'
+	+ EtiqFuncion : 'eti1'
+	+ TipoParam1 : 'NUMBER'
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION print #2 :
+
+	* LEXEMA : 'f'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
+	* LEXEMA : 'msg'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 1
+--------------------------------------------------------------
+	* LEXEMA : 's'
+	ATRIBUTOS:
+	+ Tipo : 'STRING'
+	+ Despl : 65
+--------------------------------------------------------------
+CONTENIDO DE LA TABLA FUNCION Factorial #3 :
+
+	* LEXEMA : 'n'
+	ATRIBUTOS:
+	+ Tipo : 'NUMBER'
+	+ Despl : 0
+--------------------------------------------------------------
