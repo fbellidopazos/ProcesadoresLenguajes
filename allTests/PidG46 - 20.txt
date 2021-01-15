@@ -3,17 +3,17 @@
 let string cadena;input(cadena);
 let boolean logico1;let boolean logico2;
 let number number2;
-number1 = 378;
+number1 = 873;
 
-number2 = number1;
-cadena = "string";
+number2 = 378;
+if (logico1&& logico2) cadena = "hello";
 
 function string ff(string ss)
 {
-	logico2 =  logico1;
-	if (logico2) cadena = ff (ss);
-	varglobal = 78;
-	return cadena;
+	global = 33;
+	logico1 =  logico2;
+	if (logico1) ss = ff (cadena);
+	return ss;
 }
 		
 function string funcion (string logico2)
@@ -25,7 +25,6 @@ function string funcion (string logico2)
 
   return logico2;
 }
-
-alert(cadena);
 cadena = ((ff(funcion(cadena))));
+alert(cadena);
 

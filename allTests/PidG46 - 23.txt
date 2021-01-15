@@ -5,11 +5,11 @@ input (x);
 alert (x);
 input (z);
 alert (x-z);
-b=x!=z;if (b)
+b=x==z;if (b)
 x =
   x - 6
     - z
-    + 1
+    - 1
     + (2
-    + y
+    - y
     + 6);
