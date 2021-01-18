@@ -179,13 +179,14 @@ public class analizadorLexico {
 
             if (estado == null) {
                 errorModule.raiseError(0, line);
-                
+
                 token = new Token<String, String>("ERROR DE TOKEN", "");
                 estado = "S";
                 digito = 0;
                 lexema = "";
                 leer();
             } else {
+                //System.err.println((int) c + " accion " + accion);
                 switch (accion) {
                     case "A0":
                         // Saltamos Del
@@ -261,7 +262,7 @@ public class analizadorLexico {
                                 token = new Token<>("coma", "");
                                 break;
                             default:
-                                
+
                                 errorModule.raiseError(-1, line);
                         }
                         leer();
@@ -300,7 +301,17 @@ public class analizadorLexico {
                         // System.out.println("A->oc B");
                         break;
                     case "A15":
+
                         lexema = lexema + c;
+                        if ((int) c == 65535) {
+                            errorModule.raiseError(2,
+                                    "String tiene que ir entrecomillado, no has cerrado las comillas");
+                            token = new Token<String, String>("ERROR DE TOKEN", "");
+                            estado = "S";
+                            digito = 0;
+                            lexema = "";
+
+                        }
                         leer();
                         // System.out.println("C->c1 C"+lexema);
                         break;

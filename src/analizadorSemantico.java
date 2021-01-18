@@ -999,6 +999,7 @@ public class analizadorSemantico {
             int id = gestorTablaSimbolos.insertarGlobal(idValue);
             gestorTablaSimbolos.insertarTipoGlobal(id, types.NUMBER);
         }
+        //System.err.println(gestorTablaSimbolos.getType(idValue));
 
         resHashMap.put("tipo", gestorTablaSimbolos.getType(idValue));
         resHashMap.put("numeros", null);
