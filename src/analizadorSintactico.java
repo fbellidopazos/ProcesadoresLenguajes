@@ -136,7 +136,7 @@ public class analizadorSintactico {
                 // Error sintactico o interno
                 errorModule.raiseError(5, aLexico.line,
                         "\t@Usuario: " + (String) tablaAccion[Integer.valueOf(s)][aplicacionTerminal.get(a)].second
-                                + "\n\t@Internal: Error en el token: " + sig_token);
+                                );
 
                 return parse;
             }
