@@ -40,7 +40,7 @@ public class todasPruebas {
             }
             
 
-            Files.copy(pruebaAnalizar.toPath(), (new File(path + "" + name + "/Prueba" + i + ".txt")).toPath(),
+            Files.copy(pruebaAnalizar.toPath(), (new File(path + "" + name + "/Prueba-" + filesList[i] + ".txt")).toPath(),
                     StandardCopyOption.REPLACE_EXISTING);
 
             System.err.println("Analizando el archivo: ");
@@ -55,33 +55,33 @@ public class todasPruebas {
                     gestorTablaSimbolos);
 
             // Recolector de Parse
-            fileOut = new PrintStream("./allTests/" + name + "/Parse" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/Parse-" + filesList[i] + ".txt");
             System.setOut(fileOut);
             String parse = aSintactico.aSintactico();
 
             System.out.println(parse);
 
             // Recolector de Tokens de ALex
-            fileOut = new PrintStream("./allTests/" + name + "/tokens" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/tokens-" + filesList[i] + ".txt");
             System.setOut(fileOut);
             for (Token<String, String> token : aSintactico.tokensUsados) {
                 System.out.println(token);
             }
 
             // Log Semantico
-            fileOut = new PrintStream("./allTests/" + name + "/logSemantico" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/logSemantico-" + filesList[i] + ".txt");
             System.setOut(fileOut);
             for (String str : aSemantico.logSemantico) {
                 System.out.println(str);
             }
 
             // Recolector de tabla de Simbolos
-            fileOut = new PrintStream("./allTests/" + name + "/tablaSimbolos" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/tablaSimbolos-" + filesList[i] + ".txt");
             System.setOut(fileOut);
 
             gestorTablaSimbolos.showAllTables(false);
 
-            fileOut = new PrintStream("./allTests/" + name + "/erroresDeAnalisis" + i + ".txt");
+            fileOut = new PrintStream("./allTests/" + name + "/erroresDeAnalisis-" + filesList[i] + ".txt");
             System.setOut(fileOut);
             for (String error : errorModule.analysisErrors) {
                 System.out.println(error + "\n");
