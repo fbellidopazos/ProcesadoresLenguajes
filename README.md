@@ -42,7 +42,7 @@ El espacio de trabajo consta de
 
 
 # Miembros del proyecto
-* Sofía Hernández Montero - 18M046 - 
-* Jaime González Delgado - 18M048 -
+* Sofía Hernández Montero - 18M046 - s.hernandezm@alumnos.upm.es
+* Jaime González Delgado - 18M048 - jaime.gonzalez.delgado@alumnos.upm.es
 * Fernando Bellido Pazos - 18M008 - f.bpazos@alumnos.upm.es 
 
